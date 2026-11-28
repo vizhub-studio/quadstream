@@ -141,7 +141,7 @@ export function createGlobeRenderer(
     }
     if (state.showQuadtree && !interacting && quadtree.length) {
       const cone = orthographicViewCone(state);
-      const level = state.quadtreeLevel;
+      const level = state.quadtreeLevel ?? Infinity;
       const index = cellIndex;
       const started = performance.now();
       let traversal, drawing = false;
