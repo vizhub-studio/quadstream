@@ -6,6 +6,38 @@ The empty checked-in catalog keeps ordinary installs and CI independent of
 network downloads.
 
 
+## Unified CDN geometry transport (React globe)
+
+Append `?geometry=cdn` to select version-pinned jsDelivr assets for all
+built-in production geometry: Visionscarto world 50m/110m (1.0.0), US Atlas
+states/counties (3.0.1), and the Geo Packs ADM1 source below (0.1.0).
+World geometry is requested on atlas selection; subdivisions are still
+admitted lazily by the existing regional worker scheduler. User-supplied
+files and embedded test fixtures do not use the CDN. The legacy globe is
+unchanged.
+
+The ordinary build continues to include local geometry and defaults to local
+transport for deterministic offline browser tests. To build the React globe
+without copying any geographic public assets, run from `quadstream-globe`:
+
+```sh
+VITE_GEOMETRY_CDN_ONLY=1 npm run build -- --base=/quadstream/
+```
+
+This opt-in build forces CDN transport. It retains root dependency
+installation for the application and tests, but does not publish the atlas
+files. `?international=0` still disables international layers.
+There is no automatic local fallback in CDN mode; failed fetches surface
+through the existing geometry and regional diagnostics. A CDN outage can
+prevent startup. CDN requests expose which areas are being viewed.
+
+Before switching Pages to CDN-only, verify each pinned URL, browser CORS,
+world geometry parity at both resolutions, US state/county lazy loading,
+international ADM1 coverage, offline fixture tests, and failure/retry behavior
+in Chromium and WebKit. Compare build artifact sizes and cold/warm request
+timing. Confirm that a CDN-only dist has no copied `globe-data` directory.
+No Pages workflow default changes are made until these checks pass.
+
 ## Experimental npm/CDN ADM1 source (React globe)
 
 Start the React globe normally and append `?international=cdn` to its URL.
