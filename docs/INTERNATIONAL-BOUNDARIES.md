@@ -51,7 +51,7 @@ package file inventory and its world topology (country envelopes); it does
 not fetch subdivision topology until a country is admitted at 3x zoom.
 Only non-US ADM1 files are selected; ADM2 is intentionally out of scope.
 The package documents roughly 200 ADM1 country files, with known gaps.
-The globe retains the six-international-worker admission limit. Country
+The globe schedules at most six active international workers, without limiting eligible visible layers. Country
 envelopes use the package world outlines with a five-degree margin;
 these are approximate, not proven bounds on the subdivision geometry.
 
@@ -102,10 +102,11 @@ The pinned gb80 API endpoint and data format need a live smoke test; do not
 silently switch to a moving current release if the endpoint is unavailable.
 
 ADM1 enters at 3x and ADM2 at 6x (exit 2.7x/5.4x). The catalog bounds each
-layer conservatively, and only the six nearest eligible international layers
-are admitted at once. Offscreen or unadmitted workers and their cached frames
-are discarded. This caps worker count, not bytes; broad caps can cause
-unneeded loads or omit visible neighbors under the admission limit.
+layer conservatively, and all eligible visible layers are queued, nearest first, with up to six active
+international workers. Completed validated frames and quadtree cells remain
+visible after their worker slots are reassigned. Offscreen datasets may be
+retained in the warm worker or prepared geometry caches. Broad caps can cause
+unneeded loads; the worker limit is not a visibility or total heap limit.
 US workers and geometry remain independent. Use `?international=0` to disable
 the extension, or `?counties=0` to disable both US counties and ADM2.
 
@@ -128,3 +129,21 @@ attribution; inspect the catalog license and source fields before distribution.
 
 Global data generation, distribution via npm/CDN, per-country attribution
 display, memory-byte budgets and validated global coverage remain follow-ups.
+
+
+## Strict regional rendering and quadtree overlay
+
+Regional subdivisions are drawn only from successful validated Quadstream
+queries, including when the world atlas is in original mode. No raw
+geometry is displayed while loading, building, or after a failed query.
+A previously validated frame may remain visible at or below the requested
+detail level. A failed layer is reported in diagnostics and may be retried
+after leaving and re-entering the activation region.
+
+The quadtree overlay retains yellow for the world tree and assigns stable
+bright categorical colors to each regional dataset, without a legend.
+Each tree uses its own rendered detail level and shares the existing
+viewport culling and incremental drawing budget. Colors can repeat for
+different datasets; coincident cells are deduplicated within each tree.
+Check a wide European viewport at ADM1 activation zoom, including more than
+six eligible countries, rapid panning and zooming, and worker eviction.
