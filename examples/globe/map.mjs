@@ -1,84 +1,12 @@
 // Adapted from VizHub rPa9vFJ0kEvpjaJn-280C (MIT). Geometry only.
-import {
-  computeFeatureCap,
-  filterVisibleFeatures,
-  isCapVisible,
-  orthographicViewCone,
-} from "./cull.mjs";
-import {
-  CLIP_MARGIN_RAD,
-  CLIP_MAX_RADIUS_RAD,
-  CLIP_RADIUS_SCALE,
-  createViewClipper,
-} from "./clip.mjs";
+import { filterVisibleFeatures, orthographicViewCone } from "./cull.mjs";
+import { createViewClipper } from "./clip.mjs";
 import { createFrameBatches } from "./frame-batches.mjs";
-
-const faceAxes = {
-  "+X": [
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1],
-  ],
-  "-X": [
-    [-1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1],
-  ],
-  "+Y": [
-    [0, 1, 0],
-    [1, 0, 0],
-    [0, 0, 1],
-  ],
-  "-Y": [
-    [0, -1, 0],
-    [1, 0, 0],
-    [0, 0, 1],
-  ],
-  "+Z": [
-    [0, 0, 1],
-    [1, 0, 0],
-    [0, 1, 0],
-  ],
-  "-Z": [
-    [0, 0, -1],
-    [1, 0, 0],
-    [0, 1, 0],
-  ],
-};
-function cellPoint(cell, u, v) {
-  const [normal, uAxis, vAxis] = faceAxes[cell.face],
-    x = normal[0] + u * uAxis[0] + v * vAxis[0],
-    y = normal[1] + u * uAxis[1] + v * vAxis[1],
-    z = normal[2] + u * uAxis[2] + v * vAxis[2],
-    length = Math.hypot(x, y, z);
-  return [
-    (Math.atan2(y, x) * 180) / Math.PI,
-    (Math.asin(z / length) * 180) / Math.PI,
-  ];
-}
-function quadtreeCellFeature(cell) {
-  const side = 2 ** cell.level,
-    min = -1 + (2 * cell.i) / side,
-    max = -1 + (2 * (cell.i + 1)) / side,
-    low = -1 + (2 * cell.j) / side,
-    high = -1 + (2 * (cell.j + 1)) / side;
-  return {
-    type: "Feature",
-    properties: null,
-    geometry: {
-      type: "Polygon",
-      coordinates: [
-        [
-          cellPoint(cell, min, low),
-          cellPoint(cell, max, low),
-          cellPoint(cell, max, high),
-          cellPoint(cell, min, high),
-          cellPoint(cell, min, low),
-        ],
-      ],
-    },
-  };
-}
+import {
+  cellBoundary,
+  createCellIndex,
+  createCellTraversal,
+} from "./quadtree-overlay.mjs";
 
 function geometryRings(geometry) {
   if (geometry?.type === "Polygon") return geometry.coordinates;
@@ -115,7 +43,7 @@ function meshGeometry(geojson) {
 export function createGlobeRenderer(
   d3,
   ctx,
-  { cull = false, clip = false } = {},
+  { cull = false, clip = false, onQuadtreeStats } = {},
 ) {
   const projection = d3.geoOrthographic(),
     path = d3.geoPath(projection, ctx),
@@ -123,7 +51,7 @@ export function createGlobeRenderer(
     finePrecision = projection.precision();
   const sphere = { type: "Sphere" };
   const capCache = cull || clip ? new WeakMap() : null;
-  const quadtreeCapCache = new WeakMap();
+  let indexedCells, cellIndex, quadtreeStats;
   const quadtreeBatches = createFrameBatches();
   const clipper = clip ? createViewClipper() : null;
   const meshCache = new WeakMap();
@@ -138,6 +66,11 @@ export function createGlobeRenderer(
   function render(state, geojson, source, quadtree = [], overlays = []) {
     // Every base redraw invalidates the previous canvas and projection.
     quadtreeBatches.cancel();
+    quadtreeStats = null;
+    if (indexedCells !== quadtree) {
+      indexedCells = quadtree;
+      cellIndex = createCellIndex(quadtree);
+    }
     const {
       width,
       height,
@@ -208,47 +141,76 @@ export function createGlobeRenderer(
     }
     if (state.showQuadtree && !interacting && quadtree.length) {
       const cone = orthographicViewCone(state);
-      cone.viewRadius = Math.min(
-        CLIP_MAX_RADIUS_RAD,
-        cone.viewRadius * CLIP_RADIUS_SCALE + CLIP_MARGIN_RAD,
-      );
-      const level = state.quadtreeLevel;
-      // Append directly to the existing canvas only while this scene is current.
-      // Build, cull and project cells incrementally; no full geometry allocation.
-      quadtreeBatches.start(quadtree, {
-        begin() {
-          ctx.save();
-          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-          ctx.globalAlpha = 0.2;
-          ctx.strokeStyle = "yellow";
-          ctx.lineWidth = 0.5;
-          ctx.beginPath();
-        },
-        visit(cell) {
-          if (cell.level > level) return;
-          let cap = quadtreeCapCache.get(cell);
-          let feature;
-          if (!cap) {
-            feature = quadtreeCellFeature(cell);
-            cap = computeFeatureCap(feature);
-            quadtreeCapCache.set(cell, cap);
-          }
-          if (isCapVisible(cap, cone))
-            path(feature ?? quadtreeCellFeature(cell));
-        },
-        end() {
-          try {
-            ctx.stroke();
-          } finally {
-            ctx.restore();
-          }
-        },
+      const level = state.quadtreeLevel ?? Infinity;
+      const index = cellIndex;
+      const started = performance.now();
+      let traversal, drawing = false;
+      const metrics = (quadtreeStats = {
+        total: quadtree.length,
+        indexed: index.cursor,
+        occupied: index.occupied,
+        visited: 0,
+        pruned: 0,
+        rendered: 0,
+        edgesRejected: 0,
+        geometryMs: 0,
+        completionMs: null,
       });
+      function hasWork() {
+        if (index.cursor < quadtree.length) return true;
+        traversal ??= createCellTraversal(index, cone, level, metrics);
+        return traversal.hasWork();
+      }
+      quadtreeBatches.startWork(
+        hasWork,
+        () => {
+          if (index.cursor < quadtree.length) {
+            index.step();
+            metrics.indexed = index.cursor;
+            metrics.occupied = index.occupied;
+            return;
+          }
+          traversal.step((cell) => {
+            const before = performance.now();
+            const boundary = cellBoundary(cell, cone);
+            metrics.geometryMs += performance.now() - before;
+            if (!boundary) return false;
+            if (!drawing) {
+              ctx.save();
+              ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+              ctx.globalAlpha = 0.2;
+              ctx.strokeStyle = "yellow";
+              ctx.lineWidth = 0.5;
+              ctx.beginPath();
+              drawing = true;
+            }
+            path(boundary);
+            return true;
+          });
+        },
+        {
+          begin() {},
+          end() {
+            if (!drawing) return;
+            try {
+              ctx.stroke();
+            } finally {
+              drawing = false;
+              ctx.restore();
+            }
+          },
+          complete() {
+            metrics.completionMs = performance.now() - started;
+            onQuadtreeStats?.(metrics);
+          },
+        },
+      );
     }
     ctx.restore();
     // `visible` is exactly what was handed to d3 for the land layer.
     return { visible: target, stats };
   }
   render.cancelQuadtree = quadtreeBatches.cancel;
+  render.quadtreeStats = () => quadtreeStats;
   return render;
 }

@@ -16,9 +16,20 @@ export function createFrameBatches({
     if (job?.raf != null) cancelFrame(job.raf);
   }
   function start(items, { begin, visit, end }) {
+    let index = 0;
+    return startWork(
+      () => index < items.length,
+      () => visit(items[index++]),
+      { begin, end },
+    );
+  }
+  function startWork(hasWork, step, { begin, end, complete }) {
     cancel();
-    if (!items.length) return;
-    const job = { index: 0, raf: null };
+    if (!hasWork()) {
+      complete?.();
+      return;
+    }
+    const job = { raf: null };
     active = job;
     function slice() {
       if (active !== job) return;
@@ -28,11 +39,11 @@ export function createFrameBatches({
       try {
         let count = 0;
         do {
-          visit(items[job.index++]);
+          step();
           count++;
         } while (
           active === job &&
-          job.index < items.length &&
+          hasWork() &&
           count < maxItems &&
           now() < deadline
         );
@@ -40,10 +51,13 @@ export function createFrameBatches({
         end();
       }
       if (active !== job) return;
-      if (job.index < items.length) job.raf = requestFrame(slice);
-      else active = null;
+      if (hasWork()) job.raf = requestFrame(slice);
+      else {
+        active = null;
+        complete?.();
+      }
     }
     job.raf = requestFrame(slice);
   }
-  return { start, cancel };
+  return { start, startWork, cancel };
 }
