@@ -78,7 +78,7 @@ const reducedMotion = Boolean(
   globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches,
 );
 const camera = createCamera({
-  limits: { zMin: Math.log(0.6), zMax: Math.log(64) },
+  limits: { zMin: Math.log(0.6), zMax: Math.log(256) },
   responseMs: nav.response,
   damping: nav.damping,
 });

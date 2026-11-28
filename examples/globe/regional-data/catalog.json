@@ -1,4 +1,4283 @@
 {
   "version": "gb80",
-  "records": []
+  "records": [
+    {
+      "id": "afg-adm1",
+      "iso": "AFG",
+      "level": "ADM1",
+      "file": "afg-adm1-6a069339202e3621.json",
+      "object": "AFGADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.32177750943906136,
+          "cy": 0.7585398573925084,
+          "cz": 0.5666361435402335,
+          "radiusRad": 0.11644202645473424
+        }
+      ],
+      "sha256": "6a069339202e36219bb4e5f1722000c7265c8709a55fdedda0446552e3984006",
+      "bytes": 28829,
+      "boundaryID": "AFG-ADM1-12653393",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/AFG/ADM1/geoBoundaries-AFG-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Afghanistan_provinces_numbered_gray.PNG",
+      "attribution": "Wikimedia, geoBoundaries",
+      "year": "2007"
+    },
+    {
+      "id": "ago-adm1",
+      "iso": "AGO",
+      "level": "ADM1",
+      "file": "ago-adm1-a50b33c045fb66ec.json",
+      "object": "AGOADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.937979148372894,
+          "cy": 0.28409461843455097,
+          "cz": -0.19870924737965126,
+          "radiusRad": 0.12245355963925188
+        }
+      ],
+      "sha256": "a50b33c045fb66ec60d031e2912aea0a116e10e4f2255f24aeb3c277601b378a",
+      "bytes": 1108582,
+      "boundaryID": "AGO-ADM1-26408823",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/AGO/ADM1/geoBoundaries-AGO-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://www.census.gov/geographies/mapping-files/time-series/demo/international-programs/subnationalpopulation.html",
+      "attribution": "U.S. Census Bureau",
+      "year": "2021"
+    },
+    {
+      "id": "alb-adm1",
+      "iso": "ALB",
+      "level": "ADM1",
+      "file": "alb-adm1-9c864df238f981d6.json",
+      "object": "ALBADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7070664961323795,
+          "cy": 0.257294633516375,
+          "cz": 0.6586777980247658,
+          "radiusRad": 0.026150459738834963
+        }
+      ],
+      "sha256": "9c864df238f981d6c32adc9a0ccc9d502d9ba562717c204f618ceb01d5ceec20",
+      "bytes": 11384,
+      "boundaryID": "ALB-ADM1-10019604",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ALB/ADM1/geoBoundaries-ALB-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File",
+      "attribution": "geoBoundaries, Wikipedia",
+      "year": "2021"
+    },
+    {
+      "id": "and-adm1",
+      "iso": "AND",
+      "level": "ADM1",
+      "file": "and-adm1-8e5f8c3223e95c09.json",
+      "object": "ANDADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7364688704365774,
+          "cy": 0.02012630523550748,
+          "cz": 0.6761719712583768,
+          "radiusRad": 0.0031557653961888773
+        }
+      ],
+      "sha256": "8e5f8c3223e95c09788a9cac00560cf62533a0e574303bb0ab6ddf437ba2d2f2",
+      "bytes": 13186,
+      "boundaryID": "AND-ADM1-23515209",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/AND/ADM1/geoBoundaries-AND-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:0_Andorra_parishes_all.svg",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2007"
+    },
+    {
+      "id": "are-adm1",
+      "iso": "ARE",
+      "level": "ADM1",
+      "file": "are-adm1-7c2dcd3145855665.json",
+      "object": "AREADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5066627606264064,
+          "cy": 0.7492951985963546,
+          "cz": 0.4264382163395751,
+          "radiusRad": 0.02002460615646082
+        }
+      ],
+      "sha256": "7c2dcd3145855665488ec1ea16657d6fd5a3036b560db20e4981ef10e62c8213",
+      "bytes": 675751,
+      "boundaryID": "ARE-ADM1-86790563",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ARE/ADM1/geoBoundaries-ARE-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "arg-adm1",
+      "iso": "ARG",
+      "level": "ADM1",
+      "file": "arg-adm1-60595ea0e21779bb.json",
+      "object": "ARGADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.3676324373478341,
+          "cy": -0.776128752612021,
+          "cz": -0.5123187976041864,
+          "radiusRad": 0.2980236926285664
+        }
+      ],
+      "sha256": "60595ea0e21779bb411ddb542577300cb979179167e2fae22b143daee52cd741",
+      "bytes": 31631,
+      "boundaryID": "ARG-ADM1-28365195",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ARG/ADM1/geoBoundaries-ARG-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Argentina_provinces_blank.png",
+      "attribution": "Wikimedia",
+      "year": "2006"
+    },
+    {
+      "id": "arm-adm1",
+      "iso": "ARM",
+      "level": "ADM1",
+      "file": "arm-adm1-e0d2ca89341a2426.json",
+      "object": "ARMADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5420007196061624,
+          "cy": 0.5340446917754461,
+          "cz": 0.648869391428561,
+          "radiusRad": 0.021613383753490735
+        }
+      ],
+      "sha256": "e0d2ca89341a24264957c383be881ba0fd9be65c8606b825523db43ceb13fa01",
+      "bytes": 21711,
+      "boundaryID": "ARM-ADM1-6114869",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ARM/ADM1/geoBoundaries-ARM-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Armenia_provinces_blank.png",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2005"
+    },
+    {
+      "id": "atg-adm1",
+      "iso": "ATG",
+      "level": "ADM1",
+      "file": "atg-adm1-874743900fd83b97.json",
+      "object": "ATGADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.4516995436977137,
+          "cy": -0.8424123680213086,
+          "cz": 0.29378380559181355,
+          "radiusRad": 0.0017779925928287834
+        }
+      ],
+      "sha256": "874743900fd83b977925cfbb686a77b3c89230c1ad9ff73826ee8b2fde3380d8",
+      "bytes": 16238,
+      "boundaryID": "ATG-ADM1-74100532",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ATG/ADM1/geoBoundaries-ATG-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Antigua_Prestegjeld_Barbuda.png",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2009"
+    },
+    {
+      "id": "aus-adm1",
+      "iso": "AUS",
+      "level": "ADM1",
+      "file": "aus-adm1-9b441c0515691c11.json",
+      "object": "AUSADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.6798900216975295,
+          "cy": 0.46448127661209626,
+          "cz": -0.5674563437595266,
+          "radiusRad": 0.4609444287320998
+        }
+      ],
+      "sha256": "9b441c0515691c116403426e2c90ececf64860d16c3b5cc9272b1704673c0a83",
+      "bytes": 14901015,
+      "boundaryID": "AUS-ADM1-82085004",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/AUS/ADM1/geoBoundaries-AUS-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://www.abs.gov.au/website-privacy-copyright-and-disclaimer#copyright-and-creative-commons",
+      "attribution": "Australian Bureau of Statistics",
+      "year": "2021"
+    },
+    {
+      "id": "aut-adm1",
+      "iso": "AUT",
+      "level": "ADM1",
+      "file": "aut-adm1-9152954848b97db3.json",
+      "object": "AUTADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6514134101286357,
+          "cy": 0.17245436683490892,
+          "cz": 0.7388640338141738,
+          "radiusRad": 0.057475892870843495
+        }
+      ],
+      "sha256": "9152954848b97db3e28ea30bdd94d74b0c476c1e5c53fc4012b0c1ef29cd95bc",
+      "bytes": 2741190,
+      "boundaryID": "AUT-ADM1-97560089",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/AUT/ADM1/geoBoundaries-AUT-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 2.0",
+      "licenseSource": "https://twitter.com/WMgeoLab/status/1253487894313959424",
+      "attribution": "geoBoundaries, Federal Office for Metrology and Survey, Austria",
+      "year": "2017"
+    },
+    {
+      "id": "bdi-adm1",
+      "iso": "BDI",
+      "level": "ADM1",
+      "file": "bdi-adm1-18d0c637077df35e.json",
+      "object": "BDIADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8659572172241435,
+          "cy": 0.4965857701672232,
+          "cz": -0.05933524083412442,
+          "radiusRad": 0.021068147752226967
+        }
+      ],
+      "sha256": "18d0c637077df35e00d008275ee9346448b04b975c5d639c33177b7b0f1c99cd",
+      "bytes": 32153,
+      "boundaryID": "BDI-ADM1-87207978",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BDI/ADM1/geoBoundaries-BDI-ADM1.topojson",
+      "license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Provinces_of_Burundi_2014_(named).png",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2014"
+    },
+    {
+      "id": "bel-adm1",
+      "iso": "BEL",
+      "level": "ADM1",
+      "file": "bel-adm1-39ac15decd72563b.json",
+      "object": "BELADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6308037517943615,
+          "cy": 0.04680400183500795,
+          "cz": 0.7745295424542473,
+          "radiusRad": 0.022203522119249718
+        }
+      ],
+      "sha256": "39ac15decd72563b43d4d290b94af8c7898065b99a8e1e51b6a4da02bc37357c",
+      "bytes": 1879,
+      "boundaryID": "BEL-ADM1-27649430",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BEL/ADM1/geoBoundaries-BEL-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://ec.europa.eu/info/legal-notice_en",
+      "attribution": "Eurostat- European Commission",
+      "year": "2022"
+    },
+    {
+      "id": "ben-adm1",
+      "iso": "BEN",
+      "level": "ADM1",
+      "file": "ben-adm1-27d25b2f9d9ec2f8.json",
+      "object": "BENADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9890679076284102,
+          "cy": 0.0385132422520747,
+          "cz": 0.14234255959055842,
+          "radiusRad": 0.06545386648461451
+        }
+      ],
+      "sha256": "27d25b2f9d9ec2f8ee8fa98521847a8055f872c394b76c360711d819f33b393e",
+      "bytes": 12175,
+      "boundaryID": "BEN-ADM1-11314189",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BEN/ADM1/geoBoundaries-BEN-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Benin_Administrative_Divisions.jpg",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2012"
+    },
+    {
+      "id": "bfa-adm1",
+      "iso": "BFA",
+      "level": "ADM1",
+      "file": "bfa-adm1-83be455002777d3d.json",
+      "object": "BFAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9776670815600262,
+          "cy": -0.035384194585551886,
+          "cz": 0.20715944682160348,
+          "radiusRad": 0.062203172304393366
+        }
+      ],
+      "sha256": "83be455002777d3d0be3bb0bcfc681dabda060a07ff9519f610d9c7aabde0d0a",
+      "bytes": 133772,
+      "boundaryID": "BFA-ADM1-92566538",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BFA/ADM1/geoBoundaries-BFA-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://datacatalog.worldbank.org/public-licenses#cc-by",
+      "attribution": "World Bank",
+      "year": "2017"
+    },
+    {
+      "id": "bgd-adm1",
+      "iso": "BGD",
+      "level": "ADM1",
+      "file": "bgd-adm1-173a985473e0f351.json",
+      "object": "BGDADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.002241564752783033,
+          "cy": 0.9131995630695166,
+          "cz": 0.4075064826442679,
+          "radiusRad": 0.03512882182744542
+        }
+      ],
+      "sha256": "173a985473e0f351ef0645e0e994d3fec8d4f263ef46dde3878d2328be3a21f7",
+      "bytes": 19087,
+      "boundaryID": "BGD-ADM1-32408957",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BGD/ADM1/geoBoundaries-BGD-ADM1.topojson",
+      "license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Bangladesh_divisions_english.svg",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2015"
+    },
+    {
+      "id": "bgr-adm1",
+      "iso": "BGR",
+      "level": "ADM1",
+      "file": "bgr-adm1-56485efcc7c0faae.json",
+      "object": "BGRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6632601145010176,
+          "cy": 0.3129182701826868,
+          "cz": 0.6798295203195959,
+          "radiusRad": 0.0378417744015695
+        }
+      ],
+      "sha256": "56485efcc7c0faae9f720122c5f90da0bcbb31cc22b86f5786444a9794ee6851",
+      "bytes": 54857,
+      "boundaryID": "BGR-ADM1-22928101",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BGR/ADM1/geoBoundaries-BGR-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Bulgaria_municipalities.svg",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2019"
+    },
+    {
+      "id": "bhr-adm1",
+      "iso": "BHR",
+      "level": "ADM1",
+      "file": "bhr-adm1-4860412196ff2524.json",
+      "object": "BHRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5704816982678327,
+          "cy": 0.6930472827416149,
+          "cz": 0.4407222433981675,
+          "radiusRad": 0.0020573121288252087
+        }
+      ],
+      "sha256": "4860412196ff2524e0a0f26d39a4f154d3bcc58b59fbdc05181308e4c3894372",
+      "bytes": 95802,
+      "boundaryID": "BHR-ADM1-46075475",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BHR/ADM1/geoBoundaries-BHR-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "bhs-adm1",
+      "iso": "BHS",
+      "level": "ADM1",
+      "file": "bhs-adm1-31b4c1094a5e6e42.json",
+      "object": "BHSADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.19161227392974284,
+          "cy": -0.8799996978298659,
+          "cz": 0.4346093283614812,
+          "radiusRad": 0.028779372866086717
+        }
+      ],
+      "sha256": "31b4c1094a5e6e425ba8a418b8223cca96d4bfe3dacf8afadb5486121ac6bad2",
+      "bytes": 2192062,
+      "boundaryID": "BHS-ADM1-57655419",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BHS/ADM1/geoBoundaries-BHS-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https:https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Haiti GeoPortal",
+      "year": "09-09-2017 to 24-08-2020"
+    },
+    {
+      "id": "bih-adm1",
+      "iso": "BIH",
+      "level": "ADM1",
+      "file": "bih-adm1-499ff87c8fffdb6a.json",
+      "object": "BIHADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.68065624096609,
+          "cy": 0.22153122949577655,
+          "cz": 0.6983058040658129,
+          "radiusRad": 0.030180562707519953
+        }
+      ],
+      "sha256": "499ff87c8fffdb6a8c7ce3ee85a54c1864fff2c46e7ee482d091d32e8fda61b1",
+      "bytes": 30725,
+      "boundaryID": "BIH-ADM1-54001226",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BIH/ADM1/geoBoundaries-BIH-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:BiH_municipality_location_Mostar.svg",
+      "attribution": "Wikimedia Commons",
+      "year": "2013"
+    },
+    {
+      "id": "blr-adm1",
+      "iso": "BLR",
+      "level": "ADM1",
+      "file": "blr-adm1-d434307a7e0b512f.json",
+      "object": "BLRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5235973918848833,
+          "cy": 0.27778591222455856,
+          "cz": 0.805407200229125,
+          "radiusRad": 0.04505238107509535
+        }
+      ],
+      "sha256": "d434307a7e0b512fc97431fd7ae68f0a11cf14ba7f22389ed5662113f40e5b69",
+      "bytes": 50866,
+      "boundaryID": "BLR-ADM1-45462678",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BLR/ADM1/geoBoundaries-BLR-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 License",
+      "licenseSource": "https://creativecommons.org/licenses/by/3.0/",
+      "attribution": "geoBoundaries, CIESIN",
+      "year": "2005"
+    },
+    {
+      "id": "blz-adm1",
+      "iso": "BLZ",
+      "level": "ADM1",
+      "file": "blz-adm1-61b2f1244a3beb94.json",
+      "object": "BLZADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.021943679604851468,
+          "cy": -0.9556485701899455,
+          "cz": 0.29369079866300224,
+          "radiusRad": 0.02210142866886806
+        }
+      ],
+      "sha256": "61b2f1244a3beb94732cee3ff013559e5bb7d565fc7d930d8ef46b5011749091",
+      "bytes": 11963,
+      "boundaryID": "BLZ-ADM1-66346737",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BLZ/ADM1/geoBoundaries-BLZ-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Belize_districts_named.png",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2006"
+    },
+    {
+      "id": "bol-adm1",
+      "iso": "BOL",
+      "level": "ADM1",
+      "file": "bol-adm1-a1baaf4f4754e20f.json",
+      "object": "BOLADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.393421486838583,
+          "cy": -0.8640020213299054,
+          "cz": -0.31419745516403613,
+          "radiusRad": 0.1585910865094599
+        }
+      ],
+      "sha256": "a1baaf4f4754e20f484662c022a34864f4dbbdae15c8abedba19be35f9d49a9f",
+      "bytes": 1218527,
+      "boundaryID": "BOL-ADM1-26024454",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BOL/ADM1/geoBoundaries-BOL-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://geo.gob.bo/geonetwork/srv/spa/catalog.search#/metadata/aeeb85a9-23df-48d4-a4e5-dd19e8b206db",
+      "attribution": "GeoBolivia, Derived from ADM3 layer",
+      "year": "2015"
+    },
+    {
+      "id": "bra-adm1",
+      "iso": "BRA",
+      "level": "ADM1",
+      "file": "bra-adm1-ea012c4cd5548d53.json",
+      "object": "BRAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6460473105289227,
+          "cy": -0.7322372556661697,
+          "cz": -0.21552604012699245,
+          "radiusRad": 0.4639172464752751
+        }
+      ],
+      "sha256": "ea012c4cd5548d53166ded964f177749924da18f376291465c3f75a47b28e1c0",
+      "bytes": 579882,
+      "boundaryID": "BRA-ADM1-14911670",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BRA/ADM1/geoBoundaries-BRA-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Brazil_States.svg",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2006"
+    },
+    {
+      "id": "brb-adm1",
+      "iso": "BRB",
+      "level": "ADM1",
+      "file": "brb-adm1-e7d1760d3abbdcf4.json",
+      "object": "BRBADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.4933552619241457,
+          "cy": -0.8394770583184298,
+          "cz": 0.22776930014554914,
+          "radiusRad": 0.0036699865057148694
+        }
+      ],
+      "sha256": "e7d1760d3abbdcf4da68d1c2367c1dc1aa32260a40d56a60d37091f75b60030b",
+      "bytes": 10626,
+      "boundaryID": "BRB-ADM1-18249212",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BRB/ADM1/geoBoundaries-BRB-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Barbados_parishes_blank.png",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2005"
+    },
+    {
+      "id": "brn-adm1",
+      "iso": "BRN",
+      "level": "ADM1",
+      "file": "brn-adm1-84924be431fb4bb8.json",
+      "object": "BRNADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.4170004625951373,
+          "cy": 0.905264612422217,
+          "cz": 0.08128096758463653,
+          "radiusRad": 0.007415198548264315
+        }
+      ],
+      "sha256": "84924be431fb4bb845358b5c8f70e3885ea66fc56ce0befbba906bc1c22fb675",
+      "bytes": 8317,
+      "boundaryID": "BRN-ADM1-59962399",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BRN/ADM1/geoBoundaries-BRN-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Brunei_Map_(Blank).png",
+      "attribution": "Wikimedia Commons",
+      "year": "2007"
+    },
+    {
+      "id": "btn-adm1",
+      "iso": "BTN",
+      "level": "ADM1",
+      "file": "btn-adm1-3326f99210e6ab22.json",
+      "object": "BTNADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.006547923080966594,
+          "cy": 0.8886719851491877,
+          "cz": 0.45849670392962244,
+          "radiusRad": 0.026643602320957162
+        }
+      ],
+      "sha256": "3326f99210e6ab228fb811793ef481840aa79b55d73f9e06e0e53bb4264d6afb",
+      "bytes": 19784,
+      "boundaryID": "BTN-ADM1-66845921",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BTN/ADM1/geoBoundaries-BTN-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 License",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Bhutan-divisions.svg",
+      "attribution": "geoBoundaries, Wikimedia Commons; credit to author 'Babbage'",
+      "year": "2010"
+    },
+    {
+      "id": "bwa-adm1",
+      "iso": "BWA",
+      "level": "ADM1",
+      "file": "bwa-adm1-b166218f5c0a7220.json",
+      "object": "BWAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8318777169096296,
+          "cy": 0.4009928055845947,
+          "cz": -0.3836459747978826,
+          "radiusRad": 0.11167043323623893
+        }
+      ],
+      "sha256": "b166218f5c0a72201d8a9346235ec4c555012d58972cf53c2ab623dce8464e77",
+      "bytes": 354941,
+      "boundaryID": "BWA-ADM1-57670837",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/BWA/ADM1/geoBoundaries-BWA-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 2.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "caf-adm1",
+      "iso": "CAF",
+      "level": "ADM1",
+      "file": "caf-adm1-0894d0c329a46a50.json",
+      "object": "CAFADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9344651683233,
+          "cy": 0.33864626360081623,
+          "cz": 0.10997071128129059,
+          "radiusRad": 0.10078126421933864
+        }
+      ],
+      "sha256": "0894d0c329a46a50651664e07584b4eda6482abb229dfea10e200a05e0c8e643",
+      "bytes": 19528,
+      "boundaryID": "CAF-ADM1-63714938",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CAF/ADM1/geoBoundaries-CAF-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Central_African_Republic_prefectures_blank.png",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2006"
+    },
+    {
+      "id": "can-adm1",
+      "iso": "CAN",
+      "level": "ADM1",
+      "file": "can-adm1-f58dcbb55b1c5d09.json",
+      "object": "CANADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.03015657377790551,
+          "cy": -0.5607710574362889,
+          "cz": 0.8274215383948885,
+          "radiusRad": 0.4922088140177573
+        }
+      ],
+      "sha256": "f58dcbb55b1c5d09ecd1732fca9d16ac8273ca9b4a6329f693924cdda41e829d",
+      "bytes": 146234478,
+      "boundaryID": "CAN-ADM1-82249235",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CAN/ADM1/geoBoundaries-CAN-ADM1.topojson",
+      "license": "Open Government Canada 2.0",
+      "licenseSource": "https://www.statcan.gc.ca/eng/reference/licence",
+      "attribution": "Statistics Canada (StatCan)",
+      "year": "2023"
+    },
+    {
+      "id": "che-adm1",
+      "iso": "CHE",
+      "level": "ADM1",
+      "file": "che-adm1-4ce6a9ae27581db7.json",
+      "object": "CHEADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6738487162122084,
+          "cy": 0.09754910014239487,
+          "cz": 0.732401584324179,
+          "radiusRad": 0.029610826199710255
+        }
+      ],
+      "sha256": "4ce6a9ae27581db765b88613be3b6c54dcc00e71769292ffdf6ebc3137e99966",
+      "bytes": 1075892,
+      "boundaryID": "CHE-ADM1-70761945",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CHE/ADM1/geoBoundaries-CHE-ADM1.topojson",
+      "license": "Federal Office of Topography swisstopo License",
+      "licenseSource": "https://www.swisstopo.admin.ch/en/home/meta/conditions/geodata/ogd.html",
+      "attribution": "Federal Office of Topography swisstopo",
+      "year": "2022"
+    },
+    {
+      "id": "chl-adm1",
+      "iso": "CHL",
+      "level": "ADM1",
+      "file": "chl-adm1-36de98e0f6285f1e.json",
+      "object": "CHLADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.26074133891354717,
+          "cy": -0.7790081565771106,
+          "cz": -0.5702282404159781,
+          "radiusRad": 0.2847935495346974
+        }
+      ],
+      "sha256": "36de98e0f6285f1ed324e98f2cda95228dbc5aefae7a6a7b282f2a3fd9b5876d",
+      "bytes": 26812103,
+      "boundaryID": "CHL-ADM1-47653553",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CHL/ADM1/geoBoundaries-CHL-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/chile-administrative-level-0-country-1-region-region",
+      "attribution": "La Biblioteca del Congreso Nacional de Chile (BCN), OCHA ROLAC",
+      "year": "2020"
+    },
+    {
+      "id": "chn-adm1",
+      "iso": "CHN",
+      "level": "ADM1",
+      "file": "chn-adm1-420e699e7aed7675.json",
+      "object": "CHNADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.2699584457961319,
+          "cy": 0.7913960379801969,
+          "cz": 0.5484658135313301,
+          "radiusRad": 0.44602032890696724
+        }
+      ],
+      "sha256": "420e699e7aed76756baa1e42c7cd7d37f51d1743c1aca0e735063398095c38c6",
+      "bytes": 38841,
+      "boundaryID": "CHN-ADM1-43563684",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CHN/ADM1/geoBoundaries-CHN-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:China_blank_province_map.svg",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2019"
+    },
+    {
+      "id": "civ-adm1",
+      "iso": "CIV",
+      "level": "ADM1",
+      "file": "civ-adm1-b83a65392358161e.json",
+      "object": "CIVADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9874359114658756,
+          "cy": -0.09124184602945429,
+          "cz": 0.12901645740250686,
+          "radiusRad": 0.06268743000391677
+        }
+      ],
+      "sha256": "b83a65392358161e64a23182db08c3813eaa036f3f7404f7aca57f62f38a19ce",
+      "bytes": 229079,
+      "boundaryID": "CIV-ADM1-83157122",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CIV/ADM1/geoBoundaries-CIV-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://datacatalog.worldbank.org/public-licenses#cc-by",
+      "attribution": "World Bank Group, OCHA Côte d’Ivoire",
+      "year": "2016"
+    },
+    {
+      "id": "cmr-adm1",
+      "iso": "CMR",
+      "level": "ADM1",
+      "file": "cmr-adm1-33548fee461861fe.json",
+      "object": "CMRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9754167553150687,
+          "cy": 0.19999498294828402,
+          "cz": 0.09254274820935013,
+          "radiusRad": 0.1001748301383061
+        }
+      ],
+      "sha256": "33548fee461861febb9cc6d9e0f0d947fd9b3bd8b60e99a8b52c27f1673864a5",
+      "bytes": 25929,
+      "boundaryID": "CMR-ADM1-27767025",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CMR/ADM1/geoBoundaries-CMR-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 License",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:R%C3%A9gions_du_Cameroun-Fran%C3%A7ais.jpg",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2016"
+    },
+    {
+      "id": "cod-adm1",
+      "iso": "COD",
+      "level": "ADM1",
+      "file": "cod-adm1-8f3c74b8cd502e07.json",
+      "object": "CODADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9195415546337378,
+          "cy": 0.38943134128398366,
+          "cz": -0.05278787481539628,
+          "radiusRad": 0.17849597747326498
+        }
+      ],
+      "sha256": "8f3c74b8cd502e07f2ba4c76988656d435eec3a8129bdbef1a9a7bfa842b9689",
+      "bytes": 1194241,
+      "boundaryID": "COD-ADM1-28894549",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/COD/ADM1/geoBoundaries-COD-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "cog-adm1",
+      "iso": "COG",
+      "level": "ADM1",
+      "file": "cog-adm1-49af8a9df4f544d0.json",
+      "object": "COGADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9673339958626357,
+          "cy": 0.2508025282752918,
+          "cz": -0.03691926677424474,
+          "radiusRad": 0.09369828855907668
+        }
+      ],
+      "sha256": "49af8a9df4f544d0f2f2fd938f28d456cc2e0fda922243f70dbab9806363a68a",
+      "bytes": 17689,
+      "boundaryID": "COG-ADM1-97442701",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/COG/ADM1/geoBoundaries-COG-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://creativecommons.org/licenses/by/2.5/deed.en",
+      "attribution": "Wikimedia",
+      "year": "2023"
+    },
+    {
+      "id": "col-adm1",
+      "iso": "COL",
+      "level": "ADM1",
+      "file": "col-adm1-f73d9538ac1c0476.json",
+      "object": "COLADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.2760128916492398,
+          "cy": -0.9568632845049022,
+          "cz": 0.09071680334929892,
+          "radiusRad": 0.1599529671523552
+        }
+      ],
+      "sha256": "f73d9538ac1c0476cb188a61eca278113e16d404902c40c52a1a71072d1e6eb1",
+      "bytes": 4544640,
+      "boundaryID": "COL-ADM1-41075838",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/COL/ADM1/geoBoundaries-COL-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://www.colombiaenmapas.gov.co/?e=-100.75804154869174,-5.984010205931133,-62.39378373620192,19.997396869787522,4686&b=igac&l=659&u=0&t=29&servicio=609",
+      "attribution": "Instituto Geográfico Agustín Codazzi - IGAC",
+      "year": "2024"
+    },
+    {
+      "id": "cpv-adm1",
+      "iso": "CPV",
+      "level": "ADM1",
+      "file": "cpv-adm1-93167f779670e23b.json",
+      "object": "CPVADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8800462700208976,
+          "cy": -0.39329265866200935,
+          "cz": 0.2661568095406797,
+          "radiusRad": 0.03626154341530288
+        }
+      ],
+      "sha256": "93167f779670e23b6945c1ee911c4f555b9ba97045e53ada9bae584a516fbb86",
+      "bytes": 181949,
+      "boundaryID": "CPV-ADM1-35879248",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CPV/ADM1/geoBoundaries-CPV-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "cri-adm1",
+      "iso": "CRI",
+      "level": "ADM1",
+      "file": "cri-adm1-dc29cac692012344.json",
+      "object": "CRIADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.10181515927720415,
+          "cy": -0.9796665492944402,
+          "cz": 0.17287893317255826,
+          "radiusRad": 0.031931102201216484
+        }
+      ],
+      "sha256": "dc29cac69201234423a80a71667b82112d8c36b7effe32e4b689d7e8f7027757",
+      "bytes": 224957,
+      "boundaryID": "CRI-ADM1-80129987",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CRI/ADM1/geoBoundaries-CRI-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "cub-adm1",
+      "iso": "CUB",
+      "level": "ADM1",
+      "file": "cub-adm1-d9213eabef39a92c.json",
+      "object": "CUBADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.17716063535959584,
+          "cy": -0.911192805878292,
+          "cz": 0.3719432480831312,
+          "radiusRad": 0.07518265418825755
+        }
+      ],
+      "sha256": "d9213eabef39a92c333a3bb147c2f41970d07d512a657d1a992f492f64232c61",
+      "bytes": 1120055,
+      "boundaryID": "CUB-ADM1-62585838",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CUB/ADM1/geoBoundaries-CUB-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "cyp-adm1",
+      "iso": "CYP",
+      "level": "ADM1",
+      "file": "cyp-adm1-3d5feebebaec1843.json",
+      "object": "CYPADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6863923591072096,
+          "cy": 0.4471298449362554,
+          "cz": 0.5735332868513557,
+          "radiusRad": 0.010890411392303786
+        }
+      ],
+      "sha256": "3d5feebebaec1843c63aff9b086bd20fc614a5d091b238168cbc9361f1a2bd77",
+      "bytes": 177398,
+      "boundaryID": "CYP-ADM1-96831152",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CYP/ADM1/geoBoundaries-CYP-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "cze-adm1",
+      "iso": "CZE",
+      "level": "ADM1",
+      "file": "cze-adm1-7bdce0158e7b03a2.json",
+      "object": "CZEADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6222563468290565,
+          "cy": 0.17268129875215243,
+          "cz": 0.7635300962583117,
+          "radiusRad": 0.03354327092554613
+        }
+      ],
+      "sha256": "7bdce0158e7b03a248f04fb4ad4a4b87b788368d4a7f8b065f75ed8bdbe935fd",
+      "bytes": 2308331,
+      "boundaryID": "CZE-ADM1-73172107",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/CZE/ADM1/geoBoundaries-CZE-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Czech Office for Surveying",
+      "year": "2021"
+    },
+    {
+      "id": "deu-adm1",
+      "iso": "DEU",
+      "level": "ADM1",
+      "file": "deu-adm1-de55b3a4dd222060.json",
+      "object": "DEUADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6139619032082935,
+          "cy": 0.11273383862948602,
+          "cz": 0.7812437923188327,
+          "radiusRad": 0.06739982276834972
+        }
+      ],
+      "sha256": "de55b3a4dd2220604b2ffc215a35aecb37cbecec51b049dc40b23c8778924c96",
+      "bytes": 939125,
+      "boundaryID": "DEU-ADM1-10402087",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/DEU/ADM1/geoBoundaries-DEU-ADM1.topojson",
+      "license": "Data license Germany - Attribution - Version 2.0",
+      "licenseSource": "https://www.govdata.de/dl-de/by-2-0",
+      "attribution": "Federal Agency for Cartography and Geodesy",
+      "year": "2021"
+    },
+    {
+      "id": "dji-adm1",
+      "iso": "DJI",
+      "level": "ADM1",
+      "file": "dji-adm1-fb7a6550f2f393fc.json",
+      "object": "DJIADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7193939181683104,
+          "cy": 0.6640517627750718,
+          "cz": 0.2037342554843585,
+          "radiusRad": 0.018009041379829883
+        }
+      ],
+      "sha256": "fb7a6550f2f393fca5bd297992182359a931ede86281bff12d0f6144def5f9a6",
+      "bytes": 3708,
+      "boundaryID": "DJI-ADM1-25444519",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/DJI/ADM1/geoBoundaries-DJI-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "attribution": "Natural Earth",
+      "year": "2021"
+    },
+    {
+      "id": "dma-adm1",
+      "iso": "DMA",
+      "level": "ADM1",
+      "file": "dma-adm1-1d2a395797f07956.json",
+      "object": "DMAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.4622366065345613,
+          "cy": -0.8459393427771867,
+          "cz": 0.26593974490683875,
+          "radiusRad": 0.0047092144036788965
+        }
+      ],
+      "sha256": "1d2a395797f07956eb5279910697a32e14a5c5a370c293a8c26efd8e72490cdd",
+      "bytes": 17375,
+      "boundaryID": "DMA-ADM1-96108325",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/DMA/ADM1/geoBoundaries-DMA-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Dominica_parishes_blank.png",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2005"
+    },
+    {
+      "id": "dnk-adm1",
+      "iso": "DNK",
+      "level": "ADM1",
+      "file": "dnk-adm1-fdf1795de742ec28.json",
+      "object": "DNKADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5509880345672264,
+          "cy": 0.09659350738600549,
+          "cz": 0.8289040234518196,
+          "radiusRad": 0.024974232630633513
+        }
+      ],
+      "sha256": "fdf1795de742ec28db9857844c9cfa904a1943ee04a84d40e6cccc708a9fadf6",
+      "bytes": 130342,
+      "boundaryID": "DNK-ADM1-84455774",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/DNK/ADM1/geoBoundaries-DNK-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://webvectormaps.com/administrative-map-of-denmark-by-regions/",
+      "attribution": "geoBoundaries, Web Vectors Map",
+      "year": "2021"
+    },
+    {
+      "id": "dom-adm1",
+      "iso": "DOM",
+      "level": "ADM1",
+      "file": "dom-adm1-5d60b8499cefa97a.json",
+      "object": "DOMADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.31564034431100685,
+          "cy": -0.8917056677758016,
+          "cz": 0.3243950910537036,
+          "radiusRad": 0.030358848031452956
+        }
+      ],
+      "sha256": "5d60b8499cefa97a2a31fbd5fe8054c4de034ad351176a8b46866f1f0b4a1673",
+      "bytes": 18408,
+      "boundaryID": "DOM-ADM1-93820187",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/DOM/ADM1/geoBoundaries-DOM-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "attribution": "Natural Earth",
+      "year": "2022"
+    },
+    {
+      "id": "dza-adm1",
+      "iso": "DZA",
+      "level": "ADM1",
+      "file": "dza-adm1-c9495a00a641f083.json",
+      "object": "DZAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8115336027770448,
+          "cy": 0.050717934409620684,
+          "cz": 0.5821004232028448,
+          "radiusRad": 0.2810440027949989
+        }
+      ],
+      "sha256": "c9495a00a641f083416c540330dca56f1292819434a121f4ae2b5d0625efe0d6",
+      "bytes": 1251004,
+      "boundaryID": "DZA-ADM1-43142294",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/DZA/ADM1/geoBoundaries-DZA-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "ecu-adm1",
+      "iso": "ECU",
+      "level": "ADM1",
+      "file": "ecu-adm1-74fc463c7642de23.json",
+      "object": "ECUADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.1981575074397394,
+          "cy": -0.979874194226376,
+          "cz": -0.024086629786674044,
+          "radiusRad": 0.06318517737234607
+        }
+      ],
+      "sha256": "74fc463c7642de23174d90227b8363d0a32a067f968fc8b8e371699adb7ee036",
+      "bytes": 83263,
+      "boundaryID": "ECU-ADM1-780006",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ECU/ADM1/geoBoundaries-ECU-ADM1.topojson",
+      "license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Cantones_de_Ecuador.png",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2011"
+    },
+    {
+      "id": "egy-adm1",
+      "iso": "EGY",
+      "level": "ADM1",
+      "file": "egy-adm1-9575979a3927cb71.json",
+      "object": "EGYADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7394289063423262,
+          "cy": 0.44733380665463174,
+          "cz": 0.503127576156652,
+          "radiusRad": 0.20730994844507084
+        }
+      ],
+      "sha256": "9575979a3927cb71e78f25c784224b3dbf00349598c5d340efce91681ce52218",
+      "bytes": 343275,
+      "boundaryID": "EGY-ADM1-46179711",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/EGY/ADM1/geoBoundaries-EGY-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "eri-adm1",
+      "iso": "ERI",
+      "level": "ADM1",
+      "file": "eri-adm1-67dedab57f657ad4.json",
+      "object": "ERIADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7513347798937091,
+          "cy": 0.6033065878234133,
+          "cz": 0.26742701735415925,
+          "radiusRad": 0.041981926319811194
+        }
+      ],
+      "sha256": "67dedab57f657ad42b2cca40ff85b8f96bd4a04b3d57c74880ea8d554b39baa3",
+      "bytes": 329518,
+      "boundaryID": "ERI-ADM1-12472421",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ERI/ADM1/geoBoundaries-ERI-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "esp-adm1",
+      "iso": "ESP",
+      "level": "ADM1",
+      "file": "esp-adm1-61e12f23112a8ca3.json",
+      "object": "ESPADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7564397969985915,
+          "cy": -0.044762980455937115,
+          "cz": 0.6525297764067409,
+          "radiusRad": 0.06884648861340853
+        }
+      ],
+      "sha256": "61e12f23112a8ca366ae182c09d18755abf6dc537878063bf9fe63276dd98265",
+      "bytes": 6444049,
+      "boundaryID": "ESP-ADM1-25490228",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ESP/ADM1/geoBoundaries-ESP-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "http://centrodedescargas.cnig.es/CentroDescargas/index.jsp#",
+      "attribution": "Instituto de Geografico Nacional",
+      "year": "2017"
+    },
+    {
+      "id": "est-adm1",
+      "iso": "EST",
+      "level": "ADM1",
+      "file": "est-adm1-d5afb5d7d44cfca2.json",
+      "object": "ESTADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.46888781736983837,
+          "cy": 0.22850035288545872,
+          "cz": 0.8531891955793685,
+          "radiusRad": 0.02419038530866918
+        }
+      ],
+      "sha256": "d5afb5d7d44cfca2c82301d23e4e5e55bd46de4c805ee74bb3e1927ea6675f16",
+      "bytes": 4022414,
+      "boundaryID": "EST-ADM1-21999144",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/EST/ADM1/geoBoundaries-EST-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2016"
+    },
+    {
+      "id": "eth-adm1",
+      "iso": "ETH",
+      "level": "ADM1",
+      "file": "eth-adm1-e85ead1bd8261393.json",
+      "object": "ETHADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7696039065466711,
+          "cy": 0.608320646580743,
+          "cz": 0.19405107052446086,
+          "radiusRad": 0.08332600168321734
+        }
+      ],
+      "sha256": "e85ead1bd82613934bdea171f081331e6222ceadffcac1d9b90c7b0c0e1adc75",
+      "bytes": 56329,
+      "boundaryID": "ETH-ADM1-75662566",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ETH/ADM1/geoBoundaries-ETH-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://africaopendata.org/dataset/ethiopia-shapefiles",
+      "attribution": "Open Africa, Code for Ethiopia",
+      "year": "2016"
+    },
+    {
+      "id": "fin-adm1",
+      "iso": "FIN",
+      "level": "ADM1",
+      "file": "fin-adm1-98b7ade1e26fd2e6.json",
+      "object": "FINADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.4251189415202923,
+          "cy": 0.19960239662588825,
+          "cz": 0.8828548968102673,
+          "radiusRad": 0.08811959136744574
+        }
+      ],
+      "sha256": "98b7ade1e26fd2e6fcd0b671be8c4f592ef7215cdb8f07713a947861aae568ee",
+      "bytes": 3111614,
+      "boundaryID": "FIN-ADM1-49019192",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/FIN/ADM1/geoBoundaries-FIN-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "fji-adm1",
+      "iso": "FJI",
+      "level": "ADM1",
+      "file": "fji-adm1-9700bdfe6de72f11.json",
+      "object": "FJIADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.9516934432982436,
+          "cy": 0.032065797955370776,
+          "cz": -0.3053708803809201,
+          "radiusRad": 0.009819716560594126
+        }
+      ],
+      "sha256": "9700bdfe6de72f1122d6984f2505780aa23facba1b07f765cb2cd5ec070700fd",
+      "bytes": 8399,
+      "boundaryID": "FJI-ADM1-53030831",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/FJI/ADM1/geoBoundaries-FJI-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://en.wikipedia.org/wiki/File:Fiji_divisions_named.png",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2006"
+    },
+    {
+      "id": "fra-adm1",
+      "iso": "FRA",
+      "level": "ADM1",
+      "file": "fra-adm1-9446415ab7ac8428.json",
+      "object": "FRAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6861001016483638,
+          "cy": 0.025267901865565646,
+          "cz": 0.7270682111421299,
+          "radiusRad": 0.07295761528848672
+        }
+      ],
+      "sha256": "9446415ab7ac842815e78daeba114d830a57ff858057b8102ddcdcd6fa73af32",
+      "bytes": 12426294,
+      "boundaryID": "FRA-ADM1-19338628",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/FRA/ADM1/geoBoundaries-FRA-ADM1.topojson",
+      "license": "Etalab Open License 2.0",
+      "licenseSource": "https://geoservices.ign.fr/sites/default/files/2021-11/IGNF_ADMIN_EXPRESS_3-1.html",
+      "attribution": "Institut national de l'information géographique et forestière (IGN-F)",
+      "year": "2022"
+    },
+    {
+      "id": "gab-adm1",
+      "iso": "GAB",
+      "level": "ADM1",
+      "file": "gab-adm1-4a2ba30a2da99b49.json",
+      "object": "GABADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9809733761243663,
+          "cy": 0.19368360575581697,
+          "cz": -0.013337773299462403,
+          "radiusRad": 0.06618056192354282
+        }
+      ],
+      "sha256": "4a2ba30a2da99b499f0c102aa3193c19f12476c6c7d670b79e223a6c24258735",
+      "bytes": 18973,
+      "boundaryID": "GAB-ADM1-98808126",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GAB/ADM1/geoBoundaries-GAB-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 3.0 Unported",
+      "licenseSource": "https://en.wikipedia.org/wiki/Subdivisions_of_Gabon#/media/File:Gabon_provinces_numbered.png",
+      "attribution": "geoBoundaries, Wikipedia",
+      "year": "2005"
+    },
+    {
+      "id": "gbr-adm1",
+      "iso": "GBR",
+      "level": "ADM1",
+      "file": "gbr-adm1-6b3dd130b37890ed.json",
+      "object": "GBRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5950132983526107,
+          "cy": -0.0292229526846151,
+          "cz": 0.8031844083521166,
+          "radiusRad": 0.044144721566406364
+        }
+      ],
+      "sha256": "6b3dd130b37890ed258a00405337da6407db5ccd5556edd1af413b9b7682ed77",
+      "bytes": 42737,
+      "boundaryID": "GBR-ADM1-14339913",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GBR/ADM1/geoBoundaries-GBR-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://ec.europa.eu/info/legal-notice_en",
+      "attribution": "Eurostat- European Commission",
+      "year": "2021"
+    },
+    {
+      "id": "geo-adm1",
+      "iso": "GEO",
+      "level": "ADM1",
+      "file": "geo-adm1-c43bc4f14bcbfa88.json",
+      "object": "GEOADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5381253629271922,
+          "cy": 0.5103492187269989,
+          "cz": 0.6707941328896811,
+          "radiusRad": 0.027057216145307532
+        }
+      ],
+      "sha256": "c43bc4f14bcbfa88702a30d786e0ffa97cbb4afb9bde285868dea6a7e005529b",
+      "bytes": 51948,
+      "boundaryID": "GEO-ADM1-13066534",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GEO/ADM1/geoBoundaries-GEO-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 License",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Georgia.svg",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2015"
+    },
+    {
+      "id": "gha-adm1",
+      "iso": "GHA",
+      "level": "ADM1",
+      "file": "gha-adm1-ecb79898e764d7a9.json",
+      "object": "GHAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9890560564205663,
+          "cy": -0.013512197525060247,
+          "cz": 0.14692017484280906,
+          "radiusRad": 0.06838653860254026
+        }
+      ],
+      "sha256": "ecb79898e764d7a9ce03e3c9bb47dad589f9f955a182ab39062f6ef22d11ae2c",
+      "bytes": 472704,
+      "boundaryID": "GHA-ADM1-69750345",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GHA/ADM1/geoBoundaries-GHA-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 2.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "Open Street Map",
+      "year": "2021"
+    },
+    {
+      "id": "gin-adm1",
+      "iso": "GIN",
+      "level": "ADM1",
+      "file": "gin-adm1-103c3537ba68919f.json",
+      "object": "GINADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9636074347031236,
+          "cy": -0.19456623961397784,
+          "cz": 0.1833158208866372,
+          "radiusRad": 0.06068833203235826
+        }
+      ],
+      "sha256": "103c3537ba68919f7196e18e9d8d9938829565602715d2afca5c71eaace2c543",
+      "bytes": 74156,
+      "boundaryID": "GIN-ADM1-385441",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GIN/ADM1/geoBoundaries-GIN-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/guinea-geodatabase",
+      "attribution": "World Food Programme, OCHA ROWCA",
+      "year": "2017"
+    },
+    {
+      "id": "gmb-adm1",
+      "iso": "GMB",
+      "level": "ADM1",
+      "file": "gmb-adm1-cf449a2505ccf0ce.json",
+      "object": "GMBADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9347979641224596,
+          "cy": -0.26933462209959164,
+          "cz": 0.23154184850902218,
+          "radiusRad": 0.027153073940273657
+        }
+      ],
+      "sha256": "cf449a2505ccf0ce1c597e39e426fc60f8e6dcb8c680ae90d4ef6bd9bb20c511",
+      "bytes": 68705,
+      "boundaryID": "GMB-ADM1-31243875",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GMB/ADM1/geoBoundaries-GMB-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://datacatalog.worldbank.org/search/dataset/0038034",
+      "attribution": "Knippenberg, Erwin, & Moritz, Meyer. “The Hidden Potential of Mobile Phone Data: Insights on COVID-19 in the Gambia.” Data Blog, The World Bank Data Catalog",
+      "year": "2020"
+    },
+    {
+      "id": "gnb-adm1",
+      "iso": "GNB",
+      "level": "ADM1",
+      "file": "gnb-adm1-dfab79f0f666da24.json",
+      "object": "GNBADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9446195849181591,
+          "cy": -0.25311981839661324,
+          "cz": 0.20886406422338508,
+          "radiusRad": 0.019779927758058386
+        }
+      ],
+      "sha256": "dfab79f0f666da246f4ff9a6f4e9033cf2634282006d327188522162af1a2cd9",
+      "bytes": 390735,
+      "boundaryID": "GNB-ADM1-76643164",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GNB/ADM1/geoBoundaries-GNB-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "gnq-adm1",
+      "iso": "GNQ",
+      "level": "ADM1",
+      "file": "gnq-adm1-f5edd6a54d686821.json",
+      "object": "GNQADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9825008498915837,
+          "cy": 0.18381910166212082,
+          "cz": 0.030043598759912662,
+          "radiusRad": 0.050428502885449956
+        }
+      ],
+      "sha256": "f5edd6a54d6868210751875fb8a31161cbfef7abe602d2bcde2f34bf753b8e42",
+      "bytes": 61563,
+      "boundaryID": "GNQ-ADM1-51917635",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GNQ/ADM1/geoBoundaries-GNQ-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2016"
+    },
+    {
+      "id": "grc-adm1",
+      "iso": "GRC",
+      "level": "ADM1",
+      "file": "grc-adm1-899a7f4ba66decd8.json",
+      "object": "GRCADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.71686669632676,
+          "cy": 0.29041915022064296,
+          "cz": 0.6338445052871221,
+          "radiusRad": 0.039157595685310596
+        }
+      ],
+      "sha256": "899a7f4ba66decd8717fe6a462621b6019d1f121a2329802a0d199faba3d5abf",
+      "bytes": 258270,
+      "boundaryID": "GRC-ADM1-93993887",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GRC/ADM1/geoBoundaries-GRC-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://data.humdata.org/dataset/gree",
+      "attribution": "EuroGeoGraphics, Regional IM Working Group - Europe",
+      "year": "2016"
+    },
+    {
+      "id": "grd-adm1",
+      "iso": "GRD",
+      "level": "ADM1",
+      "file": "grd-adm1-ebd49797aa039c0c.json",
+      "object": "GRDADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.4637907717364964,
+          "cy": -0.8606722221861477,
+          "cz": 0.21009865779967127,
+          "radiusRad": 0.0021020953014653132
+        }
+      ],
+      "sha256": "ebd49797aa039c0c12fdaff027cc371a118880e355fd1ad2daae105c315ecaed",
+      "bytes": 38960,
+      "boundaryID": "GRD-ADM1-93511190",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GRD/ADM1/geoBoundaries-GRD-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 2.0",
+      "licenseSource": "https://osm-boundaries.com/",
+      "attribution": "OpenStreetMap, Wikipedia",
+      "year": "2017"
+    },
+    {
+      "id": "grl-adm1",
+      "iso": "GRL",
+      "level": "ADM1",
+      "file": "grl-adm1-2733d86a1a3b7f79.json",
+      "object": "GRLADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.25198703569118436,
+          "cy": -0.23487918981223188,
+          "cz": 0.9387940668947153,
+          "radiusRad": 0.2886293865619221
+        }
+      ],
+      "sha256": "2733d86a1a3b7f799c92e3635bd490ff542292d4d306af90c0f211a6dfe7d183",
+      "bytes": 350699,
+      "boundaryID": "GRL-ADM1-42512837",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GRL/ADM1/geoBoundaries-GRL-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 3.0 Unported",
+      "licenseSource": "https://creativecommons.org/licenses/by-sa/3.0/de/legalcode",
+      "attribution": "GeoBoundaries, Wikipedia",
+      "year": "2020"
+    },
+    {
+      "id": "gtm-adm1",
+      "iso": "GTM",
+      "level": "ADM1",
+      "file": "gtm-adm1-8296a7c45a3a4858.json",
+      "object": "GTMADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.008094426529135154,
+          "cy": -0.9655086943005291,
+          "cz": 0.2602449643878854,
+          "radiusRad": 0.03224940063654639
+        }
+      ],
+      "sha256": "8296a7c45a3a4858558bb7d9334af25c217232b03bbcaa0767e65396e62ecf27",
+      "bytes": 269502,
+      "boundaryID": "GTM-ADM1-53557124",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GTM/ADM1/geoBoundaries-GTM-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "guy-adm1",
+      "iso": "GUY",
+      "level": "ADM1",
+      "file": "guy-adm1-f1af5541eaefcb03.json",
+      "object": "GUYADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5201318646185262,
+          "cy": -0.8482569460972266,
+          "cz": 0.09961423997733523,
+          "radiusRad": 0.07633536463276686
+        }
+      ],
+      "sha256": "f1af5541eaefcb030e5beb3f6b9a3b81b652e2a7e72af66df945f088ad7bef8a",
+      "bytes": 141722,
+      "boundaryID": "GUY-ADM1-73500413",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/GUY/ADM1/geoBoundaries-GUY-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "hnd-adm1",
+      "iso": "HND",
+      "level": "ADM1",
+      "file": "hnd-adm1-8fdb764840f01f67.json",
+      "object": "HNDADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.04276828209582316,
+          "cy": -0.966815739112858,
+          "cz": 0.25186941189876577,
+          "radiusRad": 0.05699520572326702
+        }
+      ],
+      "sha256": "8fdb764840f01f677889a4b1ff9d77e439703f3a3e7ccd2ba838c1c2e49942f9",
+      "bytes": 585051,
+      "boundaryID": "HND-ADM1-10453824",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/HND/ADM1/geoBoundaries-HND-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "hrv-adm1",
+      "iso": "HRV",
+      "level": "ADM1",
+      "file": "hrv-adm1-9230a9607c5e2339.json",
+      "object": "HRVADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6758611011484266,
+          "cy": 0.19410021859584883,
+          "cz": 0.7110111652396747,
+          "radiusRad": 0.043166656042651
+        }
+      ],
+      "sha256": "9230a9607c5e233999c30f0ffab79e67bf30875f2af397372fb8d89e531962d6",
+      "bytes": 1977815,
+      "boundaryID": "HRV-ADM1-27960609",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/HRV/ADM1/geoBoundaries-HRV-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "hti-adm1",
+      "iso": "HTI",
+      "level": "ADM1",
+      "file": "hti-adm1-17a846b4b20e9849.json",
+      "object": "HTIADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.2816272362117112,
+          "cy": -0.903111573118816,
+          "cz": 0.32415364616584325,
+          "radiusRad": 0.03118392917409608
+        }
+      ],
+      "sha256": "17a846b4b20e9849958784f8958fd53c4dcff5fe3161dc84254beee8534fe4cf",
+      "bytes": 358167,
+      "boundaryID": "HTI-ADM1-49955354",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/HTI/ADM1/geoBoundaries-HTI-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "hun-adm1",
+      "iso": "HUN",
+      "level": "ADM1",
+      "file": "hun-adm1-c4d04fb8669def52.json",
+      "object": "HUNADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6423363969574878,
+          "cy": 0.22377867814916325,
+          "cz": 0.7330259588510395,
+          "radiusRad": 0.04339332121612982
+        }
+      ],
+      "sha256": "c4d04fb8669def52bc7a918bc52871038754d782a5b0ba0fd0e38e37f82958fb",
+      "bytes": 48737,
+      "boundaryID": "HUN-ADM1-22733592",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/HUN/ADM1/geoBoundaries-HUN-ADM1.topojson",
+      "license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "licenseSource": "https://commons.wikimedia.org/w/index.php?search=Maps+of+Hungary&title=Special:MediaSearch&type=image&haslicense=unrestricted",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2011"
+    },
+    {
+      "id": "idn-adm1",
+      "iso": "IDN",
+      "level": "ADM1",
+      "file": "idn-adm1-d2aa087dd949e9d0.json",
+      "object": "IDNADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.3318977074666209,
+          "cy": 0.9412582076349014,
+          "cz": -0.06226474394337757,
+          "radiusRad": 0.45890889747998564
+        }
+      ],
+      "sha256": "d2aa087dd949e9d047ebb9656a8b088f99631ffdf4c832c560854ff012682a72",
+      "bytes": 4388178,
+      "boundaryID": "IDN-ADM1-65028918",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/IDN/ADM1/geoBoundaries-IDN-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "ind-adm1",
+      "iso": "IND",
+      "level": "ADM1",
+      "file": "ind-adm1-0029b03920a763b0.json",
+      "object": "INDADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.14943747005306932,
+          "cy": 0.9083522252835805,
+          "cz": 0.39059528589897924,
+          "radiusRad": 0.26457746585560177
+        }
+      ],
+      "sha256": "0029b03920a763b061c87b0bd22f5675ed42a846dd8405c377b89130af2fb720",
+      "bytes": 6071646,
+      "boundaryID": "IND-ADM1-93758946",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/IND/ADM1/geoBoundaries-IND-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 India (CC BY 2.5 IN)",
+      "licenseSource": "https://projects.datameet.org/maps/states/",
+      "attribution": "DataMeet India community",
+      "year": "2011"
+    },
+    {
+      "id": "irl-adm1",
+      "iso": "IRL",
+      "level": "ADM1",
+      "file": "irl-adm1-a8309e4cf225ad77.json",
+      "object": "IRLADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5936887273549979,
+          "cy": -0.08085101941117775,
+          "cz": 0.8006227623992315,
+          "radiusRad": 0.034573384285559464
+        }
+      ],
+      "sha256": "a8309e4cf225ad771bf94fe96c230c46f19dd980f23596f5be568afb1a67e348",
+      "bytes": 15647750,
+      "boundaryID": "IRL-ADM1-98446701",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/IRL/ADM1/geoBoundaries-IRL-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://data-osi.opendata.arcgis.com/datasets/osi::counties-national-statutory-boundaries-ungeneralised-2024/about",
+      "attribution": "Ordnance Survey Ireland",
+      "year": "2024"
+    },
+    {
+      "id": "irn-adm1",
+      "iso": "IRN",
+      "level": "ADM1",
+      "file": "irn-adm1-7f1bada06e60ab42.json",
+      "object": "IRNADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5213403602603927,
+          "cy": 0.6500250483821292,
+          "cz": 0.5528758135778546,
+          "radiusRad": 0.18784476120100102
+        }
+      ],
+      "sha256": "7f1bada06e60ab426d3706c73458435ec33031472023dc3bd72b2129e241ad45",
+      "bytes": 1559035,
+      "boundaryID": "IRN-ADM1-17685810",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/IRN/ADM1/geoBoundaries-IRN-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "irq-adm1",
+      "iso": "IRQ",
+      "level": "ADM1",
+      "file": "irq-adm1-f67474a62a1ae6a0.json",
+      "object": "IRQADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5905552407671508,
+          "cy": 0.5844413907967467,
+          "cz": 0.5564824959745068,
+          "radiusRad": 0.09598127608313735
+        }
+      ],
+      "sha256": "f67474a62a1ae6a0d36eb81d35017810681a0aa56ad09a4ff0dafe5123c5194c",
+      "bytes": 26811,
+      "boundaryID": "IRQ-ADM1-90741666",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/IRQ/ADM1/geoBoundaries-IRQ-ADM1.topojson",
+      "license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "licenseSource": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2022"
+    },
+    {
+      "id": "isl-adm1",
+      "iso": "ISL",
+      "level": "ADM1",
+      "file": "isl-adm1-db0317c2d033269b.json",
+      "object": "ISLADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.39444905343205433,
+          "cy": -0.13437800795153326,
+          "cz": 0.9090393254560191,
+          "radiusRad": 0.03862440856918392
+        }
+      ],
+      "sha256": "db0317c2d033269bc4426e84aee0c75b2a108c62a904e95e3a6b8ff9530b7300",
+      "bytes": 869476,
+      "boundaryID": "ISL-ADM1-53860390",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ISL/ADM1/geoBoundaries-ISL-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "isr-adm1",
+      "iso": "ISR",
+      "level": "ADM1",
+      "file": "isr-adm1-8f5a3ed857bd98ee.json",
+      "object": "ISRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6938009158976838,
+          "cy": 0.4845076093120541,
+          "cz": 0.5328157895729563,
+          "radiusRad": 0.012645627699076052
+        }
+      ],
+      "sha256": "8f5a3ed857bd98eede5ba9495d99e6384a69194d8b6dc7ae64f9e0b58215ad8f",
+      "bytes": 19314,
+      "boundaryID": "ISR-ADM1-19161824",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ISR/ADM1/geoBoundaries-ISR-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Israel_districts.png",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2006"
+    },
+    {
+      "id": "ita-adm1",
+      "iso": "ITA",
+      "level": "ADM1",
+      "file": "ita-adm1-8abb834bb0bef69a.json",
+      "object": "ITAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7033036257030324,
+          "cy": 0.14213293075671096,
+          "cz": 0.6965358856997084,
+          "radiusRad": 0.060200886290603516
+        }
+      ],
+      "sha256": "8abb834bb0bef69a06f3e992c71ca42c9383534e0740ecd4baf5d6a0db687b70",
+      "bytes": 3769534,
+      "boundaryID": "ITA-ADM1-72843720",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ITA/ADM1/geoBoundaries-ITA-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 License",
+      "licenseSource": "https://www.istat.it/it/note-legali",
+      "attribution": "ISTAT, National Institute of Statistics",
+      "year": "2023"
+    },
+    {
+      "id": "jam-adm1",
+      "iso": "JAM",
+      "level": "ADM1",
+      "file": "jam-adm1-a7f6129cea8ff454.json",
+      "object": "JAMADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.2072772016486885,
+          "cy": -0.9268609611275015,
+          "cz": 0.31299348302239943,
+          "radiusRad": 0.02410814689499728
+        }
+      ],
+      "sha256": "a7f6129cea8ff45499dd5dd3d6ec95e71f0260abe67fce1806b6581438f4b512",
+      "bytes": 127888,
+      "boundaryID": "JAM-ADM1-11528761",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/JAM/ADM1/geoBoundaries-JAM-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 2.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2011"
+    },
+    {
+      "id": "jor-adm1",
+      "iso": "JOR",
+      "level": "ADM1",
+      "file": "jor-adm1-3dd88c26b705fe70.json",
+      "object": "JORADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6902342778342297,
+          "cy": 0.49900573919743424,
+          "cz": 0.5239941926688515,
+          "radiusRad": 0.0442975735472526
+        }
+      ],
+      "sha256": "3dd88c26b705fe709c45e7c4621adca2cafe886e952f926f78f8e8ebbaeeb481",
+      "bytes": 12120,
+      "boundaryID": "JOR-ADM1-50493656",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/JOR/ADM1/geoBoundaries-JOR-ADM1.topojson",
+      "license": "Creative Commons Attribution 2.5 Generic",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Jordan_governorates_blank.png",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2006"
+    },
+    {
+      "id": "jpn-adm1",
+      "iso": "JPN",
+      "level": "ADM1",
+      "file": "jpn-adm1-97e70c4a884e51a3.json",
+      "object": "JPNADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.5901478574462177,
+          "cy": 0.5569237965176599,
+          "cz": 0.5844325377868645,
+          "radiusRad": 0.1117465931684065
+        }
+      ],
+      "sha256": "97e70c4a884e51a35c43b406ae77599f5547c70d41c5be732b53178db67519eb",
+      "bytes": 17614704,
+      "boundaryID": "JPN-ADM1-47310658",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/JPN/ADM1/geoBoundaries-JPN-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "kaz-adm1",
+      "iso": "KAZ",
+      "level": "ADM1",
+      "file": "kaz-adm1-546ff26c74890b6f.json",
+      "object": "KAZADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.2158906511371495,
+          "cy": 0.6266101118781391,
+          "cz": 0.7488330885074749,
+          "radiusRad": 0.3031946679662123
+        }
+      ],
+      "sha256": "546ff26c74890b6f6a7ffe7d9ddb12012f466049eaa7c90c4013f9f09625279e",
+      "bytes": 502291,
+      "boundaryID": "KAZ-ADM1-16772668",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/KAZ/ADM1/geoBoundaries-KAZ-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "ken-adm1",
+      "iso": "KEN",
+      "level": "ADM1",
+      "file": "ken-adm1-6bafc682bf5b8750.json",
+      "object": "KENADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8002075268657727,
+          "cy": 0.5997186039797121,
+          "cz": -0.002347336360446749,
+          "radiusRad": 0.10410392436174282
+        }
+      ],
+      "sha256": "6bafc682bf5b87505d4a08907ad5bea0f292d986fccd24428f2f6f6112ea472b",
+      "bytes": 943550,
+      "boundaryID": "KEN-ADM1-32016919",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/KEN/ADM1/geoBoundaries-KEN-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://rcmrd.africageoportal.com/datasets/africageoportal::kenya-county-boundaries/about",
+      "attribution": "RCMRD GeoPortal, Africa GeoPortal",
+      "year": "2020"
+    },
+    {
+      "id": "kgz-adm1",
+      "iso": "KGZ",
+      "level": "ADM1",
+      "file": "kgz-adm1-7b76298c4dbc4381.json",
+      "object": "KGZADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.19817651470697908,
+          "cy": 0.7165131988682286,
+          "cz": 0.668830998733023,
+          "radiusRad": 0.06040968878410763
+        }
+      ],
+      "sha256": "7b76298c4dbc4381408d1c16da77927dbe6573ff67743743304f577bed376a5b",
+      "bytes": 246365,
+      "boundaryID": "KGZ-ADM1-38789647",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/KGZ/ADM1/geoBoundaries-KGZ-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "khm-adm1",
+      "iso": "KHM",
+      "level": "ADM1",
+      "file": "khm-adm1-416db111e96d3ab3.json",
+      "object": "KHMADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.2491878473095897,
+          "cy": 0.9438868020609696,
+          "cz": 0.21675590337596012,
+          "radiusRad": 0.05732387171347812
+        }
+      ],
+      "sha256": "416db111e96d3ab38b1870a60463d0e90f4b8326389d680ffc1f87b85f3a4fe4",
+      "bytes": 467884,
+      "boundaryID": "KHM-ADM1-37992800",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/KHM/ADM1/geoBoundaries-KHM-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "kna-adm1",
+      "iso": "KNA",
+      "level": "ADM1",
+      "file": "kna-adm1-3c72c2a67a185015.json",
+      "object": "KNAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.43728515697229364,
+          "cy": -0.8486673616425101,
+          "cz": 0.29756579234592373,
+          "radiusRad": 0.0048942813705983475
+        }
+      ],
+      "sha256": "3c72c2a67a1850155d416e5b296b4cc6b9ff8c5689ed07301bded202ca287ff8",
+      "bytes": 38889,
+      "boundaryID": "KNA-ADM1-52472329",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/KNA/ADM1/geoBoundaries-KNA-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 2.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap",
+      "year": "2021"
+    },
+    {
+      "id": "kor-adm1",
+      "iso": "KOR",
+      "level": "ADM1",
+      "file": "kor-adm1-f5ea0d732048bc06.json",
+      "object": "KORADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.4933702729854741,
+          "cy": 0.6349526532919794,
+          "cz": 0.5944921377206888,
+          "radiusRad": 0.035329102316127264
+        }
+      ],
+      "sha256": "f5ea0d732048bc069e5ecbcbb4c5965f2b99892a12234f506d66643cdbae44a8",
+      "bytes": 38556,
+      "boundaryID": "KOR-ADM1-68945753",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/KOR/ADM1/geoBoundaries-KOR-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "attribution": "Natural Earth",
+      "year": "2021"
+    },
+    {
+      "id": "kwt-adm1",
+      "iso": "KWT",
+      "level": "ADM1",
+      "file": "kwt-adm1-6f3fd41bb425379c.json",
+      "object": "KWTADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.584903042911978,
+          "cy": 0.6476898298823968,
+          "cz": 0.48824821009320735,
+          "radiusRad": 0.010697115144208444
+        }
+      ],
+      "sha256": "6f3fd41bb425379c55c174233a40950d078b5f45b173780def8df2eb2931f49d",
+      "bytes": 88016,
+      "boundaryID": "KWT-ADM1-60633882",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/KWT/ADM1/geoBoundaries-KWT-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "lao-adm1",
+      "iso": "LAO",
+      "level": "ADM1",
+      "file": "lao-adm1-1629b322c9255fdc.json",
+      "object": "LAOADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.22966033624397003,
+          "cy": 0.9220433793926556,
+          "cz": 0.31159611113503705,
+          "radiusRad": 0.08323505333639994
+        }
+      ],
+      "sha256": "1629b322c9255fdcef13b91cb349dcf9cb8b374243d807c4f64f3ad91dd162fd",
+      "bytes": 444534,
+      "boundaryID": "LAO-ADM1-31783359",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LAO/ADM1/geoBoundaries-LAO-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "lbn-adm1",
+      "iso": "LBN",
+      "level": "ADM1",
+      "file": "lbn-adm1-5e081665013b5a83.json",
+      "object": "LBNADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6743169416789173,
+          "cy": 0.4855061839493294,
+          "cz": 0.5563995035150119,
+          "radiusRad": 0.015301766523070194
+        }
+      ],
+      "sha256": "5e081665013b5a83eafdb8ac74222e355b7b8c2252b000b9c8c9c112c45b6246",
+      "bytes": 39245,
+      "boundaryID": "LBN-ADM1-68408151",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LBN/ADM1/geoBoundaries-LBN-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:North_Governorate1.png",
+      "attribution": "geoBoundaries, Wikimedia Commons",
+      "year": "2017"
+    },
+    {
+      "id": "lbr-adm1",
+      "iso": "LBR",
+      "level": "ADM1",
+      "file": "lbr-adm1-2731eefe4f397961.json",
+      "object": "LBRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9799664973623582,
+          "cy": -0.16582819751335715,
+          "cz": 0.11030264256500041,
+          "radiusRad": 0.04642458766678417
+        }
+      ],
+      "sha256": "2731eefe4f397961465dc006d35dd98bfdde08694eaae00a9602f3abe2b46da8",
+      "bytes": 106204,
+      "boundaryID": "LBR-ADM1-1627179",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LBR/ADM1/geoBoundaries-LBR-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/liberia-admin-level-2-boundaries",
+      "attribution": "UNMIL, OCHA ROWCA",
+      "year": "2021"
+    },
+    {
+      "id": "lby-adm1",
+      "iso": "LBY",
+      "level": "ADM1",
+      "file": "lby-adm1-b7dde0439782c4e3.json",
+      "object": "LBYADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8365222112541357,
+          "cy": 0.24112517408059342,
+          "cz": 0.49202565024914535,
+          "radiusRad": 0.1664792787489398
+        }
+      ],
+      "sha256": "b7dde0439782c4e392c93736a46fd43651aaef79a9ad8b4c2c3dae45ec5ffa18",
+      "bytes": 16133,
+      "boundaryID": "LBY-ADM1-10800210",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LBY/ADM1/geoBoundaries-LBY-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "attribution": "Natural Earth",
+      "year": "2021"
+    },
+    {
+      "id": "lca-adm1",
+      "iso": "LCA",
+      "level": "ADM1",
+      "file": "lca-adm1-7f1ddca506e712ad.json",
+      "object": "LCAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.47090501723333,
+          "cy": -0.8489411166850785,
+          "cz": 0.23989048573457292,
+          "radiusRad": 0.0030271085501868272
+        }
+      ],
+      "sha256": "7f1ddca506e712adfe06aee64daea1b80c8f2c9a240970f6330fb8cf20a4df1a",
+      "bytes": 44068,
+      "boundaryID": "LCA-ADM1-63095687",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LCA/ADM1/geoBoundaries-LCA-ADM1.topojson",
+      "license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:%D8%B6%D9%88%D8%A7%D8%AD%D9%8A_%D8%B3%D8%A7%D9%86%D8%AA_%D9%84%D9%88%D8%B3%D9%8A%D8%A7.svg",
+      "attribution": "Wikimedia Commons, Wikimedia Commons",
+      "year": "2015"
+    },
+    {
+      "id": "lie-adm1",
+      "iso": "LIE",
+      "level": "ADM1",
+      "file": "lie-adm1-d0bbf8d17c7d1519.json",
+      "object": "LIEADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6705943183949512,
+          "cy": 0.11290639289019211,
+          "cz": 0.7331817009315879,
+          "radiusRad": 0.0018535636146017353
+        }
+      ],
+      "sha256": "d0bbf8d17c7d1519205c9ffe5e2fc880cd10f4a8de207dbf267ecb880a5f26c9",
+      "bytes": 44782,
+      "boundaryID": "LIE-ADM1-41692755",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LIE/ADM1/geoBoundaries-LIE-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "lka-adm1",
+      "iso": "LKA",
+      "level": "ADM1",
+      "file": "lka-adm1-1cd1990c3e1256ab.json",
+      "object": "LKAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.1591939807566293,
+          "cy": 0.9789123403064381,
+          "cz": 0.12801525880390244,
+          "radiusRad": 0.0292397431229651
+        }
+      ],
+      "sha256": "1cd1990c3e1256aba006614199d5c312605c300271b3c622d69bb2c0f99d7005",
+      "bytes": 222547,
+      "boundaryID": "LKA-ADM1-99731895",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LKA/ADM1/geoBoundaries-LKA-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "lso-adm1",
+      "iso": "LSO",
+      "level": "ADM1",
+      "file": "lso-adm1-9793483e61cf5b8a.json",
+      "object": "LSOADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7667565390522623,
+          "cy": 0.41050038235773606,
+          "cz": -0.49353201102334693,
+          "radiusRad": 0.01949763560872538
+        }
+      ],
+      "sha256": "9793483e61cf5b8a3961cc150ab06318a6133870511c37bdc586223bc18fa0fd",
+      "bytes": 289314,
+      "boundaryID": "LSO-ADM1-63558799",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LSO/ADM1/geoBoundaries-LSO-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "ltu-adm1",
+      "iso": "LTU",
+      "level": "ADM1",
+      "file": "ltu-adm1-e3694d44be4281c3.json",
+      "object": "LTUADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5187185142979748,
+          "cy": 0.2291522676867097,
+          "cz": 0.8236627593490797,
+          "radiusRad": 0.030389305851398617
+        }
+      ],
+      "sha256": "e3694d44be4281c31497d392a34bb0395dcb3c2631b3c6a925ac852d86bae78b",
+      "bytes": 526177,
+      "boundaryID": "LTU-ADM1-39236102",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LTU/ADM1/geoBoundaries-LTU-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "lux-adm1",
+      "iso": "LUX",
+      "level": "ADM1",
+      "file": "lux-adm1-ffc902d92214ec13.json",
+      "object": "LUXADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.642045425826312,
+          "cy": 0.06859146029216681,
+          "cz": 0.7635920918595858,
+          "radiusRad": 0.004984164773827481
+        }
+      ],
+      "sha256": "ffc902d92214ec13f6bb767b3a4df5a90ad60748f08c725d9ff038a118be1b14",
+      "bytes": 401859,
+      "boundaryID": "LUX-ADM1-76397094",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LUX/ADM1/geoBoundaries-LUX-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "lva-adm1",
+      "iso": "LVA",
+      "level": "ADM1",
+      "file": "lva-adm1-41e6fcf61d8947d4.json",
+      "object": "LVAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.49466394406247977,
+          "cy": 0.23239455068592246,
+          "cz": 0.8374367768709707,
+          "radiusRad": 0.041501580919638424
+        }
+      ],
+      "sha256": "41e6fcf61d8947d461e8f0332d16cc4adfd39c0c1ecdde7f396bf8d0052404c8",
+      "bytes": 1441196,
+      "boundaryID": "LVA-ADM1-71098776",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/LVA/ADM1/geoBoundaries-LVA-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://geolatvija.lv/geo/p/658",
+      "attribution": "Geoportal of Latvia",
+      "year": "2021"
+    },
+    {
+      "id": "mar-adm1",
+      "iso": "MAR",
+      "level": "ADM1",
+      "file": "mar-adm1-53ca1a538f21aad3.json",
+      "object": "MARADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8371688855899612,
+          "cy": -0.09737673819327827,
+          "cz": 0.5382063060378431,
+          "radiusRad": 0.1900566573255019
+        }
+      ],
+      "sha256": "53ca1a538f21aad346dcf3134659f0c51bf9f0e79d42690d3b847672408ef59b",
+      "bytes": 449751,
+      "boundaryID": "MAR-ADM1-70788906",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MAR/ADM1/geoBoundaries-MAR-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "mda-adm1",
+      "iso": "MDA",
+      "level": "ADM1",
+      "file": "mda-adm1-d911fb8c2002e9cc.json",
+      "object": "MDAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5961790613666937,
+          "cy": 0.3256050757106013,
+          "cz": 0.7338609278735456,
+          "radiusRad": 0.03147931835849796
+        }
+      ],
+      "sha256": "d911fb8c2002e9cc6d5ce5d161b5757ba5543a6150273fe0316504ba5d2d0914",
+      "bytes": 92449,
+      "boundaryID": "MDA-ADM1-25212430",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MDA/ADM1/geoBoundaries-MDA-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/moldova-administrative-level-0-1-boundaries",
+      "attribution": "UNHCR, OCHA FISS",
+      "year": "2020"
+    },
+    {
+      "id": "mdg-adm1",
+      "iso": "MDG",
+      "level": "ADM1",
+      "file": "mdg-adm1-3b5dd94c7560e0a7.json",
+      "object": "MDGADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6420066024714113,
+          "cy": 0.6984366493708781,
+          "cz": -0.31624953628218344,
+          "radiusRad": 0.12936262060928
+        }
+      ],
+      "sha256": "3b5dd94c7560e0a7d8e7c9fdd859e088dd09bb83f14686865096cf56b81cf3f1",
+      "bytes": 769549,
+      "boundaryID": "MDG-ADM1-27540722",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MDG/ADM1/geoBoundaries-MDG-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "mdv-adm1",
+      "iso": "MDV",
+      "level": "ADM1",
+      "file": "mdv-adm1-a11bee4f0bdc211f.json",
+      "object": "MDVADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.29183102488985563,
+          "cy": 0.9550653437948233,
+          "cz": 0.05181546095338967,
+          "radiusRad": 0.020262471837037478
+        }
+      ],
+      "sha256": "a11bee4f0bdc211f64fb211520cf73eeccd1db1f832379dd7301e0ae0d88af0f",
+      "bytes": 36025,
+      "boundaryID": "MDV-ADM1-51498476",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MDV/ADM1/geoBoundaries-MDV-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "mex-adm1",
+      "iso": "MEX",
+      "level": "ADM1",
+      "file": "mex-adm1-246a6d97bb7a91d1.json",
+      "object": "MEXADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.16217660529314765,
+          "cy": -0.9174334733170385,
+          "cz": 0.3633380942497297,
+          "radiusRad": 0.306335797673857
+        }
+      ],
+      "sha256": "246a6d97bb7a91d13267d9a5d92ba78a4b1da8fc063621c19421afde1c4c5637",
+      "bytes": 5099791,
+      "boundaryID": "MEX-ADM1-31927357",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MEX/ADM1/geoBoundaries-MEX-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/mexican-administrative-level-0-country-1-estado-and-2-municipio-boundary-polygons",
+      "attribution": "Instituto Nacional de Estadística y Geografía (INEGI)",
+      "year": "2020"
+    },
+    {
+      "id": "mkd-adm1",
+      "iso": "MKD",
+      "level": "ADM1",
+      "file": "mkd-adm1-b36c3d38b53dac36.json",
+      "object": "MKDADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6869102819396103,
+          "cy": 0.2814856367816343,
+          "cz": 0.6700150004673648,
+          "radiusRad": 0.003833012816160104
+        }
+      ],
+      "sha256": "b36c3d38b53dac36fb675a7c1045f726aa35f129f63323384dbbdb05b2df50f8",
+      "bytes": 11851,
+      "boundaryID": "MKD-ADM1-19869673",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MKD/ADM1/geoBoundaries-MKD-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://data.humdata.org/dataset/fyrom-administrative-levels-1-4-from-eurogeographics-and-ntes",
+      "attribution": "EuroGeographics and NTES (Nomenclature of Territorial Units for Statistics - Republic of Macedonia State Statistical Office), Regional IM Working Group - Europe",
+      "year": "2016"
+    },
+    {
+      "id": "mli-adm1",
+      "iso": "MLI",
+      "level": "ADM1",
+      "file": "mli-adm1-14fe02e2c61a4bf9.json",
+      "object": "MLIADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9660124656954013,
+          "cy": -0.11379832966377584,
+          "cz": 0.2320988071637286,
+          "radiusRad": 0.21933570002843816
+        }
+      ],
+      "sha256": "14fe02e2c61a4bf9ad2d0212ba280782287b825eabdb141cbd8a613a51edcd01",
+      "bytes": 90805,
+      "boundaryID": "MLI-ADM1-92416918",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MLI/ADM1/geoBoundaries-MLI-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://data.humdata.org/dataset/administrative-boundaries-cod-mli",
+      "attribution": "DNCT - Direction Nationale des Collectivités Territoriales, United Nations Office for the Coordination of Humanitarian Affairs, Mali",
+      "year": "2021"
+    },
+    {
+      "id": "mlt-adm1",
+      "iso": "MLT",
+      "level": "ADM1",
+      "file": "mlt-adm1-f1a9037814a93c24.json",
+      "object": "MLTADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7843405143942903,
+          "cy": 0.20159367557716837,
+          "cz": 0.5866599930513309,
+          "radiusRad": 0.004183917170434098
+        }
+      ],
+      "sha256": "f1a9037814a93c247c321edb92a7e8b065424bfa58ede8ab39cf9ca06f43c5d2",
+      "bytes": 54689,
+      "boundaryID": "MLT-ADM1-83640313",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MLT/ADM1/geoBoundaries-MLT-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://d-maps.com/conditions.php?lang=en",
+      "attribution": "geoBoundaries, d-maps.com",
+      "year": "2022"
+    },
+    {
+      "id": "mmr-adm1",
+      "iso": "MMR",
+      "level": "ADM1",
+      "file": "mmr-adm1-8aa753e1b7c7c3e5.json",
+      "object": "MMRADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.09682825422263691,
+          "cy": 0.9294698940717432,
+          "cz": 0.35596348857496457,
+          "radiusRad": 0.1118782275914151
+        }
+      ],
+      "sha256": "8aa753e1b7c7c3e51a8938dffdfb5b7c1cf2cb16d487239477aad8d2b7b0c4df",
+      "bytes": 470832,
+      "boundaryID": "MMR-ADM1-20573499",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MMR/ADM1/geoBoundaries-MMR-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://data.mmanalytics.org/dataset/border-shapefiles",
+      "attribution": "Myanmar Analytics Project, geoBoundaries",
+      "year": "2019"
+    },
+    {
+      "id": "mne-adm1",
+      "iso": "MNE",
+      "level": "ADM1",
+      "file": "mne-adm1-06d1977391e2067f.json",
+      "object": "MNEADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.694199888328671,
+          "cy": 0.24194463579206812,
+          "cz": 0.6779006625280022,
+          "radiusRad": 0.014806574249798433
+        }
+      ],
+      "sha256": "06d1977391e2067f159e29232a0d58bbe28010cd48df2213e77d016594114aaf",
+      "bytes": 174873,
+      "boundaryID": "MNE-ADM1-59799669",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MNE/ADM1/geoBoundaries-MNE-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "mng-adm1",
+      "iso": "MNG",
+      "level": "ADM1",
+      "file": "mng-adm1-dc27a3ae9a77f7e0.json",
+      "object": "MNGADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.14438920272548633,
+          "cy": 0.6606700668087153,
+          "cz": 0.7366592298744826,
+          "radiusRad": 0.1772706556623172
+        }
+      ],
+      "sha256": "dc27a3ae9a77f7e03fad0383644335c7e8544d405e23036839dcff48ad4a3ba6",
+      "bytes": 164715,
+      "boundaryID": "MNG-ADM1-14279143",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MNG/ADM1/geoBoundaries-MNG-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "moz-adm1",
+      "iso": "MOZ",
+      "level": "ADM1",
+      "file": "moz-adm1-2a00067334e78ffa.json",
+      "object": "MOZADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7711708819353216,
+          "cy": 0.5552859579457242,
+          "cz": -0.31137272803410015,
+          "radiusRad": 0.14146520464808518
+        }
+      ],
+      "sha256": "2a00067334e78ffa9607eda419300c15d723f4deed718474a92fb3a4e5d17eb6",
+      "bytes": 778241,
+      "boundaryID": "MOZ-ADM1-27363107",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MOZ/ADM1/geoBoundaries-MOZ-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "mrt-adm1",
+      "iso": "MRT",
+      "level": "ADM1",
+      "file": "mrt-adm1-8b6bf487398edd7b.json",
+      "object": "MRTADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.936246897267346,
+          "cy": -0.19653450274036932,
+          "cz": 0.2912317575228763,
+          "radiusRad": 0.2398278911900031
+        }
+      ],
+      "sha256": "8b6bf487398edd7b0848828a52377e85fc41dd72f1a2d4a1616e79125a65f49b",
+      "bytes": 236798,
+      "boundaryID": "MRT-ADM1-64602211",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MRT/ADM1/geoBoundaries-MRT-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 3.0 Unported",
+      "licenseSource": "https://maps.princeton.edu/catalog/stanford-nw291zj7245/metadata",
+      "attribution": "Princeton University Library",
+      "year": "2015"
+    },
+    {
+      "id": "mus-adm1",
+      "iso": "MUS",
+      "level": "ADM1",
+      "file": "mus-adm1-2e453fc89b3598e1.json",
+      "object": "MUSADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5031577385302154,
+          "cy": 0.7910406626383731,
+          "cz": -0.3479755166815665,
+          "radiusRad": 0.007962176099950547
+        }
+      ],
+      "sha256": "2e453fc89b3598e1de89a78a9f2d887a7ef3abf21bc8789cdcf5bb1e38517419",
+      "bytes": 80340,
+      "boundaryID": "MUS-ADM1-65221844",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MUS/ADM1/geoBoundaries-MUS-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "geoBoundaries, OpenStreetMap",
+      "year": "2017"
+    },
+    {
+      "id": "mwi-adm1",
+      "iso": "MWI",
+      "level": "ADM1",
+      "file": "mwi-adm1-fd998d56c5f29fb4.json",
+      "object": "MWIADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8029584195111878,
+          "cy": 0.5475388252474639,
+          "cz": -0.23549737022464248,
+          "radiusRad": 0.03296186264104553
+        }
+      ],
+      "sha256": "fd998d56c5f29fb4e1caf40031238e145aab447a089ac4f56201b3420db359e2",
+      "bytes": 229708,
+      "boundaryID": "MWI-ADM1-82672581",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MWI/ADM1/geoBoundaries-MWI-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "mys-adm1",
+      "iso": "MYS",
+      "level": "ADM1",
+      "file": "mys-adm1-ed2d014d3fc05d3a.json",
+      "object": "MYSADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.21208152580738637,
+          "cy": 0.9745973488232268,
+          "cz": 0.07198217889136435,
+          "radiusRad": 0.2363630062449176
+        }
+      ],
+      "sha256": "ed2d014d3fc05d3a307ec4e0829877630ee981d4f6e45d7534f812fce8cf500e",
+      "bytes": 795726,
+      "boundaryID": "MYS-ADM1-15666254",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/MYS/ADM1/geoBoundaries-MYS-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "nam-adm1",
+      "iso": "NAM",
+      "level": "ADM1",
+      "file": "nam-adm1-cc5a2e58b86b28ac.json",
+      "object": "NAMADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8888833689282202,
+          "cy": 0.26917531650176557,
+          "cz": -0.37071688042088374,
+          "radiusRad": 0.12354139749686033
+        }
+      ],
+      "sha256": "cc5a2e58b86b28ac3c35793463ca92c2550925bc30e205d5cfa93dc10eaf3212",
+      "bytes": 24794,
+      "boundaryID": "NAM-ADM1-33880854",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NAM/ADM1/geoBoundaries-NAM-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "attribution": "Natural Earth",
+      "year": "2022"
+    },
+    {
+      "id": "ner-adm1",
+      "iso": "NER",
+      "level": "ADM1",
+      "file": "ner-adm1-58aa54d8b9e0816b.json",
+      "object": "NERADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9603414579588181,
+          "cy": 0.11207294434465706,
+          "cz": 0.255311455425429,
+          "radiusRad": 0.17191119869988436
+        }
+      ],
+      "sha256": "58aa54d8b9e0816ba9ddbba10e0d2c5506d2cd33ec7d582c5935a4e14efcb5d5",
+      "bytes": 105532,
+      "boundaryID": "NER-ADM1-87150794",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NER/ADM1/geoBoundaries-NER-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://spatialdata.dhsprogram.com/references/subnational_data_schema.pdf",
+      "attribution": "IPUMS DHS",
+      "year": "2012"
+    },
+    {
+      "id": "nga-adm1",
+      "iso": "NGA",
+      "level": "ADM1",
+      "file": "nga-adm1-14588f17a201e8c4.json",
+      "object": "NGAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9766268193646458,
+          "cy": 0.13545360263430894,
+          "cz": 0.16689031497088747,
+          "radiusRad": 0.10820431057153865
+        }
+      ],
+      "sha256": "14588f17a201e8c4a789630325864eddcebd5a62f9e17d7a452269b3a4c592c6",
+      "bytes": 267005,
+      "boundaryID": "NGA-ADM1-27671186",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NGA/ADM1/geoBoundaries-NGA-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://data.grid3.org/datasets/grid3-nigeria-state-boundaries/explore?location=8.992006%2C8.685290%2C6.82",
+      "attribution": "GRID3",
+      "year": "2022"
+    },
+    {
+      "id": "nic-adm1",
+      "iso": "NIC",
+      "level": "ADM1",
+      "file": "nic-adm1-01451c13e1510bea.json",
+      "object": "NICADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.06940627064233497,
+          "cy": -0.9735761403222465,
+          "cz": 0.21755980463026778,
+          "radiusRad": 0.057404406720047436
+        }
+      ],
+      "sha256": "01451c13e1510beaa38b754d60e464246243d0494e53b4c14a9ed8fe68eea1d6",
+      "bytes": 336006,
+      "boundaryID": "NIC-ADM1-94367503",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NIC/ADM1/geoBoundaries-NIC-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://osm-boundaries.com/",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "niu-adm1",
+      "iso": "NIU",
+      "level": "ADM1",
+      "file": "niu-adm1-57c80c4a90e7407e.json",
+      "object": "NIUADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.9304984054411956,
+          "cy": -0.1661057241385676,
+          "cz": -0.3264683841963792,
+          "radiusRad": 0.00265982276210163
+        }
+      ],
+      "sha256": "57c80c4a90e7407eaa28aada44519858448cb2469c65ae7c6d6b59452931f6a4",
+      "bytes": 20102,
+      "boundaryID": "NIU-ADM1-93272968",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NIU/ADM1/geoBoundaries-NIU-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://pacificdata.org/data/dataset/2011_niu_phc_admin_boundaries",
+      "attribution": "Pacific Data Hub",
+      "year": "2020"
+    },
+    {
+      "id": "nld-adm1",
+      "iso": "NLD",
+      "level": "ADM1",
+      "file": "nld-adm1-65cf754bcd8973e9.json",
+      "object": "NLDADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6069371317553682,
+          "cy": 0.06079347764225987,
+          "cz": 0.7924212712772966,
+          "radiusRad": 0.02516209509007286
+        }
+      ],
+      "sha256": "65cf754bcd8973e93314fde7e6f7093ebf8afa99168e3002f543ed13865a75fe",
+      "bytes": 724102,
+      "boundaryID": "NLD-ADM1-6811986",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NLD/ADM1/geoBoundaries-NLD-ADM1.topojson",
+      "license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "licenseSource": "https://nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/208bc283-7c66-4ce7-8ad3-1cf3e8933fb5?tab=general",
+      "attribution": "National Georegister",
+      "year": "2022"
+    },
+    {
+      "id": "nor-adm1",
+      "iso": "NOR",
+      "level": "ADM1",
+      "file": "nor-adm1-88cf6c2bdff31716.json",
+      "object": "NORADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.47523669174194794,
+          "cy": 0.08257890443583858,
+          "cz": 0.8759742070200157,
+          "radiusRad": 0.1446702972087745
+        }
+      ],
+      "sha256": "88cf6c2bdff31716262e1635c7dda798e41299cdc6ac56bac5b94d3d5897b44d",
+      "bytes": 15319269,
+      "boundaryID": "NOR-ADM1-71437522",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NOR/ADM1/geoBoundaries-NOR-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://kartkatalog.geonorge.no/metadata/administrative-enheter-fylker/6093c8a8-fa80-11e6-bc64-92361f002671",
+      "attribution": "Kartverket",
+      "year": "2022"
+    },
+    {
+      "id": "npl-adm1",
+      "iso": "NPL",
+      "level": "ADM1",
+      "file": "npl-adm1-0b049878c847d971.json",
+      "object": "NPLADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.09680078412658812,
+          "cy": 0.8765111390577882,
+          "cz": 0.47154833400203705,
+          "radiusRad": 0.05802421263114152
+        }
+      ],
+      "sha256": "0b049878c847d971c8708ae1c16f0ea0cdc39ec80525305471d06c3d62ed4303",
+      "bytes": 877827,
+      "boundaryID": "NPL-ADM1-97224137",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NPL/ADM1/geoBoundaries-NPL-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/administrative-bounadries-of-nepal",
+      "attribution": "Survey Department of Nepal",
+      "year": "2020"
+    },
+    {
+      "id": "nru-adm1",
+      "iso": "NRU",
+      "level": "ADM1",
+      "file": "nru-adm1-b6db6a796caeea08.json",
+      "object": "NRUADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.9740745385144489,
+          "cy": 0.22604202451500058,
+          "cz": -0.009154046702036126,
+          "radiusRad": 0.0005447136818818254
+        }
+      ],
+      "sha256": "b6db6a796caeea08ec632d70ee20cfda43b1a20ce0cd678c457f012c5cbeec86",
+      "bytes": 19415,
+      "boundaryID": "NRU-ADM1-42797286",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NRU/ADM1/geoBoundaries-NRU-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://creativecommons.org/share-your-work/public-domain/",
+      "attribution": "geoBoundaries, FreeMapViewer",
+      "year": "2005"
+    },
+    {
+      "id": "nzl-adm1",
+      "iso": "NZL",
+      "level": "ADM1",
+      "file": "nzl-adm1-8a70b3bb9d4da847.json",
+      "object": "NZLADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.7443579097654558,
+          "cy": 0.08679349861557493,
+          "cz": -0.6621164480419359,
+          "radiusRad": 0.10560422816801301
+        }
+      ],
+      "sha256": "8a70b3bb9d4da847e99264684fffd0eb882d493b57bb2e5b2f69818326fb1325",
+      "bytes": 24542919,
+      "boundaryID": "NZL-ADM1-40311993",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/NZL/ADM1/geoBoundaries-NZL-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "http://www.stats.govt.nz/about_us/about-this-site/copyright-terms-of-use.aspx",
+      "attribution": "NZ Stats",
+      "year": "2017"
+    },
+    {
+      "id": "omn-adm1",
+      "iso": "OMN",
+      "level": "ADM1",
+      "file": "omn-adm1-11f04a9b7c82069e.json",
+      "object": "OMNADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.4960084360202262,
+          "cy": 0.774211140497,
+          "cz": 0.393157400193744,
+          "radiusRad": 0.11766923376488847
+        }
+      ],
+      "sha256": "11f04a9b7c82069e56ef49b35b2ff8f3a3066d36587761e19922451d0d4bf804",
+      "bytes": 640434,
+      "boundaryID": "OMN-ADM1-34121849",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/OMN/ADM1/geoBoundaries-OMN-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2010"
+    },
+    {
+      "id": "pak-adm1",
+      "iso": "PAK",
+      "level": "ADM1",
+      "file": "pak-adm1-1150e416ca4f2047.json",
+      "object": "PAKADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.2689902070184033,
+          "cy": 0.8012404620299837,
+          "cz": 0.5344698219115604,
+          "radiusRad": 0.15076655782204307
+        }
+      ],
+      "sha256": "1150e416ca4f2047a98479e33121846dce92d1016e8a46d6087bb0e874740ac1",
+      "bytes": 28996,
+      "boundaryID": "PAK-ADM1-70912109",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://creativecommons.org/share-your-work/public-domain/",
+      "attribution": "geoBoundaries, Wikipedia",
+      "year": "2019"
+    },
+    {
+      "id": "pan-adm1",
+      "iso": "PAN",
+      "level": "ADM1",
+      "file": "pan-adm1-cebe558961b54285.json",
+      "object": "PANADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.14000805912696113,
+          "cy": -0.9786691366160235,
+          "cz": 0.15034781147309206,
+          "radiusRad": 0.08343258876063055
+        }
+      ],
+      "sha256": "cebe558961b54285c100bf243f1ad1d65d4bd776f71dee86219d319463086312",
+      "bytes": 646435,
+      "boundaryID": "PAN-ADM1-82927092",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/PAN/ADM1/geoBoundaries-PAN-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "per-adm1",
+      "iso": "PER",
+      "level": "ADM1",
+      "file": "per-adm1-c5db888044fc735b.json",
+      "object": "PERADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.2516668649118593,
+          "cy": -0.94969123292974,
+          "cz": -0.1864144608173576,
+          "radiusRad": 0.16911980585967212
+        }
+      ],
+      "sha256": "c5db888044fc735b7378a9075c98382eb9901985dd3a8c7e03dbd09a6c4d49d7",
+      "bytes": 50322,
+      "boundaryID": "PER-ADM1-1875124",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/PER/ADM1/geoBoundaries-PER-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Peru_Provinces.png",
+      "attribution": "Wikimedia Commons",
+      "year": "2008"
+    },
+    {
+      "id": "phl-adm1",
+      "iso": "PHL",
+      "level": "ADM1",
+      "file": "phl-adm1-18a77cebe73450ee.json",
+      "object": "PHLADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.5383065592227785,
+          "cy": 0.8223431799028613,
+          "cz": 0.18433052586314425,
+          "radiusRad": 0.1487999113048397
+        }
+      ],
+      "sha256": "18a77cebe73450eeaec789d6f638f9508f217476ebab41be26da3bb860cfdb4b",
+      "bytes": 99479536,
+      "boundaryID": "PHL-ADM1-36201628",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/PHL/ADM1/geoBoundaries-PHL-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/philippines-administrative-levels-0-to-3",
+      "attribution": "National Mapping and Resource Information Authority (NAMRIA), Philippines Statistics Authority (PSA), OCHA Philippines",
+      "year": "2020"
+    },
+    {
+      "id": "plw-adm1",
+      "iso": "PLW",
+      "level": "ADM1",
+      "file": "plw-adm1-e85702c8e9d9a9fc.json",
+      "object": "PLWADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.6958268968828313,
+          "cy": 0.7062466770659244,
+          "cz": 0.13053949864983208,
+          "radiusRad": 0.0037138300117751403
+        }
+      ],
+      "sha256": "e85702c8e9d9a9fce4f1b9488f691d51b67a8e72f2f6c17afd75f4336c3c417c",
+      "bytes": 98564,
+      "boundaryID": "PLW-ADM1-51375826",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/PLW/ADM1/geoBoundaries-PLW-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "png-adm1",
+      "iso": "PNG",
+      "level": "ADM1",
+      "file": "png-adm1-d08442f8922433d0.json",
+      "object": "PNGADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.8212367193429763,
+          "cy": 0.5578465307002346,
+          "cz": -0.11990620913237945,
+          "radiusRad": 0.13079674902452068
+        }
+      ],
+      "sha256": "d08442f8922433d0d073b00d186b46c0c15ce7b759344410c62daedab1dd4d75",
+      "bytes": 749780,
+      "boundaryID": "PNG-ADM1-602756",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/PNG/ADM1/geoBoundaries-PNG-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/papua-new-guinea-admin-level-0-international-boundaries",
+      "attribution": "Papua New Guinea National Statistics Office, OCHA ROAP",
+      "year": "2019"
+    },
+    {
+      "id": "pol-adm1",
+      "iso": "POL",
+      "level": "ADM1",
+      "file": "pol-adm1-e44be3bfd9e345bc.json",
+      "object": "POLADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5832913740287465,
+          "cy": 0.20433466167858272,
+          "cz": 0.7861415387958812,
+          "radiusRad": 0.05827912661069792
+        }
+      ],
+      "sha256": "e44be3bfd9e345bc14964e2c3df01ee9f8927032c34aa23cfc6c99040c2bf8a0",
+      "bytes": 1341851,
+      "boundaryID": "POL-ADM1-17162690",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/POL/ADM1/geoBoundaries-POL-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "prk-adm1",
+      "iso": "PRK",
+      "level": "ADM1",
+      "file": "prk-adm1-40bde328b253c1cf.json",
+      "object": "PRKADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.46076449989906965,
+          "cy": 0.6143308037576845,
+          "cz": 0.6405417544447806,
+          "radiusRad": 0.050022424303140835
+        }
+      ],
+      "sha256": "40bde328b253c1cf8f99786d7372ac301bb5d2d5d2099f38dd335a71ced3c6d7",
+      "bytes": 216743,
+      "boundaryID": "PRK-ADM1-3916807",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/PRK/ADM1/geoBoundaries-PRK-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/dpr-korea-administrative-boundaries",
+      "attribution": "World Food Programme, OCHA ROAP",
+      "year": "2018"
+    },
+    {
+      "id": "prt-adm1",
+      "iso": "PRT",
+      "level": "ADM1",
+      "file": "prt-adm1-b3c64b25d64f55e4.json",
+      "object": "PRTADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7631545801695118,
+          "cy": -0.10868925590329122,
+          "cz": 0.6370099939698631,
+          "radiusRad": 0.04230229258690386
+        }
+      ],
+      "sha256": "b3c64b25d64f55e443db47677a7d2f09eed709095fbe1539cc71a1ff603c3658",
+      "bytes": 4379586,
+      "boundaryID": "PRT-ADM1-24955722",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/PRT/ADM1/geoBoundaries-PRT-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://snig.dgterritorio.gov.pt/rndg/srv/por/catalog.search#/metadata/5e3debf1-6cde-4ff2-8301-a86799231907",
+      "attribution": "DG Territory",
+      "year": "2016"
+    },
+    {
+      "id": "pry-adm1",
+      "iso": "PRY",
+      "level": "ADM1",
+      "file": "pry-adm1-9c4e51c703abc0a6.json",
+      "object": "PRYADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5042811358081917,
+          "cy": -0.7502781468389035,
+          "cz": -0.42753156426628997,
+          "radiusRad": 0.14078833638863378
+        }
+      ],
+      "sha256": "9c4e51c703abc0a6a1a9b57d023e56d43ba86c27ffd155b4478dcc1193bc09ae",
+      "bytes": 1341954,
+      "boundaryID": "PRY-ADM1-63826900",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/PRY/ADM1/geoBoundaries-PRY-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://twitter.com/WMgeoLab/status/1179001467669078017/photo/2",
+      "attribution": "Direcion General de Estadica, Encuestas y Censos",
+      "year": "2012"
+    },
+    {
+      "id": "qat-adm1",
+      "iso": "QAT",
+      "level": "ADM1",
+      "file": "qat-adm1-89110cd2fa689471.json",
+      "object": "QATADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.564636207740437,
+          "cy": 0.7051424238589293,
+          "cz": 0.4289057180580038,
+          "radiusRad": 0.0206668697747485
+        }
+      ],
+      "sha256": "89110cd2fa689471c9de560b97db19c6edc41c1a7599237d5eb7e9512796d1e0",
+      "bytes": 125097,
+      "boundaryID": "QAT-ADM1-59647477",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/QAT/ADM1/geoBoundaries-QAT-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://www.data.gov.qa/pages/license/annexes",
+      "attribution": "geoBoundaries, Qatar Open Data Portal",
+      "year": "2015"
+    },
+    {
+      "id": "rou-adm1",
+      "iso": "ROU",
+      "level": "ADM1",
+      "file": "rou-adm1-cbfcd5800a72e5c4.json",
+      "object": "ROUADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6312877301442604,
+          "cy": 0.2918625563429116,
+          "cz": 0.7185346546787343,
+          "radiusRad": 0.05621970451757832
+        }
+      ],
+      "sha256": "cbfcd5800a72e5c45e4debf17b1d373c886e9168161467a991a707dddcd378d4",
+      "bytes": 3375645,
+      "boundaryID": "ROU-ADM1-60013409",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ROU/ADM1/geoBoundaries-ROU-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets",
+      "attribution": "World Bank",
+      "year": "2017"
+    },
+    {
+      "id": "rus-adm1",
+      "iso": "RUS",
+      "level": "ADM1",
+      "file": "rus-adm1-7f76cd56bbb71664.json",
+      "object": "RUSADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.1389077970089482,
+          "cy": 0.43961202700335555,
+          "cz": 0.8873814792095461,
+          "radiusRad": 0.7507491198779087
+        }
+      ],
+      "sha256": "7f76cd56bbb71664adf5d0edfc3a1a7cff6a680cd7654886dddff03ac9c159d1",
+      "bytes": 14303522,
+      "boundaryID": "RUS-ADM1-28173009",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/RUS/ADM1/geoBoundaries-RUS-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "rwa-adm1",
+      "iso": "RWA",
+      "level": "ADM1",
+      "file": "rwa-adm1-87a7ff3caf79e5e8.json",
+      "object": "RWAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8662965510853331,
+          "cy": 0.4984192089959964,
+          "cz": -0.033295310202224086,
+          "radiusRad": 0.017196977301136788
+        }
+      ],
+      "sha256": "87a7ff3caf79e5e880ec98a73deecb58b6afd7cb1afa8653ac81f58922a9e2b2",
+      "bytes": 361125,
+      "boundaryID": "RWA-ADM1-91480417",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/RWA/ADM1/geoBoundaries-RWA-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://rwanda.africageoportal.com/datasets/dac12729b2cd4f0db92fddaa6a80460d_0",
+      "attribution": "The Rwanda Geo Portal",
+      "year": "2020"
+    },
+    {
+      "id": "sau-adm1",
+      "iso": "SAU",
+      "level": "ADM1",
+      "file": "sau-adm1-08b0e4b4e24d6aa5.json",
+      "object": "SAUADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6732405092106932,
+          "cy": 0.5920656578853545,
+          "cz": 0.44295087031239616,
+          "radiusRad": 0.21379201427661929
+        }
+      ],
+      "sha256": "08b0e4b4e24d6aa5041c06e98af085bf75088ca324b6ced62c51694295df7fd2",
+      "bytes": 677383,
+      "boundaryID": "SAU-ADM1-25081817",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SAU/ADM1/geoBoundaries-SAU-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "sdn-adm1",
+      "iso": "SDN",
+      "level": "ADM1",
+      "file": "sdn-adm1-0cb53a7827d9a75d.json",
+      "object": "SDNADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8477488458806125,
+          "cy": 0.4747938240592874,
+          "cz": 0.23641641005490333,
+          "radiusRad": 0.19849240724794628
+        }
+      ],
+      "sha256": "0cb53a7827d9a75d7aa278fbb474d0bc11f6df5e3a0de10c4c6e1df5533a5574",
+      "bytes": 114821,
+      "boundaryID": "SDN-ADM1-86620642",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SDN/ADM1/geoBoundaries-SDN-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/sudan-administrative-boundaries-levels-0-2",
+      "attribution": "Information Management Working Group (IMWG), OCHA ROSEA",
+      "year": "2020"
+    },
+    {
+      "id": "sen-adm1",
+      "iso": "SEN",
+      "level": "ADM1",
+      "file": "sen-adm1-a1315cc0c88820c3.json",
+      "object": "SENADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9401547166157317,
+          "cy": -0.2439068345080126,
+          "cz": 0.23794655892757594,
+          "radiusRad": 0.05101475428147292
+        }
+      ],
+      "sha256": "a1315cc0c88820c3cf7903a4af1509ce8aa7ac7c6b015b5d3c80e846e18ddce4",
+      "bytes": 157614,
+      "boundaryID": "SEN-ADM1-71046170",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SEN/ADM1/geoBoundaries-SEN-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/senegal-administrative-boundaries",
+      "attribution": "Government of Senegal, OCHA ROWCA",
+      "year": "2019"
+    },
+    {
+      "id": "sgp-adm1",
+      "iso": "SGP",
+      "level": "ADM1",
+      "file": "sgp-adm1-69be5dfc18d84906.json",
+      "object": "SGPADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.23882292904976474,
+          "cy": 0.9707732369571928,
+          "cz": 0.02372616630947568,
+          "radiusRad": 0.0027838049549769434
+        }
+      ],
+      "sha256": "69be5dfc18d849061e38f38643fd813cb0bb5c147d3ef5ac665684947e12fcaa",
+      "bytes": 195127,
+      "boundaryID": "SGP-ADM1-49756563",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SGP/ADM1/geoBoundaries-SGP-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://data.gov.sg/dataset/master-plan-2014-subzone-boundary-no-sea",
+      "attribution": "Urban Redevelopment Authority, derived from ADM 3",
+      "year": "2016"
+    },
+    {
+      "id": "slb-adm1",
+      "iso": "SLB",
+      "level": "ADM1",
+      "file": "slb-adm1-ca142b8b0f6bb096.json",
+      "object": "SLBADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.9269802592721579,
+          "cy": 0.33728266289458303,
+          "cz": -0.16415847291706268,
+          "radiusRad": 0.0017033944037098002
+        }
+      ],
+      "sha256": "ca142b8b0f6bb09659a47d0c41160c80c97a76b9ddd1a711dee02487eb32b99a",
+      "bytes": 22110,
+      "boundaryID": "SLB-ADM1-17018030",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SLB/ADM1/geoBoundaries-SLB-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "attribution": "Natural Earth",
+      "year": "2021"
+    },
+    {
+      "id": "sle-adm1",
+      "iso": "SLE",
+      "level": "ADM1",
+      "file": "sle-adm1-75c634f8a86c50cc.json",
+      "object": "SLEADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9685590687216262,
+          "cy": -0.20254334990336698,
+          "cz": 0.1444628734554951,
+          "radiusRad": 0.025089306767835273
+        }
+      ],
+      "sha256": "75c634f8a86c50ccefa7ecfed791fcf5ab50550597779d5508cb22b62cad194f",
+      "bytes": 96854,
+      "boundaryID": "SLE-ADM1-38320839",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SLE/ADM1/geoBoundaries-SLE-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/sierra-leone-all-ad-min-level-boundaries",
+      "attribution": "Government of Sierra Leone, OCHA ROWCA",
+      "year": "2014"
+    },
+    {
+      "id": "slv-adm1",
+      "iso": "SLV",
+      "level": "ADM1",
+      "file": "slv-adm1-9f77697dcff3aa34.json",
+      "object": "SLVADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.01601949108585553,
+          "cy": -0.9713644823835121,
+          "cz": 0.23705361897503688,
+          "radiusRad": 0.02041417625251863
+        }
+      ],
+      "sha256": "9f77697dcff3aa34f24ac6cd2f0f563e56dd92dddf703dbb74f8066facad37b6",
+      "bytes": 237465,
+      "boundaryID": "SLV-ADM1-98794003",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SLV/ADM1/geoBoundaries-SLV-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 2.0",
+      "licenseSource": "https://osm-boundaries.com/",
+      "attribution": "Open Street Map",
+      "year": "2021"
+    },
+    {
+      "id": "smr-adm1",
+      "iso": "SMR",
+      "level": "ADM1",
+      "file": "smr-adm1-5caedd83a709939b.json",
+      "object": "SMRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.703124901389666,
+          "cy": 0.1554420980070769,
+          "cz": 0.6938682347628624,
+          "radiusRad": 0.0007797963674837441
+        }
+      ],
+      "sha256": "5caedd83a709939b52311ee7a5337d3add341ddaba88537c9fd2fb2c501ceb30",
+      "bytes": 14796,
+      "boundaryID": "SMR-ADM1-276375",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SMR/ADM1/geoBoundaries-SMR-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "som-adm1",
+      "iso": "SOM",
+      "level": "ADM1",
+      "file": "som-adm1-c65ef834387e6ced.json",
+      "object": "SOMADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6959768246337256,
+          "cy": 0.7117924898308741,
+          "cz": 0.09469799888657385,
+          "radiusRad": 0.1348779434843595
+        }
+      ],
+      "sha256": "c65ef834387e6ced3480283b620da0cb672b297d4a123105bc8fa4df37b8f192",
+      "bytes": 456772,
+      "boundaryID": "SOM-ADM1-83879307",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SOM/ADM1/geoBoundaries-SOM-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2015"
+    },
+    {
+      "id": "srb-adm1",
+      "iso": "SRB",
+      "level": "ADM1",
+      "file": "srb-adm1-0aaa54ed3c27bb56.json",
+      "object": "SRBADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6712516681552169,
+          "cy": 0.2596215656713448,
+          "cz": 0.6942750468202055,
+          "radiusRad": 0.04365497348112219
+        }
+      ],
+      "sha256": "0aaa54ed3c27bb56e9c634639092c800ba747e2c093c129fa70069b6480e8a16",
+      "bytes": 255511,
+      "boundaryID": "SRB-ADM1-41074048",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SRB/ADM1/geoBoundaries-SRB-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "ssd-adm1",
+      "iso": "SSD",
+      "level": "ADM1",
+      "file": "ssd-adm1-465ed053f94a7c26.json",
+      "object": "SSDADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8599321610420793,
+          "cy": 0.49511281724624034,
+          "cz": 0.12401603365690532,
+          "radiusRad": 0.10608349449449916
+        }
+      ],
+      "sha256": "465ed053f94a7c261509f68283a6d90e68bd2322fcb13abb18d0414e66e96e48",
+      "bytes": 78723,
+      "boundaryID": "SSD-ADM1-48771326",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SSD/ADM1/geoBoundaries-SSD-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/south-sudan-administrative-boundaries",
+      "attribution": "South Sudan Information Management Working Group (IMWG), National Bureau of Statistics (NBS), and OCHA, OCHA South Sudan",
+      "year": "2020"
+    },
+    {
+      "id": "sur-adm1",
+      "iso": "SUR",
+      "level": "ADM1",
+      "file": "sur-adm1-6e3695820e07618a.json",
+      "object": "SURADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5627175338641447,
+          "cy": -0.8211820648078325,
+          "cz": 0.0949157179807435,
+          "radiusRad": 0.03626109404575059
+        }
+      ],
+      "sha256": "6e3695820e07618aa99163fdf3121c6347dd96d07895d1249985e2f63620fc8f",
+      "bytes": 56436,
+      "boundaryID": "SUR-ADM1-93550828",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SUR/ADM1/geoBoundaries-SUR-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "svk-adm1",
+      "iso": "SVK",
+      "level": "ADM1",
+      "file": "svk-adm1-464494da6291adc0.json",
+      "object": "SVKADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6247529678469014,
+          "cy": 0.21515662279563114,
+          "cz": 0.7505940026630021,
+          "radiusRad": 0.03936739628760151
+        }
+      ],
+      "sha256": "464494da6291adc0687055667d7f6ed7c3a445c9033446c09355b098bda12979",
+      "bytes": 741523,
+      "boundaryID": "SVK-ADM1-25762395",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SVK/ADM1/geoBoundaries-SVK-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "svn-adm1",
+      "iso": "SVN",
+      "level": "ADM1",
+      "file": "svn-adm1-2dfec3312fe51685.json",
+      "object": "SVNADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6722676578588073,
+          "cy": 0.17481328531647375,
+          "cz": 0.7193723037995658,
+          "radiusRad": 0.015653970660204596
+        }
+      ],
+      "sha256": "2dfec3312fe51685704907b1ad13e28655ff3b9bda3585129f3d02c143944c94",
+      "bytes": 1186,
+      "boundaryID": "SVN-ADM1-3739544",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SVN/ADM1/geoBoundaries-SVN-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://ec.europa.eu/info/legal-notice_en",
+      "attribution": "Eurostat- European Commission",
+      "year": "2021"
+    },
+    {
+      "id": "swe-adm1",
+      "iso": "SWE",
+      "level": "ADM1",
+      "file": "swe-adm1-f7f0110f76cbf252.json",
+      "object": "SWEADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.496927641341416,
+          "cy": 0.13552995777868782,
+          "cz": 0.8571432492969678,
+          "radiusRad": 0.1394875260509771
+        }
+      ],
+      "sha256": "f7f0110f76cbf25270781ae2e4bdaae682e4b978115553dbbdb4f6dc6f475d3d",
+      "bytes": 5771734,
+      "boundaryID": "SWE-ADM1-68755315",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SWE/ADM1/geoBoundaries-SWE-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 License",
+      "licenseSource": "https://commons.wikimedia.org/w/index.php?curid=5675559",
+      "attribution": "geoBoundaries, Erik Frohne",
+      "year": "2009"
+    },
+    {
+      "id": "swz-adm1",
+      "iso": "SWZ",
+      "level": "ADM1",
+      "file": "swz-adm1-0b4e82c98175b603.json",
+      "object": "SWZADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7618735687886387,
+          "cy": 0.46659967257166046,
+          "cz": -0.4492587347367692,
+          "radiusRad": 0.015620810949138895
+        }
+      ],
+      "sha256": "0b4e82c98175b60301a7700dec8d3893da17511da4054f8ee12b915496a5dbcc",
+      "bytes": 22551,
+      "boundaryID": "SWZ-ADM1-75366066",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SWZ/ADM1/geoBoundaries-SWZ-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "syc-adm1",
+      "iso": "SYC",
+      "level": "ADM1",
+      "file": "syc-adm1-6663f2d21e345fa5.json",
+      "object": "SYCADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.5649657402428949,
+          "cy": 0.8211345444569151,
+          "cz": -0.08094301854596275,
+          "radiusRad": 0.007295775336156428
+        }
+      ],
+      "sha256": "6663f2d21e345fa51348570cbb9d5b762c4692e454cd5c25dc7e95d5449c05de",
+      "bytes": 4210663,
+      "boundaryID": "SYC-ADM1-16061225",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SYC/ADM1/geoBoundaries-SYC-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://simplemaps.com/gis/country/sc",
+      "attribution": "Simple Maps",
+      "year": "2022"
+    },
+    {
+      "id": "syr-adm1",
+      "iso": "SYR",
+      "level": "ADM1",
+      "file": "syr-adm1-fdae08938499e35b.json",
+      "object": "SYRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6510007634598298,
+          "cy": 0.49737829042349885,
+          "cz": 0.5734220454343522,
+          "radiusRad": 0.06236095351259452
+        }
+      ],
+      "sha256": "fdae08938499e35b83bca4d8cb46dc62004ca19d3f1ddd1666ae2b31131d04b7",
+      "bytes": 132979,
+      "boundaryID": "SYR-ADM1-8384693",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/SYR/ADM1/geoBoundaries-SYR-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/syrian-arab-republic-administrative-boundaries-populated-places",
+      "attribution": "United Nations Cartographic Section (UNCS) and United Nations Office for the Coordination of Humanitarian Affairs (UNOCHA), OCHA ROSC",
+      "year": "2017"
+    },
+    {
+      "id": "tcd-adm1",
+      "iso": "TCD",
+      "level": "ADM1",
+      "file": "tcd-adm1-aa5a38fcee7772e2.json",
+      "object": "TCDADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.932631570984824,
+          "cy": 0.29782764973678905,
+          "cz": 0.20370823217199624,
+          "radiusRad": 0.21171910007255276
+        }
+      ],
+      "sha256": "aa5a38fcee7772e2753eb154fdac7c88b650e0778af2ab8105e5e6aa8aba80bb",
+      "bytes": 20379,
+      "boundaryID": "TCD-ADM1-82309497",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TCD/ADM1/geoBoundaries-TCD-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://data.unhcr.org/en/geoservices/",
+      "attribution": "UNHCR Operational Data Portal",
+      "year": "2024"
+    },
+    {
+      "id": "tgo-adm1",
+      "iso": "TGO",
+      "level": "ADM1",
+      "file": "tgo-adm1-a509d0d1efd69549.json",
+      "object": "TGOADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.9879596933183693,
+          "cy": 0.014255860906940867,
+          "cz": 0.15405328561272463,
+          "radiusRad": 0.04433735345636182
+        }
+      ],
+      "sha256": "a509d0d1efd6954972cd35f7d40c1c0a3eebcc51341af925b78294ce84b7b91a",
+      "bytes": 156510,
+      "boundaryID": "TGO-ADM1-44829518",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TGO/ADM1/geoBoundaries-TGO-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "tha-adm1",
+      "iso": "THA",
+      "level": "ADM1",
+      "file": "tha-adm1-1ff208698907f5be.json",
+      "object": "THAADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.1914296311283374,
+          "cy": 0.9451141005718164,
+          "cz": 0.26479054595358015,
+          "radiusRad": 0.17516460703721987
+        }
+      ],
+      "sha256": "1ff208698907f5be2987e2c03289275042de54f0baa294936638e6fbff7a01fa",
+      "bytes": 1039383,
+      "boundaryID": "THA-ADM1-36821470",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/THA/ADM1/geoBoundaries-THA-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "tjk-adm1",
+      "iso": "TJK",
+      "level": "ADM1",
+      "file": "tjk-adm1-f3c0059b19ae59f6.json",
+      "object": "TJKADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.2678124378946994,
+          "cy": 0.7328640714432032,
+          "cz": 0.6254492392645381,
+          "radiusRad": 0.034769558213018824
+        }
+      ],
+      "sha256": "f3c0059b19ae59f6e3a3d83b74652ad46689b8eff2f51e23ccfbdfea140ae2c9",
+      "bytes": 121515,
+      "boundaryID": "TJK-ADM1-86453995",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TJK/ADM1/geoBoundaries-TJK-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "tkm-adm1",
+      "iso": "TKM",
+      "level": "ADM1",
+      "file": "tkm-adm1-a1001dc202f804ed.json",
+      "object": "TKMADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.39096390305566464,
+          "cy": 0.6750819869457501,
+          "cz": 0.6256289135013335,
+          "radiusRad": 0.08554493617792816
+        }
+      ],
+      "sha256": "a1001dc202f804ed268566f5e8111d70c887a94390d11a80a494848a5e873c27",
+      "bytes": 10802,
+      "boundaryID": "TKM-ADM1-27578892",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TKM/ADM1/geoBoundaries-TKM-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:Turkmenistan_districts.png",
+      "attribution": "geoBoundaries, Wikimedia",
+      "year": "2007"
+    },
+    {
+      "id": "tls-adm1",
+      "iso": "TLS",
+      "level": "ADM1",
+      "file": "tls-adm1-d7ffd233cbeb0e90.json",
+      "object": "TLSADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.5783587342286871,
+          "cy": 0.8012793638772067,
+          "cz": -0.15314227230235924,
+          "radiusRad": 0.018650585986382886
+        }
+      ],
+      "sha256": "d7ffd233cbeb0e9034b260c8b18d0ad79eb7123c1b27d584164d55f9bc143af9",
+      "bytes": 131010,
+      "boundaryID": "TLS-ADM1-58719522",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TLS/ADM1/geoBoundaries-TLS-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "tto-adm1",
+      "iso": "TTO",
+      "level": "ADM1",
+      "file": "tto-adm1-173c3a25f79a176f.json",
+      "object": "TTOADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.4721184696192606,
+          "cy": -0.8626633028387283,
+          "cz": 0.18142815817767638,
+          "radiusRad": 0.010475755413899855
+        }
+      ],
+      "sha256": "173c3a25f79a176f539e2e7a3916ac1e917283dc77fc320d4a92d32820c94249",
+      "bytes": 110317,
+      "boundaryID": "TTO-ADM1-22272344",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TTO/ADM1/geoBoundaries-TTO-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "tun-adm1",
+      "iso": "TUN",
+      "level": "ADM1",
+      "file": "tun-adm1-e59d56955b04b2c8.json",
+      "object": "TUNADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8025058796320208,
+          "cy": 0.1359688970283881,
+          "cz": 0.5809447238738985,
+          "radiusRad": 0.06868014772141072
+        }
+      ],
+      "sha256": "e59d56955b04b2c8a200b95a5af387a6155fd9d256dabbf54a9ac903436712f1",
+      "bytes": 541236,
+      "boundaryID": "TUN-ADM1-13205935",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TUN/ADM1/geoBoundaries-TUN-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "tur-adm1",
+      "iso": "TUR",
+      "level": "ADM1",
+      "file": "tur-adm1-9dbc010291d6b91e.json",
+      "object": "TURADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6414701207049069,
+          "cy": 0.4337167567557981,
+          "cz": 0.6327763105174403,
+          "radiusRad": 0.14684847223669031
+        }
+      ],
+      "sha256": "9dbc010291d6b91ecf5607850f4619ea84f61241193703fd8e3899729465fe24",
+      "bytes": 2616180,
+      "boundaryID": "TUR-ADM1-25984515",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TUR/ADM1/geoBoundaries-TUR-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 2.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "Open Street Map",
+      "year": "2021"
+    },
+    {
+      "id": "twn-adm1",
+      "iso": "TWN",
+      "level": "ADM1",
+      "file": "twn-adm1-65bcb27e38065a96.json",
+      "object": "TWNADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.4704171510216477,
+          "cy": 0.7836020835441168,
+          "cz": 0.40580226550623777,
+          "radiusRad": 0.030179862091680974
+        }
+      ],
+      "sha256": "65bcb27e38065a96e78cb2241884a24389da5414e1dfdbb84dffb147e7ef5a71",
+      "bytes": 672255,
+      "boundaryID": "TWN-ADM1-90331920",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TWN/ADM1/geoBoundaries-TWN-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "tza-adm1",
+      "iso": "TZA",
+      "level": "ADM1",
+      "file": "tza-adm1-21057a4f4d61c206.json",
+      "object": "TZAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8097434616462381,
+          "cy": 0.5771040714273165,
+          "cz": -0.10614337974260102,
+          "radiusRad": 0.10944162130876922
+        }
+      ],
+      "sha256": "21057a4f4d61c206d22500ab325bf7fc7ab2e9862a7a03153f38c01d9759b3ba",
+      "bytes": 1858419,
+      "boundaryID": "TZA-ADM1-24199039",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/TZA/ADM1/geoBoundaries-TZA-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+      "licenseSource": "https://www.nbs.go.tz/nbs/takwimu/references/Licence-Agreement-NBS.pdf",
+      "attribution": "Tanzania National Bureau of Statistics",
+      "year": "2019"
+    },
+    {
+      "id": "uga-adm1",
+      "iso": "UGA",
+      "level": "ADM1",
+      "file": "uga-adm1-f21f7bf8366fc7b5.json",
+      "object": "UGAADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8412133367342771,
+          "cy": 0.5401872787406399,
+          "cz": 0.023618340059488502,
+          "radiusRad": 0.054318268865678206
+        }
+      ],
+      "sha256": "f21f7bf8366fc7b506bccfe06dda9814ecff10f06f6da9abf2b0c1673edaf2c8",
+      "bytes": 463548,
+      "boundaryID": "UGA-ADM1-17295835",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/UGA/ADM1/geoBoundaries-UGA-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "ukr-adm1",
+      "iso": "UKR",
+      "level": "ADM1",
+      "file": "ukr-adm1-927d398552b6f62d.json",
+      "object": "UKRADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.562781914215863,
+          "cy": 0.33292110033024896,
+          "cz": 0.7565976856866702,
+          "radiusRad": 0.10590290600389318
+        }
+      ],
+      "sha256": "927d398552b6f62df72bb4a639bb8d447bb2d1c3411e3a42ce0cec61e4caecf9",
+      "bytes": 728062,
+      "boundaryID": "UKR-ADM1-14850775",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/UKR/ADM1/geoBoundaries-UKR-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "ury-adm1",
+      "iso": "URY",
+      "level": "ADM1",
+      "file": "ury-adm1-d9386267fbec7c98.json",
+      "object": "URYADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.470880591450562,
+          "cy": -0.6879225244025485,
+          "cz": -0.5522988946347744,
+          "radiusRad": 0.06170002332624868
+        }
+      ],
+      "sha256": "d9386267fbec7c980f55610a403a5a446a1dff1142f72d3b73660c5eb508c156",
+      "bytes": 620558,
+      "boundaryID": "URY-ADM1-27058087",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/URY/ADM1/geoBoundaries-URY-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "uzb-adm1",
+      "iso": "UZB",
+      "level": "ADM1",
+      "file": "uzb-adm1-dfbce50d37747ba5.json",
+      "object": "UZBADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.2821183307310026,
+          "cy": 0.7009692716188716,
+          "cz": 0.6550200971814996,
+          "radiusRad": 0.11093575788116745
+        }
+      ],
+      "sha256": "dfbce50d37747ba52fd6be4284ad6c4e1493db162ba64a8a83f0fee7e635cf9a",
+      "bytes": 133935,
+      "boundaryID": "UZB-ADM1-4885205",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/UZB/ADM1/geoBoundaries-UZB-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "vct-adm1",
+      "iso": "VCT",
+      "level": "ADM1",
+      "file": "vct-adm1-5e33e3c073769504.json",
+      "object": "VCTADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.4689989480942139,
+          "cy": -0.8529616178982146,
+          "cz": 0.22912107078787233,
+          "radiusRad": 0.002509995186213681
+        }
+      ],
+      "sha256": "5e33e3c0737695042407e74db29648a6908591a86de6a5f33676a930b1c6d525",
+      "bytes": 52105,
+      "boundaryID": "VCT-ADM1-94954027",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/VCT/ADM1/geoBoundaries-VCT-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "ven-adm1",
+      "iso": "VEN",
+      "level": "ADM1",
+      "file": "ven-adm1-ea788471532eebf1.json",
+      "object": "VENADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.3662169692456358,
+          "cy": -0.9170440412577011,
+          "cz": 0.15784599402672517,
+          "radiusRad": 0.14595319758171416
+        }
+      ],
+      "sha256": "ea788471532eebf16594a6eb41e3c00451e28a36bcb8d442f641003446567cbf",
+      "bytes": 1119798,
+      "boundaryID": "VEN-ADM1-42786344",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/VEN/ADM1/geoBoundaries-VEN-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "Data: https://data.humdata.org/dataset/venezuela-administrative-level-0-1-and-2-boundaries",
+      "attribution": "OCHA Venezuela, Instituto Nacional de Estadística",
+      "year": "2020"
+    },
+    {
+      "id": "vnm-adm1",
+      "iso": "VNM",
+      "level": "ADM1",
+      "file": "vnm-adm1-8a5f9adc0df0e465.json",
+      "object": "VNMADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.266522797733942,
+          "cy": 0.9152667004421936,
+          "cz": 0.302080229988214,
+          "radiusRad": 0.1524408920548619
+        }
+      ],
+      "sha256": "8a5f9adc0df0e465543ed8c4bff950a78a8ef4a9f8f1b91a25ba6fcf9cc2fb36",
+      "bytes": 107926,
+      "boundaryID": "VNM-ADM1-63759600",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/VNM/ADM1/geoBoundaries-VNM-ADM1.topojson",
+      "license": "Public Domain",
+      "licenseSource": "https://commons.wikimedia.org/wiki/File:LocationVietnamHoChiMinh2.png",
+      "attribution": "geoBoundaries, Wikipedia",
+      "year": "2008"
+    },
+    {
+      "id": "wsm-adm1",
+      "iso": "WSM",
+      "level": "ADM1",
+      "file": "wsm-adm1-9baf081f393c96c9.json",
+      "object": "WSMADM1gbOpen",
+      "caps": [
+        {
+          "cx": -0.9620125075553053,
+          "cy": -0.13361346329542112,
+          "cz": -0.23807431136801968,
+          "radiusRad": 0.012648180725250735
+        }
+      ],
+      "sha256": "9baf081f393c96c92807ebaf945b98cb8b783c068e00d4b890092f76f5faf352",
+      "bytes": 140925,
+      "boundaryID": "WSM-ADM1-40696546",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/WSM/ADM1/geoBoundaries-WSM-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 3.0 Unported",
+      "licenseSource": "https://en.wikipedia.org/wiki/File:Samoa_District_borders_(numbered).png",
+      "attribution": "Wikipedia",
+      "year": "2018"
+    },
+    {
+      "id": "xkx-adm1",
+      "iso": "XKX",
+      "level": "ADM1",
+      "file": "xkx-adm1-cc5122d7e5002599.json",
+      "object": "XKXADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6877241049946818,
+          "cy": 0.2637236335979705,
+          "cz": 0.6763766705698437,
+          "radiusRad": 0.011448886630754914
+        }
+      ],
+      "sha256": "cc5122d7e5002599de4911ed314a1ab7be655c43c54329eeec9d24a845ec513a",
+      "bytes": 391882,
+      "boundaryID": "XKX-ADM1-2360587",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/XKX/ADM1/geoBoundaries-XKX-ADM1.topojson",
+      "license": "Creative Commons Attribution-ShareAlike 2.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "Open Street Map",
+      "year": "2021"
+    },
+    {
+      "id": "yem-adm1",
+      "iso": "YEM",
+      "level": "ADM1",
+      "file": "yem-adm1-81500d9d3f103c25.json",
+      "object": "YEMADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.6891834039554801,
+          "cy": 0.6789526385144389,
+          "cz": 0.25308012637625105,
+          "radiusRad": 0.15128498758694497
+        }
+      ],
+      "sha256": "81500d9d3f103c2522cb5dc51e73b12d6c4a4c2c9a5909a197f16351c2aeb8f0",
+      "bytes": 462702,
+      "boundaryID": "YEM-ADM1-18629408",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/YEM/ADM1/geoBoundaries-YEM-ADM1.topojson",
+      "license": "Open Data Commons Open Database License 1.0",
+      "licenseSource": "https://www.openstreetmap.org/copyright",
+      "attribution": "OpenStreetMap, Wambacher",
+      "year": "2017"
+    },
+    {
+      "id": "zaf-adm1",
+      "iso": "ZAF",
+      "level": "ADM1",
+      "file": "zaf-adm1-2d8313f1836d6886.json",
+      "object": "ZAFADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.7726899629358609,
+          "cy": 0.40795692390416616,
+          "cz": -0.48633462699753155,
+          "radiusRad": 0.1576457522911872
+        }
+      ],
+      "sha256": "2d8313f1836d68865441c92093ff813f485f2a72a4e8e8ac7e365c8d528f3965",
+      "bytes": 3275317,
+      "boundaryID": "ZAF-ADM1-76434192",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ZAF/ADM1/geoBoundaries-ZAF-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/south-africa-admin-level-1-boundaries",
+      "attribution": "OCHA ROSEA, South African Municipal Demarcation Board",
+      "year": "2020"
+    },
+    {
+      "id": "zmb-adm1",
+      "iso": "ZMB",
+      "level": "ADM1",
+      "file": "zmb-adm1-f41573493fc8c8e6.json",
+      "object": "ZMBADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8577336965680962,
+          "cy": 0.46237589623189795,
+          "cz": -0.22472524636848862,
+          "radiusRad": 0.11599799039779357
+        }
+      ],
+      "sha256": "f41573493fc8c8e6c5d1314e51ee75af0788768928ab00008f9e8f06ae528f89",
+      "bytes": 1027723,
+      "boundaryID": "ZMB-ADM1-6923714",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ZMB/ADM1/geoBoundaries-ZMB-ADM1.topojson",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "licenseSource": "https://zambia-nsdi-mlnr.hub.arcgis.com/datasets/6fe71ff483ab491782c8524ec3d1a3b8_0/about",
+      "attribution": "Zambia Data Hub",
+      "year": "2020"
+    },
+    {
+      "id": "zwe-adm1",
+      "iso": "ZWE",
+      "level": "ADM1",
+      "file": "zwe-adm1-eec3f296a4fa09d7.json",
+      "object": "ZWEADM1gbOpen",
+      "caps": [
+        {
+          "cx": 0.8172059013092076,
+          "cy": 0.47813855307500364,
+          "cz": -0.3218043488344243,
+          "radiusRad": 0.0671596699560489
+        }
+      ],
+      "sha256": "eec3f296a4fa09d7e3bb2285d8b591d7d87efd19eeb7ebff3ecd2f5d5c543dc7",
+      "bytes": 844820,
+      "boundaryID": "ZWE-ADM1-88200057",
+      "source": "https://www.geoboundaries.org/data/snapshots/1c423398df24ddf6e730b116567d2181c9782778d0459c3f3b76ca2f9f12b6bc/gbOpen/ZWE/ADM1/geoBoundaries-ZWE-ADM1.topojson",
+      "license": "Creative Commons Attribution 3.0 Intergovernmental Organisations (CC BY 3.0 IGO)",
+      "licenseSource": "https://data.humdata.org/dataset/zimbabwe-administrative-levels-0-3-boundaries",
+      "attribution": "Zimbabwe National Statistics Agency (ZIMSTAT www.zimstat.co.zw) Central Statistics Office, OCHA ROSEA",
+      "year": "2020"
+    }
+  ]
 }
