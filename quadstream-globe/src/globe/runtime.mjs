@@ -15,6 +15,7 @@ import { createGlobeRenderer } from "../../../examples/globe/map.mjs";
 import { createMinimapRenderer } from "../../../examples/globe/minimap.mjs";
 import { GlobeWorkerClient } from "../../../examples/globe/client.mjs";
 import { fixture } from "../../../examples/globe/fixture.mjs";
+import { createGeometryCache } from "../../../examples/globe/geometry-cache.mjs";
 import {
   createRegionalLayers,
   regionalConfig,
@@ -136,7 +137,9 @@ export function mountGlobe(root) {
     selectedFile = null,
     abort,
     disposed = false;
+  const geometryCache = createGeometryCache();
   const regional = createRegionalLayers({
+    loadGeometry: async (url) => (await geometryCache.load(url)).data,
     configs: configs(),
     createWorker: () =>
       new Worker(new URL("./regional-worker.mjs", import.meta.url), {
@@ -149,11 +152,9 @@ export function mountGlobe(root) {
   if (international !== "0") {
     const catalogRequest =
       international === "cdn"
-        ? loadGeoPacksConfigs(topojson, (url) =>
-            fetch(url, { signal: lifetime.signal }),
-          )
+        ? loadGeoPacksConfigs(topojson, geometryCache.fetch)
         : loadRegionalCatalog(() =>
-            fetch(asset("regional/catalog.json"), { signal: lifetime.signal }),
+            geometryCache.fetch(asset("regional/catalog.json")),
           ).then(configs);
     if (international === "cdn") {
       const credits = document.createElement("a");
@@ -273,6 +274,8 @@ export function mountGlobe(root) {
             " ms"
           : "—"),
       "Atlas payload: " + atlasBytes + " bytes | geometry queries: " + requests,
+      "Geometry cache: " + JSON.stringify({ ...geometryCache.stats(), byUrl: undefined }),
+      "Regional cache: " + JSON.stringify(regional.cacheStats()),
       "Geometry transport: " + transport,
       "International catalog: " + catalogStatus,
       "Regional layers: " +
@@ -311,6 +314,7 @@ export function mountGlobe(root) {
       mode: $("mode").value,
       quadtreeStats: JSON.stringify(qt ?? null),
       regionalLayers: JSON.stringify(regional.status()),
+      geometryCache: JSON.stringify({ downloads: geometryCache.stats(), regional: regional.cacheStats() }),
     });
   }
   // Single frame scheduler: at most one rAF is outstanding, each frame advances
@@ -537,6 +541,7 @@ export function mountGlobe(root) {
   // Deterministic hook for browser tests: jump the camera without animation.
   const debug = (globalThis.globeDebug = {
     testModules: { d3, topojson, map, geometry },
+    cacheStats: () => ({ downloads: geometryCache.stats(), regional: regional.cacheStats() }),
     setView({ rotation, scale }) {
       camera.brake();
       moving = false;
@@ -563,7 +568,6 @@ export function mountGlobe(root) {
     quadtree = [];
     requests = 0;
     atlasBytes = 0;
-    regional.reset();
     latest?.dispose();
     client?.dispose();
     abort?.abort();
@@ -580,13 +584,12 @@ export function mountGlobe(root) {
         source = fixture;
         atlasBytes = 0;
       } else {
-        const r = await fetch(geometryAsset("world/" + sourceName + ".json"), {
-          signal: abort.signal,
-        });
-        if (!r.ok) throw new Error("Atlas HTTP " + r.status);
-        const text = await r.text();
-        atlasBytes = new TextEncoder().encode(text).length;
-        source = JSON.parse(text);
+        const cached = await geometryCache.load(
+          geometryAsset("world/" + sourceName + ".json"),
+        );
+        if (id !== epoch || disposed) return;
+        atlasBytes = cached.bytes;
+        source = cached.data;
       }
       if (id !== epoch || disposed) return;
       original =
@@ -747,6 +750,7 @@ export function mountGlobe(root) {
     epoch++;
     abort?.abort();
     regional.reset();
+    geometryCache.dispose();
     latest?.dispose();
     client?.dispose();
     detach();

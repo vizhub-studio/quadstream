@@ -11,6 +11,7 @@ import { createGlobeRenderer } from "./map.mjs";
 import { createMinimapRenderer } from "./minimap.mjs";
 import { GlobeWorkerClient } from "./client.mjs";
 import { fixture } from "./fixture.mjs";
+import { createGeometryCache } from "./geometry-cache.mjs";
 import {
   createRegionalLayers,
   regionalConfig,
@@ -96,7 +97,9 @@ let original,
   selectedFile = null,
   abort,
   disposed = false;
+const geometryCache = createGeometryCache();
 const regional = createRegionalLayers({
+  loadGeometry: async (url) => (await geometryCache.load(url)).data,
   configs: regionalConfig({
     counties: new URLSearchParams(location.search).get("counties") !== "0",
   }),
@@ -107,7 +110,7 @@ const regional = createRegionalLayers({
   onChange: schedule,
 });
 if (new URLSearchParams(location.search).get("international") !== "0") {
-  loadRegionalCatalog()
+  loadRegionalCatalog(geometryCache.fetch)
     .then((catalog) => {
       if (!disposed)
         regional.addConfigs(
@@ -215,6 +218,8 @@ function diagnostics() {
           " ms"
         : "—"),
     "Atlas payload: " + atlasBytes + " bytes | geometry queries: " + requests,
+    "Geometry cache: " + JSON.stringify({ ...geometryCache.stats(), byUrl: undefined }),
+    "Regional cache: " + JSON.stringify(regional.cacheStats()),
     "Regional layers: " +
       regional
         .status()
@@ -251,6 +256,7 @@ function diagnostics() {
     mode: $("mode").value,
     quadtreeStats: JSON.stringify(qt ?? null),
     regionalLayers: JSON.stringify(regional.status()),
+    geometryCache: JSON.stringify({ downloads: geometryCache.stats(), regional: regional.cacheStats() }),
   });
 }
 // Single frame scheduler: at most one rAF is outstanding, each frame advances
@@ -474,6 +480,7 @@ const keyboard = createKeyboardControls({
 const detachKeyboard = attachKeyboardControls(window, keyboard);
 // Deterministic hook for browser tests: jump the camera without animation.
 globalThis.globeDebug = {
+  cacheStats: () => ({ downloads: geometryCache.stats(), regional: regional.cacheStats() }),
   setView({ rotation, scale }) {
     camera.brake();
     moving = false;
@@ -500,7 +507,6 @@ async function init() {
   quadtree = [];
   requests = 0;
   atlasBytes = 0;
-  regional.reset();
   latest?.dispose();
   client?.dispose();
   abort?.abort();
@@ -517,16 +523,12 @@ async function init() {
       source = fixture;
       atlasBytes = 0;
     } else {
-      const r = await fetch(
-        "../../node_modules/visionscarto-world-atlas/world/" +
-          sourceName +
-          ".json",
-        { signal: abort.signal },
+      const cached = await geometryCache.load(
+        "../../node_modules/visionscarto-world-atlas/world/" + sourceName + ".json",
       );
-      if (!r.ok) throw new Error("Atlas HTTP " + r.status);
-      const text = await r.text();
-      atlasBytes = new TextEncoder().encode(text).length;
-      source = JSON.parse(text);
+      if (id !== epoch || disposed) return;
+      atlasBytes = cached.bytes;
+      source = cached.data;
     }
     if (id !== epoch || disposed) return;
     original =
@@ -682,6 +684,7 @@ window.addEventListener(
     epoch++;
     abort?.abort();
     regional.reset();
+    geometryCache.dispose();
     latest?.dispose();
     client?.dispose();
     detach();

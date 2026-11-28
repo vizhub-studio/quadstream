@@ -1,5 +1,6 @@
 import { isCapVisible, lonLatToVec, orthographicViewCone } from "./cull.mjs";
 import { improvesLod } from "./lod.mjs";
+import { createWeightedCache, estimateGeometryBytes, MiB } from "./geometry-cache.mjs";
 
 const cap = (lon, lat, radius) => {
   const [cx, cy, cz] = lonLatToVec(lon, lat);
@@ -114,9 +115,20 @@ export function createRegionalLayers({
   createWorker,
   onChange = () => {},
   maxInternationalWorkers = 6,
+  maxWarmInternationalWorkers = 6,
+  maxPreparedBytes = 256 * MiB,
+  loadGeometry,
 }) {
   if (!Number.isInteger(maxInternationalWorkers) || maxInternationalWorkers < 1)
     throw new Error("Invalid worker limit");
+  if (!Number.isInteger(maxWarmInternationalWorkers) || maxWarmInternationalWorkers < 0)
+    throw new Error("Invalid warm worker limit");
+  const prepared = createWeightedCache(maxPreparedBytes);
+  let clock = 0, builds = 0, preparedHits = 0, workerEvictions = 0;
+  const key = (layer) => JSON.stringify([
+    layer.config.url, layer.config.object, Boolean(layer.config.autoObject),
+    Boolean(layer.config.includeExternal), Boolean(layer.config.sameState),
+  ]);
   const layers = configs.map((config) => ({
     config,
     active: false,
@@ -135,6 +147,7 @@ export function createRegionalLayers({
       !layer.active ||
       layer.busy ||
       !layer.worker ||
+      layer.phase === "loading" ||
       !layer.original ||
       layer.originalMode ||
       layer.target === layer.rendered
@@ -162,7 +175,8 @@ export function createRegionalLayers({
           layer.original = data.original;
           layer.phase = data.warning ? "fallback" : "ready";
           layer.warning = data.warning;
-          layer.frame = data.original;
+          if (!layer.frame) layer.frame = data.original;
+          builds++;
         } else if (data.type === "frame") {
           layer.busy = false;
           if (improvesLod(data.level, layer.rendered, layer.target)) {
@@ -179,12 +193,39 @@ export function createRegionalLayers({
         if (layer.worker === worker)
           fail(layer, event.message || "Regional worker failed");
       };
-      worker.postMessage({ type: "init", config: layer.config });
+      const cached = prepared.get(key(layer));
+      if (cached) {
+        preparedHits++;
+        prepared.delete(key(layer));
+        Object.assign(layer, cached);
+      }
+      const send = (data) => {
+        if (layer.worker !== worker) return;
+        worker.postMessage({ type: "init", config: layer.config, ...data });
+      };
+      if (cached?.original) send({ original: cached.original });
+      else if (loadGeometry)
+        Promise.resolve()
+          .then(() => loadGeometry(layer.config.url))
+          .then((topology) => send({ topology }))
+          .catch((error) => {
+            if (layer.worker === worker) fail(layer, error);
+          });
+      else send({});
     } catch (error) {
       fail(layer, error);
     }
   }
-  function release(layer) {
+  function release(layer, retain = false) {
+    if (retain && layer.original) {
+      prepared.set(key(layer), {
+        original: layer.original,
+        frame: layer.frame,
+        rendered: layer.rendered,
+      }, estimateGeometryBytes(layer.original) +
+        (layer.frame === layer.original ? 0 : estimateGeometryBytes(layer.frame)));
+    }
+    if (retain && layer.worker) workerEvictions++;
     layer.worker?.terminate();
     Object.assign(layer, {
       active: false,
@@ -201,6 +242,7 @@ export function createRegionalLayers({
   }
   function reset() {
     for (const layer of layers) release(layer);
+    prepared.clear();
   }
   return {
     addConfigs(configs) {
@@ -211,10 +253,15 @@ export function createRegionalLayers({
       onChange();
     },
     reset,
+    cacheStats: () => ({ ...prepared.stats(), preparedHits, builds, workerEvictions,
+      warmWorkers: layers.filter((layer) => !layer.active && layer.worker).length,
+      activeWorkers: layers.filter((layer) => layer.active && layer.worker).length,
+    }),
     status: () =>
-      layers.map(({ config, active, phase, error, warning, rendered }) => ({
+      layers.map(({ config, active, phase, error, warning, rendered, worker }) => ({
         id: config.id,
         active,
+        warm: !active && Boolean(worker),
         phase,
         error,
         warning,
@@ -244,8 +291,14 @@ export function createRegionalLayers({
       );
       const admitted = new Set(candidates.slice(0, maxInternationalWorkers));
       for (const layer of layers) {
-        if (layer.config.international && !admitted.has(layer)) release(layer);
+        if (layer.config.international && !admitted.has(layer)) layer.active = false;
+        if (layer.active) layer.lastUsed = ++clock;
+        if (!layer.active && layer.phase === "error") release(layer, true);
       }
+      const warm = layers
+        .filter((layer) => layer.config.international && !layer.active && layer.worker)
+        .sort((a, b) => (b.lastUsed ?? 0) - (a.lastUsed ?? 0));
+      for (const layer of warm.slice(maxWarmInternationalWorkers)) release(layer, true);
       for (const layer of layers) {
         const { config } = layer;
         layer.originalMode = original;

@@ -2,7 +2,10 @@ import "../../node_modules/topojson-client/dist/topojson-client.min.js";
 import { buildSphericalQuadstream, canonicalLonLat } from "../../dist/index.js";
 import { internalBoundaryMesh } from "./regional-geometry.mjs";
 
+import { createRegionalFrameCache } from "./geometry-cache.mjs";
+
 let original, engine, warning;
+const frames = createRegionalFrameCache();
 const cleanLine = (line) => {
   const result = [];
   for (const position of line) {
@@ -15,14 +18,19 @@ const cleanLine = (line) => {
 self.onmessage = async ({ data }) => {
   try {
     if (data.type === "init") {
-      const response = await fetch(data.config.url);
-      if (!response.ok)
-        throw new Error("Regional atlas HTTP " + response.status);
-      original = internalBoundaryMesh(
-        await response.json(),
-        data.config,
-        self.topojson,
-      );
+      frames.clear();
+      engine = undefined;
+      warning = undefined;
+      if (data.original) original = data.original;
+      else {
+        let topology = data.topology;
+        if (!topology) {
+          const response = await fetch(data.config.url);
+          if (!response.ok) throw new Error("Regional atlas HTTP " + response.status);
+          topology = await response.json();
+        }
+        original = internalBoundaryMesh(topology, data.config, self.topojson);
+      }
       try {
         const features = original.coordinates
           .map(cleanLine)
@@ -42,6 +50,11 @@ self.onmessage = async ({ data }) => {
       }
       self.postMessage({ type: "ready", original, warning });
     } else if (data.type === "query") {
+      const cached = frames.get(data.level);
+      if (cached) {
+        self.postMessage(cached);
+        return;
+      }
       let geometry = original;
       let frameWarning = warning;
       if (engine) {
@@ -59,12 +72,14 @@ self.onmessage = async ({ data }) => {
           frameWarning = "Source fallback: " + String(error.message ?? error);
         }
       }
-      self.postMessage({
+      const result = {
         type: "frame",
         level: data.level,
         geometry,
         warning: frameWarning,
-      });
+      };
+      if (!frameWarning) frames.set(data.level, result);
+      self.postMessage(result);
     }
   } catch (error) {
     self.postMessage({ error: String(error.message ?? error) });
