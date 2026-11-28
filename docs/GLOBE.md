@@ -75,9 +75,11 @@ Caps include Alaska, Hawaii and territories; they can overselect near edges.
 Thresholds are provisional, not measured screen-space error bounds.
 
 Each layer lazily loads unprojected 10m TopoJSON and builds a spherical
-Quadstream hierarchy from its internal shared-arc mesh in its own worker.
-County lines exclude interstate arcs. Visionscarto remains the only source
-of coastlines and international borders. D3 clips line overlays during drawing;
+Quadstream hierarchy from its TopoJSON boundary mesh in its own worker.
+US state lines include unshared exterior arcs, including Great Lakes shores;
+county lines include only shared intrastate arcs. Visionscarto supplies the
+base land polygons and international borders. The US state line overlay may
+also trace coastlines; it does not change land or water fills. D3 clips line overlays during drawing;
 the polygon-only padded clipper is not used for lines. Cross-atlas junctions
 may not align exactly. Original mode draws original meshes; source fallback
 is reported when regional preprocessing or reconstruction fails. The worker

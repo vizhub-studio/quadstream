@@ -169,19 +169,141 @@ test("bundled atlas objects and deduplicated regional meshes", async () => {
     );
     const mesh = internalBoundaryMesh(atlas, config, topojson);
     assert.ok(mesh.coordinates.length > 10);
-    assert.deepEqual(
-      mesh,
-      topojson.mesh(
-        atlas,
-        atlas.objects[config.object],
-        (a, b) =>
-          (config.includeExternal && a == null && b == null) ||
-          (a != null &&
-            b != null &&
-            a !== b &&
-            (!config.sameState ||
-              String(a.id).slice(0, 2) === String(b.id).slice(0, 2))),
-      ),
-    );
+    const object = atlas.objects[config.object];
+    const segments = meshSegments(mesh);
+    if (config.object === "states") {
+      // All state arcs, including unshared shores, must be represented.
+      assert.deepEqual(segments, meshSegments(topojson.mesh(atlas, object)));
+      const exterior = topojson.mesh(atlas, object, (a, b) => a === b);
+      // The actual atlas must contain shore vertices near these US cities,
+      // and the rendered state mesh must retain their incident segments.
+      for (const [name, lon, lat] of [
+        ["Lake Michigan (Chicago)", -87.61, 41.89],
+        ["Lake Superior (Duluth)", -92.09, 46.78],
+        ["Lake Huron (Alpena)", -83.43, 45.06],
+        ["Lake Erie (Cleveland)", -81.69, 41.5],
+        ["Lake Ontario (Rochester)", -77.6, 43.25],
+      ]) {
+        const nearby = exterior.coordinates.flatMap((line) =>
+          line.slice(1).flatMap((point, i) =>
+            [point, line[i]].some(
+              ([x, y]) => Math.abs(x - lon) < 0.3 && Math.abs(y - lat) < 0.3,
+            )
+              ? [segmentKey(line[i], point)]
+              : [],
+          ),
+        );
+        assert.ok(nearby.length > 0, name + " source shore is present");
+        for (const key of nearby)
+          assert.ok(segments.has(key), name + " shore segment is retained");
+      }
+    } else {
+      // Compare against meshes independently constructed within each state.
+      const byState = new Map();
+      for (const county of object.geometries) {
+        const state = String(county.id).slice(0, 2);
+        if (!byState.has(state)) byState.set(state, []);
+        byState.get(state).push(county);
+      }
+      const expected = new Set();
+      for (const geometries of byState.values()) {
+        const internal = topojson.mesh(
+          atlas,
+          { type: "GeometryCollection", geometries },
+          (a, b) => a !== b,
+        );
+        for (const key of meshSegments(internal)) expected.add(key);
+      }
+      assert.deepEqual(segments, expected);
+    }
   }
+});
+
+function segmentKey(a, b) {
+  return [JSON.stringify(a), JSON.stringify(b)].sort().join("|");
+}
+
+function meshSegments(mesh) {
+  const segments = new Set();
+  for (const line of mesh.coordinates) {
+    for (let i = 1; i < line.length; i++) {
+      segments.add(segmentKey(line[i - 1], line[i]));
+    }
+  }
+  return segments;
+}
+
+test("state exterior arcs and shared county arcs use distinct mesh policies", () => {
+  // Three adjacent squares. The first two are in Illinois, the third is
+  // in Indiana. Arc 1 is intrastate; arc 5 is interstate.
+  const topology = {
+    type: "Topology",
+    objects: {
+      regions: {
+        type: "GeometryCollection",
+        geometries: [
+          { type: "Polygon", id: "17001", arcs: [[0, 1, 2, 3]] },
+          { type: "Polygon", id: "17003", arcs: [[4, 5, 6, -2]] },
+          { type: "Polygon", id: "18001", arcs: [[7, 8, 9, -6]] },
+        ],
+      },
+    },
+    arcs: [
+      [
+        [0, 0],
+        [1, 0],
+      ],
+      [
+        [1, 0],
+        [1, 1],
+      ],
+      [
+        [1, 1],
+        [0, 1],
+      ],
+      [
+        [0, 1],
+        [0, 0],
+      ],
+      [
+        [1, 0],
+        [2, 0],
+      ],
+      [
+        [2, 0],
+        [2, 1],
+      ],
+      [
+        [2, 1],
+        [1, 1],
+      ],
+      [
+        [2, 0],
+        [3, 0],
+      ],
+      [
+        [3, 0],
+        [3, 1],
+      ],
+      [
+        [3, 1],
+        [2, 1],
+      ],
+    ],
+  };
+  const [states, counties] = regionalConfig();
+  const selected = (config) =>
+    meshSegments(
+      internalBoundaryMesh(topology, { ...config, object: "regions" }, topojson),
+    );
+  const key = (i) => segmentKey(...topology.arcs[i]);
+  assert.deepEqual(
+    selected(states),
+    new Set(topology.arcs.map((_, i) => key(i))),
+  );
+  assert.deepEqual(selected(counties), new Set([key(1)]));
+  assert.deepEqual(
+    selected({ ...states, includeExternal: false }),
+    new Set([key(1), key(5)]),
+  );
 });
