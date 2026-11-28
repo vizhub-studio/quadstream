@@ -11,6 +11,7 @@ import {
   CLIP_RADIUS_SCALE,
   createViewClipper,
 } from "./clip.mjs";
+import { createFrameBatches } from "./frame-batches.mjs";
 
 const faceAxes = {
   "+X": [
@@ -55,44 +56,28 @@ function cellPoint(cell, u, v) {
     (Math.asin(z / length) * 180) / Math.PI,
   ];
 }
-function quadtreeGeometry(cells, level, state, capCache) {
-  const cone = orthographicViewCone(state);
-  cone.viewRadius = Math.min(
-    CLIP_MAX_RADIUS_RAD,
-    cone.viewRadius * CLIP_RADIUS_SCALE + CLIP_MARGIN_RAD,
-  );
-  const features = [];
-  for (const cell of cells) {
-    if (cell.level > level) continue;
-    const side = 2 ** cell.level,
-      min = -1 + (2 * cell.i) / side,
-      max = -1 + (2 * (cell.i + 1)) / side,
-      low = -1 + (2 * cell.j) / side,
-      high = -1 + (2 * (cell.j + 1)) / side;
-    let feature = {
-      type: "Feature",
-      properties: null,
-      geometry: {
-        type: "Polygon",
-        coordinates: [
-          [
-            cellPoint(cell, min, low),
-            cellPoint(cell, max, low),
-            cellPoint(cell, max, high),
-            cellPoint(cell, min, high),
-            cellPoint(cell, min, low),
-          ],
+function quadtreeCellFeature(cell) {
+  const side = 2 ** cell.level,
+    min = -1 + (2 * cell.i) / side,
+    max = -1 + (2 * (cell.i + 1)) / side,
+    low = -1 + (2 * cell.j) / side,
+    high = -1 + (2 * (cell.j + 1)) / side;
+  return {
+    type: "Feature",
+    properties: null,
+    geometry: {
+      type: "Polygon",
+      coordinates: [
+        [
+          cellPoint(cell, min, low),
+          cellPoint(cell, max, low),
+          cellPoint(cell, max, high),
+          cellPoint(cell, min, high),
+          cellPoint(cell, min, low),
         ],
-      },
-    };
-    let cap = capCache.get(cell);
-    if (!cap) {
-      cap = computeFeatureCap(feature);
-      capCache.set(cell, cap);
-    }
-    if (isCapVisible(cap, cone)) features.push(feature);
-  }
-  return { type: "FeatureCollection", features };
+      ],
+    },
+  };
 }
 
 function geometryRings(geometry) {
@@ -139,6 +124,7 @@ export function createGlobeRenderer(
   const sphere = { type: "Sphere" };
   const capCache = cull || clip ? new WeakMap() : null;
   const quadtreeCapCache = new WeakMap();
+  const quadtreeBatches = createFrameBatches();
   const clipper = clip ? createViewClipper() : null;
   const meshCache = new WeakMap();
   let oceanKey;
@@ -149,7 +135,9 @@ export function createGlobeRenderer(
     if (fill) ctx.fill();
     if (stroke) ctx.stroke();
   }
-  return (state, geojson, source, quadtree = [], overlays = []) => {
+  function render(state, geojson, source, quadtree = [], overlays = []) {
+    // Every base redraw invalidates the previous canvas and projection.
+    quadtreeBatches.cancel();
     const {
       width,
       height,
@@ -219,22 +207,48 @@ export function createGlobeRenderer(
       drawShape(geometry, false, true);
     }
     if (state.showQuadtree && !interacting && quadtree.length) {
-      ctx.globalAlpha = 0.2;
-      ctx.strokeStyle = "yellow";
-      ctx.lineWidth = 0.5;
-      ctx.beginPath();
-      path(
-        quadtreeGeometry(
-          quadtree,
-          state.quadtreeLevel,
-          state,
-          quadtreeCapCache,
-        ),
+      const cone = orthographicViewCone(state);
+      cone.viewRadius = Math.min(
+        CLIP_MAX_RADIUS_RAD,
+        cone.viewRadius * CLIP_RADIUS_SCALE + CLIP_MARGIN_RAD,
       );
-      ctx.stroke();
+      const level = state.quadtreeLevel;
+      // Append directly to the existing canvas only while this scene is current.
+      // Build, cull and project cells incrementally; no full geometry allocation.
+      quadtreeBatches.start(quadtree, {
+        begin() {
+          ctx.save();
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          ctx.globalAlpha = 0.2;
+          ctx.strokeStyle = "yellow";
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+        },
+        visit(cell) {
+          if (cell.level > level) return;
+          let cap = quadtreeCapCache.get(cell);
+          let feature;
+          if (!cap) {
+            feature = quadtreeCellFeature(cell);
+            cap = computeFeatureCap(feature);
+            quadtreeCapCache.set(cell, cap);
+          }
+          if (isCapVisible(cap, cone))
+            path(feature ?? quadtreeCellFeature(cell));
+        },
+        end() {
+          try {
+            ctx.stroke();
+          } finally {
+            ctx.restore();
+          }
+        },
+      });
     }
     ctx.restore();
     // `visible` is exactly what was handed to d3 for the land layer.
     return { visible: target, stats };
-  };
+  }
+  render.cancelQuadtree = quadtreeBatches.cancel;
+  return render;
 }
