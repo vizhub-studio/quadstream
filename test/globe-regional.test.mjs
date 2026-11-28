@@ -307,3 +307,51 @@ test("state exterior arcs and shared county arcs use distinct mesh policies", ()
     new Set([key(1), key(5)]),
   );
 });
+
+test("county mesh retains multi-owner intrastate arcs exactly once", () => {
+  const topology = {
+    type: "Topology",
+    objects: {
+      counties: {
+        type: "GeometryCollection",
+        geometries: [
+          { type: "MultiLineString", id: "17001", arcs: [[0], [1], [2]] },
+          { type: "MultiLineString", id: "17003", arcs: [[-1], [-2], [3]] },
+          { type: "MultiLineString", id: "18001", arcs: [[0], [-3]] },
+          { type: "LineString", id: "18003", arcs: [-1] },
+        ],
+      },
+    },
+    arcs: [
+      [
+        [0, 0],
+        [0, 1],
+      ],
+      [
+        [1, 0],
+        [1, 1],
+      ],
+      [
+        [2, 0],
+        [2, 1],
+      ],
+      [
+        [3, 0],
+        [3, 1],
+      ],
+    ],
+  };
+  const [, counties] = regionalConfig();
+  const mesh = internalBoundaryMesh(topology, counties, topojson);
+  // Arc 0 has four owners across two states; the first and last owners
+  // are from different states, yet each state has an intrastate pair.
+  // Arc 1 is intrastate, arc 2 interstate, and arc 3 unshared.
+  assert.deepEqual(
+    meshSegments(mesh),
+    new Set(topology.arcs.slice(0, 2).map(([a, b]) => segmentKey(a, b))),
+  );
+  assert.equal(
+    mesh.coordinates.reduce((count, line) => count + line.length - 1, 0),
+    2,
+  );
+});
