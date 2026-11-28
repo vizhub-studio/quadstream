@@ -5,6 +5,8 @@ import {
 } from "../../../dist/index.js";
 import { internalBoundaryMesh } from "../../../examples/globe/regional-geometry.mjs";
 
+import { geoPacksObject } from "../../../examples/globe/geopacks.mjs";
+
 let original, engine, warning;
 const cleanLine = (line) => {
   const result = [];
@@ -21,11 +23,11 @@ self.onmessage = async ({ data }) => {
       const response = await fetch(data.config.url);
       if (!response.ok)
         throw new Error("Regional atlas HTTP " + response.status);
-      original = internalBoundaryMesh(
-        await response.json(),
-        data.config,
-        topojson,
-      );
+      const topology = await response.json();
+      const config = data.config.autoObject
+        ? { ...data.config, object: geoPacksObject(topology) }
+        : data.config;
+      original = internalBoundaryMesh(topology, config, topojson);
       try {
         const features = original.coordinates
           .map(cleanLine)
