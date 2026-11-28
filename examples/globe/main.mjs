@@ -287,6 +287,8 @@ function advanceCamera() {
   syncState();
 }
 function schedule() {
+  // A dirty scene supersedes any unfinished overlay, even before its redraw.
+  draw.cancelQuadtree();
   if (raf || disposed) return;
   raf = requestAnimationFrame(() => {
     raf = 0;
@@ -652,6 +654,7 @@ window.addEventListener(
   (e) => {
     if (e.persisted) return;
     disposed = true;
+    draw.cancelQuadtree();
     epoch++;
     abort?.abort();
     regional.reset();
