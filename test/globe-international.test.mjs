@@ -51,6 +51,7 @@ test("international workers are admitted, evicted and stale replies ignored", ()
   const layers = createRegionalLayers({
     configs,
     maxInternationalWorkers: 2,
+    maxWarmInternationalWorkers: 0,
     createWorker: () => {
       const w = {
         postMessage() {},
@@ -141,5 +142,66 @@ test("international ADM1 and ADM2 layers reject obsolete LOD frames", () => {
   );
   for (const worker of workers) send(worker, 10);
   assert.deepEqual(rendered(), [10, 10]);
+  layers.reset();
+});
+
+test("international workers remain warm across repeated zoom reversals", () => {
+  const workers = [];
+  const configs = regionalConfig({ catalog: [record("CAN")] })
+    .filter((config) => config.international);
+  const layers = createRegionalLayers({
+    configs,
+    createWorker: () => {
+      const worker = {
+        sent: [],
+        postMessage(message) { this.sent.push(message); },
+        terminate() { this.terminated = true; },
+      };
+      workers.push(worker);
+      return worker;
+    },
+  });
+  const view = { initialScale: 100, scale: 600, width: 200, height: 200,
+    rotation: [0, 0, 0] };
+  const options = { enabled: true, original: true, level: 6 };
+  layers.update(view, options);
+  const original = { type: "MultiLineString", coordinates: [[[0, 0], [1, 1]]] };
+  workers[0].onmessage({ data: { type: "ready", original } });
+  for (let i = 0; i < 10; i++) {
+    assert.deepEqual(layers.update({ ...view, scale: 100 }, options), []);
+    assert.equal(layers.cacheStats().warmWorkers, 1);
+    assert.equal(layers.update(view, options)[0].geometry, original);
+  }
+  assert.equal(workers.length, 1);
+  assert.equal(layers.cacheStats().builds, 1);
+  layers.reset();
+  assert.ok(workers[0].terminated);
+});
+
+test("evicted regional worker restarts from cached mesh", () => {
+  const workers = [];
+  const layers = createRegionalLayers({
+    configs: regionalConfig({ catalog: [record("CAN")] }).filter((c) => c.international),
+    maxWarmInternationalWorkers: 0,
+    createWorker: () => {
+      const worker = {
+        sent: [],
+        postMessage(message) { this.sent.push(message); },
+        terminate() { this.terminated = true; },
+      };
+      workers.push(worker);
+      return worker;
+    },
+  });
+  const view = { initialScale: 100, scale: 600, width: 200, height: 200, rotation: [0, 0, 0] };
+  const options = { enabled: true, original: true, level: 6 };
+  layers.update(view, options);
+  const original = { type: "MultiLineString", coordinates: [[[0, 0], [1, 1]]] };
+  workers[0].onmessage({ data: { type: "ready", original } });
+  layers.update({ ...view, scale: 100 }, options);
+  assert.ok(workers[0].terminated);
+  assert.equal(layers.update(view, options)[0].geometry, original);
+  assert.equal(workers[1].sent[0].original, original);
+  assert.equal(layers.cacheStats().preparedHits, 1);
   layers.reset();
 });
