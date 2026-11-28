@@ -51,7 +51,16 @@ export function createGlobeRenderer(
     finePrecision = projection.precision();
   const sphere = { type: "Sphere" };
   const capCache = cull || clip ? new WeakMap() : null;
-  let indexedCells, cellIndex, quadtreeStats;
+  let quadtreeStats;
+  const cellIndexes = new WeakMap();
+  function indexFor(cells) {
+    let index = cellIndexes.get(cells);
+    if (!index) {
+      index = createCellIndex(cells);
+      cellIndexes.set(cells, index);
+    }
+    return index;
+  }
   const quadtreeBatches = createFrameBatches();
   const clipper = clip ? createViewClipper() : null;
   const meshCache = new WeakMap();
@@ -67,10 +76,6 @@ export function createGlobeRenderer(
     // Every base redraw invalidates the previous canvas and projection.
     quadtreeBatches.cancel();
     quadtreeStats = null;
-    if (indexedCells !== quadtree) {
-      indexedCells = quadtree;
-      cellIndex = createCellIndex(quadtree);
-    }
     const {
       width,
       height,
@@ -139,72 +144,93 @@ export function createGlobeRenderer(
       ctx.lineWidth = width;
       drawShape(geometry, false, true);
     }
-    if (state.showQuadtree && !interacting && quadtree.length) {
+    if (state.showQuadtree && !interacting) {
       const cone = orthographicViewCone(state);
-      const level = state.quadtreeLevel ?? Infinity;
-      const index = cellIndex;
-      const started = performance.now();
-      let traversal, drawing = false;
-      const metrics = (quadtreeStats = {
-        total: quadtree.length,
-        indexed: index.cursor,
-        occupied: index.occupied,
-        visited: 0,
-        pruned: 0,
-        rendered: 0,
-        edgesRejected: 0,
-        geometryMs: 0,
-        completionMs: null,
-      });
-      function hasWork() {
-        if (index.cursor < quadtree.length) return true;
-        traversal ??= createCellTraversal(index, cone, level, metrics);
-        return traversal.hasWork();
-      }
-      quadtreeBatches.startWork(
-        hasWork,
-        () => {
-          if (index.cursor < quadtree.length) {
-            index.step();
-            metrics.indexed = index.cursor;
-            metrics.occupied = index.occupied;
-            return;
+      const trees = [
+        { cells: quadtree, level: state.quadtreeLevel ?? Infinity, color: "yellow" },
+        ...overlays.map((overlay) => ({
+          cells: overlay.quadtree,
+          level: overlay.quadtreeLevel,
+          color: overlay.quadtreeColor,
+        })),
+      ].filter((tree) => tree.cells?.length).map((tree) => ({
+        ...tree, index: indexFor(tree.cells),
+      }));
+      if (trees.length) {
+        const started = performance.now();
+        let current = 0, traversal, drawing = false;
+        const metrics = (quadtreeStats = {
+          total: trees.reduce((n, t) => n + t.cells.length, 0),
+          indexed: trees.reduce((n, t) => n + t.index.cursor, 0),
+          occupied: trees.reduce((n, t) => n + t.index.occupied, 0),
+          visited: 0,
+          pruned: 0,
+          rendered: 0,
+          edgesRejected: 0,
+          geometryMs: 0,
+          completionMs: null,
+        });
+        function flush() {
+          if (!drawing) return;
+          try {
+            ctx.stroke();
+          } finally {
+            drawing = false;
+            ctx.restore();
           }
-          traversal.step((cell) => {
-            const before = performance.now();
-            const boundary = cellBoundary(cell, cone);
-            metrics.geometryMs += performance.now() - before;
-            if (!boundary) return false;
-            if (!drawing) {
-              ctx.save();
-              ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-              ctx.globalAlpha = 0.2;
-              ctx.strokeStyle = "yellow";
-              ctx.lineWidth = 0.5;
-              ctx.beginPath();
-              drawing = true;
+        }
+        function hasWork() {
+          while (current < trees.length) {
+            const tree = trees[current];
+            if (tree.index.cursor < tree.cells.length) return true;
+            traversal ??= createCellTraversal(tree.index, cone, tree.level, metrics);
+            if (traversal.hasWork()) return true;
+            flush();
+            current++;
+            traversal = undefined;
+          }
+          return false;
+        }
+        quadtreeBatches.startWork(
+          hasWork,
+          () => {
+            const tree = trees[current];
+            const index = tree.index;
+            if (index.cursor < tree.cells.length) {
+              const occupied = index.occupied;
+              index.step();
+              metrics.indexed++;
+              metrics.occupied += index.occupied - occupied;
+              return;
             }
-            path(boundary);
-            return true;
-          });
-        },
-        {
-          begin() {},
-          end() {
-            if (!drawing) return;
-            try {
-              ctx.stroke();
-            } finally {
-              drawing = false;
-              ctx.restore();
-            }
+            traversal.step((cell) => {
+              const before = performance.now();
+              const boundary = cellBoundary(cell, cone);
+              metrics.geometryMs += performance.now() - before;
+              if (!boundary) return false;
+              if (!drawing) {
+                ctx.save();
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                ctx.globalAlpha = tree.color === "yellow" ? 0.2 : 0.65;
+                ctx.strokeStyle = tree.color;
+                ctx.lineWidth = 0.5;
+                ctx.beginPath();
+                drawing = true;
+              }
+              path(boundary);
+              return true;
+            });
           },
-          complete() {
-            metrics.completionMs = performance.now() - started;
-            onQuadtreeStats?.(metrics);
+          {
+            begin() {},
+            end: flush,
+            complete() {
+              metrics.completionMs = performance.now() - started;
+              onQuadtreeStats?.(metrics);
+            },
           },
-        },
-      );
+        );
+      }
     }
     ctx.restore();
     // `visible` is exactly what was handed to d3 for the land layer.

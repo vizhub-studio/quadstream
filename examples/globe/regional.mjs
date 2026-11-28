@@ -2,6 +2,14 @@ import { isCapVisible, lonLatToVec, orthographicViewCone } from "./cull.mjs";
 import { improvesLod } from "./lod.mjs";
 import { createWeightedCache, estimateGeometryBytes, MiB } from "./geometry-cache.mjs";
 
+// Stable by dataset identity; reserve yellow for the world tree.
+export function regionalQuadtreeColor(id) {
+  const palette = ["#00ff45", "#2693ff", "#ff25b7", "#00f5ff", "#ff791f", "#bc55ff"];
+  let hash = 0;
+  for (const char of id) hash = (Math.imul(hash, 31) + char.charCodeAt(0)) >>> 0;
+  return palette[hash % palette.length];
+}
+
 const cap = (lon, lat, radius) => {
   const [cx, cy, cz] = lonLatToVec(lon, lat);
   return { cx, cy, cz, radiusRad: (radius * Math.PI) / 180 };
@@ -149,7 +157,6 @@ export function createRegionalLayers({
       !layer.worker ||
       layer.phase === "loading" ||
       !layer.original ||
-      layer.originalMode ||
       layer.target === layer.rendered
     )
       return;
@@ -173,17 +180,23 @@ export function createRegionalLayers({
         }
         if (data.type === "ready") {
           layer.original = data.original;
-          layer.phase = data.warning ? "fallback" : "ready";
-          layer.warning = data.warning;
-          if (!layer.frame) layer.frame = data.original;
+          if (data.warning) {
+            fail(layer, data.warning);
+            return;
+          }
+          layer.phase = "ready";
+          layer.quadtree = data.quadtree ?? [];
           builds++;
         } else if (data.type === "frame") {
           layer.busy = false;
+          if (data.warning || !data.geometry) {
+            fail(layer, data.warning ?? "Missing validated regional geometry");
+            return;
+          }
           if (improvesLod(data.level, layer.rendered, layer.target)) {
             layer.rendered = data.level;
             layer.frame = data.geometry;
-            layer.phase = data.warning ? "fallback" : "ready";
-            layer.warning = data.warning;
+            layer.phase = "ready";
           }
         }
         query(layer);
@@ -193,12 +206,7 @@ export function createRegionalLayers({
         if (layer.worker === worker)
           fail(layer, event.message || "Regional worker failed");
       };
-      const cached = prepared.get(key(layer));
-      if (cached) {
-        preparedHits++;
-        prepared.delete(key(layer));
-        Object.assign(layer, cached);
-      }
+      const cached = layer.original ? layer : restore(layer);
       const send = (data) => {
         if (layer.worker !== worker) return;
         worker.postMessage({ type: "init", config: layer.config, ...data });
@@ -216,14 +224,32 @@ export function createRegionalLayers({
       fail(layer, error);
     }
   }
+  function restore(layer) {
+    const cached = prepared.get(key(layer));
+    if (cached) {
+      preparedHits++;
+      prepared.delete(key(layer));
+      Object.assign(layer, cached);
+    }
+    return cached;
+  }
+  // Yield the worker slot without dropping visible validated geometry.
+  function park(layer) {
+    if (layer.worker) workerEvictions++;
+    layer.worker?.terminate();
+    layer.worker = null;
+    layer.busy = false;
+    layer.phase = "idle";
+  }
   function release(layer, retain = false) {
     if (retain && layer.original) {
       prepared.set(key(layer), {
         original: layer.original,
         frame: layer.frame,
         rendered: layer.rendered,
+        quadtree: layer.quadtree,
       }, estimateGeometryBytes(layer.original) +
-        (layer.frame === layer.original ? 0 : estimateGeometryBytes(layer.frame)));
+        estimateGeometryBytes(layer.frame) + (layer.quadtree?.length ?? 0) * 64);
     }
     if (retain && layer.worker) workerEvictions++;
     layer.worker?.terminate();
@@ -233,6 +259,7 @@ export function createRegionalLayers({
       worker: null,
       original: null,
       frame: null,
+      quadtree: null,
       busy: false,
       target: undefined,
       rendered: undefined,
@@ -256,6 +283,14 @@ export function createRegionalLayers({
     cacheStats: () => ({ ...prepared.stats(), preparedHits, builds, workerEvictions,
       warmWorkers: layers.filter((layer) => !layer.active && layer.worker).length,
       activeWorkers: layers.filter((layer) => layer.active && layer.worker).length,
+      processingWorkers: layers.filter((layer) =>
+        layer.worker && (layer.busy || layer.phase === "loading")).length,
+      eligibleLayers: layers.filter((layer) => layer.active).length,
+      queuedLayers: layers.filter((layer) => layer.active && !layer.worker &&
+        layer.phase !== "error" && layer.target !== layer.rendered).length,
+      renderedLayers: layers.filter((layer) => layer.active && layer.frame &&
+        layer.rendered <= layer.target).length,
+      failedLayers: layers.filter((layer) => layer.active && layer.phase === "error").length,
     }),
     status: () =>
       layers.map(({ config, active, phase, error, warning, rendered, worker }) => ({
@@ -267,7 +302,7 @@ export function createRegionalLayers({
         warning,
         rendered,
       })),
-    update(state, { enabled, original, level }) {
+    update(state, { enabled, level }) {
       const overlays = [];
       const cone = orthographicViewCone(state);
       const candidates = layers.filter((layer) => {
@@ -289,28 +324,53 @@ export function createRegionalLayers({
       candidates.sort(
         (a, b) => distance(a) - distance(b) || a.config.enter - b.config.enter,
       );
-      const admitted = new Set(candidates.slice(0, maxInternationalWorkers));
+      const needsWork = (layer) =>
+        layer.phase !== "error" && layer.target !== layer.rendered;
+      // Eligibility is independent of worker admission. A completed layer
+      // retains its frame and tree when its worker is needed elsewhere.
       for (const layer of layers) {
-        if (layer.config.international && !admitted.has(layer)) layer.active = false;
-        if (layer.active) layer.lastUsed = ++clock;
-        if (!layer.active && layer.phase === "error") release(layer, true);
+        if (layer.active) {
+          layer.lastUsed = ++clock;
+          if (!layer.original) restore(layer);
+        }
+        layer.target =
+          Math.round(Math.max(0, Math.min(19, level + layer.config.offset)) * 10) / 10;
+        if (!layer.active && layer.config.international &&
+          (!layer.worker || layer.busy || layer.phase === "loading"))
+          release(layer, true);
+        else if (!layer.active && layer.phase === "error") release(layer, true);
       }
       const warm = layers
         .filter((layer) => layer.config.international && !layer.active && layer.worker)
         .sort((a, b) => (b.lastUsed ?? 0) - (a.lastUsed ?? 0));
       for (const layer of warm.slice(maxWarmInternationalWorkers)) release(layer, true);
+      // Retain in-flight jobs first. Complete all visible datasets in
+      // center-priority order, rather than limiting which datasets can draw.
+      const working = candidates.filter((layer) =>
+        layer.worker && (layer.busy || layer.phase === "loading"));
+      const pending = candidates.filter((layer) =>
+        needsWork(layer) && !working.includes(layer));
+      const selected = new Set([...working, ...pending].slice(0, maxInternationalWorkers));
+      // Keep idle workers in remaining slots to avoid rebuilding indexes.
+      for (const layer of candidates)
+        if (selected.size < maxInternationalWorkers && layer.worker)
+          selected.add(layer);
+      for (const layer of candidates)
+        if (layer.worker && !selected.has(layer)) park(layer);
       for (const layer of layers) {
         const { config } = layer;
-        layer.originalMode = original;
-        layer.target =
-          Math.round(Math.max(0, Math.min(19, level + config.offset)) * 10) /
-          10;
         if (!layer.active) continue;
-        if (layer.phase === "idle") start(layer);
-        query(layer);
-        const geometry = original ? layer.original : layer.frame;
-        if (geometry)
-          overlays.push({ geometry, color: config.color, width: config.width });
+        if (!config.international || selected.has(layer)) {
+          if (!layer.worker && needsWork(layer)) start(layer);
+          query(layer);
+        }
+        const geometry = layer.frame;
+        if (geometry && layer.rendered <= layer.target)
+          overlays.push({
+            geometry, color: config.color, width: config.width,
+            quadtree: layer.quadtree, quadtreeLevel: layer.rendered,
+            quadtreeColor: regionalQuadtreeColor(config.id),
+          });
       }
       return overlays.reverse(); // Draw state boundaries above county lines.
     },
