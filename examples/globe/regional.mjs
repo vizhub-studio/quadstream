@@ -283,6 +283,8 @@ export function createRegionalLayers({
     cacheStats: () => ({ ...prepared.stats(), preparedHits, builds, workerEvictions,
       warmWorkers: layers.filter((layer) => !layer.active && layer.worker).length,
       activeWorkers: layers.filter((layer) => layer.active && layer.worker).length,
+      processingWorkers: layers.filter((layer) =>
+        layer.worker && (layer.busy || layer.phase === "loading")).length,
       eligibleLayers: layers.filter((layer) => layer.active).length,
       queuedLayers: layers.filter((layer) => layer.active && !layer.worker &&
         layer.phase !== "error" && layer.target !== layer.rendered).length,
@@ -333,7 +335,8 @@ export function createRegionalLayers({
         }
         layer.target =
           Math.round(Math.max(0, Math.min(19, level + layer.config.offset)) * 10) / 10;
-        if (!layer.active && layer.config.international && !layer.worker)
+        if (!layer.active && layer.config.international &&
+          (!layer.worker || layer.busy || layer.phase === "loading"))
           release(layer, true);
         else if (!layer.active && layer.phase === "error") release(layer, true);
       }
