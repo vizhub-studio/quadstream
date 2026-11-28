@@ -68,7 +68,7 @@ export function mountGlobe(root) {
   const clipEnabled = new URLSearchParams(location.search).get("clip") !== "0";
   const draw = createGlobeRenderer(d3, ctx, {
     cull: true,
-    clip: clipEnabled,
+    clip: clipEnabled,    onQuadtreeStats: () => diagnostics(),
   });
   const drawMinimap = miniCtx ? createMinimapRenderer(d3, miniCtx) : null;
   const state = {
@@ -188,6 +188,7 @@ export function mountGlobe(root) {
     status.dataset.phase = phase;
   }
   function diagnostics() {
+    const qt = draw.quadtreeStats();
     const reduction = frame?.sourceVertices
       ? 100 * (1 - frame.vertices / frame.sourceVertices)
       : 0;
@@ -249,6 +250,15 @@ export function mountGlobe(root) {
             drawStats.stream.outside +
             " outside"
           : "—"),
+      "Quadtree overlay: " +
+        (qt
+          ? qt.indexed + "/" + qt.total + " indexed; " +
+            qt.occupied + " unique; " + qt.visited + " visited; " +
+            qt.pruned + " subtrees pruned; " + qt.rendered + " rendered; " +
+            qt.edgesRejected + " edge-empty; geometry " +
+            qt.geometryMs.toFixed(1) + " ms; completion " +
+            (qt.completionMs?.toFixed(1) ?? "pending") + " ms"
+          : "—"),
       "Atlas payload: " + atlasBytes + " bytes | geometry queries: " + requests,
       "Geometry transport: " + transport,
       "International catalog: " + catalogStatus,
@@ -286,6 +296,7 @@ export function mountGlobe(root) {
       clipRebuilt: String(drawStats?.rebuilt ?? ""),
       sourceVertices: String(frame?.sourceVertices ?? ""),
       mode: $("mode").value,
+      quadtreeStats: JSON.stringify(qt ?? null),
       regionalLayers: JSON.stringify(regional.status()),
     });
   }
@@ -347,6 +358,7 @@ export function mountGlobe(root) {
     syncState();
   }
   function schedule() {
+    draw.cancelQuadtree();
     if (raf || disposed) return;
     raf = requestAnimationFrame(() => {
       raf = 0;
@@ -716,6 +728,7 @@ export function mountGlobe(root) {
   function dispose() {
     if (disposed) return;
     disposed = true;
+    draw.cancelQuadtree();
     lifetime.abort();
     if (globalThis.globeDebug === debug) delete globalThis.globeDebug;
     epoch++;
