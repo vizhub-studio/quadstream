@@ -20,6 +20,7 @@ import {
   regionalConfig,
   loadRegionalCatalog,
 } from "../../../examples/globe/regional.mjs";
+import { GEO_PACKS_CREDITS, loadGeoPacksConfigs } from "../../../examples/globe/geopacks.mjs";
 import * as d3 from "d3";
 import * as topojson from "topojson-client";
 import * as map from "../../../examples/globe/map.mjs";
@@ -134,16 +135,40 @@ export function mountGlobe(root) {
       }),
     onChange: schedule,
   });
-  if (new URLSearchParams(location.search).get("international") !== "0") {
-    loadRegionalCatalog(() =>
-      fetch(asset("regional/catalog.json"), { signal: lifetime.signal }),
-    )
-      .then((catalog) => {
-        if (!disposed) regional.addConfigs(configs(catalog));
+  const international = new URLSearchParams(location.search).get("international");
+  let catalogStatus = international === "0" ? "disabled" : "loading";
+  if (international !== "0") {
+    const catalogRequest =
+      international === "cdn"
+        ? loadGeoPacksConfigs(topojson, (url) =>
+            fetch(url, { signal: lifetime.signal }),
+          )
+        : loadRegionalCatalog(() =>
+            fetch(asset("regional/catalog.json"), { signal: lifetime.signal }),
+          ).then(configs);
+    if (international === "cdn") {
+      const credits = document.createElement("a");
+      credits.href = GEO_PACKS_CREDITS;
+      credits.target = "_blank";
+      credits.rel = "noopener noreferrer";
+      credits.textContent = "ADM1 sources and licenses (Geo Packs)";
+      $("data-source").append(credits);
+      lifetime.signal.addEventListener("abort", () => credits.remove(), { once: true });
+    }
+    catalogRequest
+      .then((layers) => {
+        if (disposed) return;
+        const internationalLayers = layers.filter((layer) => layer.international);
+        catalogStatus = internationalLayers.length + " layers (" +
+          (international === "cdn" ? "Geo Packs CDN" : "local") + ")";
+        regional.addConfigs(internationalLayers);
+        schedule();
       })
       .catch((error) => {
-        if (!disposed)
-          console.warn("International boundaries unavailable", error);
+        if (disposed) return;
+        catalogStatus = "error: " + String(error.message ?? error);
+        console.warn("International boundaries unavailable", error);
+        schedule();
       });
   }
   let drawStats = null;
@@ -217,6 +242,7 @@ export function mountGlobe(root) {
             " outside"
           : "—"),
       "Atlas payload: " + atlasBytes + " bytes | geometry queries: " + requests,
+      "International catalog: " + catalogStatus,
       "Regional layers: " +
         regional
           .status()
