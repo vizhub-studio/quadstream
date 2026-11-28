@@ -4,6 +4,7 @@ import {
   regionalConfig,
   loadRegionalCatalog,
   createRegionalLayers,
+  regionalQuadtreeColor,
 } from "../examples/globe/regional.mjs";
 
 const record = (iso, level = "ADM1", cx = 1) => {
@@ -167,6 +168,8 @@ test("international workers remain warm across repeated zoom reversals", () => {
   layers.update(view, options);
   const original = { type: "MultiLineString", coordinates: [[[0, 0], [1, 1]]] };
   workers[0].onmessage({ data: { type: "ready", original } });
+  assert.deepEqual(layers.update(view, options), []);
+  workers[0].onmessage({ data: { type: "frame", level: 9, geometry: original } });
   for (let i = 0; i < 10; i++) {
     assert.deepEqual(layers.update({ ...view, scale: 100 }, options), []);
     assert.equal(layers.cacheStats().warmWorkers, 1);
@@ -198,10 +201,77 @@ test("evicted regional worker restarts from cached mesh", () => {
   layers.update(view, options);
   const original = { type: "MultiLineString", coordinates: [[[0, 0], [1, 1]]] };
   workers[0].onmessage({ data: { type: "ready", original } });
+  assert.deepEqual(layers.update(view, options), []);
+  workers[0].onmessage({ data: { type: "frame", level: 9, geometry: original } });
   layers.update({ ...view, scale: 100 }, options);
   assert.ok(workers[0].terminated);
   assert.equal(layers.update(view, options)[0].geometry, original);
+  assert.equal(workers.length, 1); // exact cached frame needs no worker
+  layers.update(view, { ...options, level: 7 });
   assert.equal(workers[1].sent[0].original, original);
   assert.equal(layers.cacheStats().preparedHits, 1);
+  layers.reset();
+});
+
+
+test("all eligible countries render with bounded workers, strict frames and colored trees", () => {
+  const workers = [];
+  const configs = regionalConfig({
+    catalog: ["CAN", "BRA", "IND", "DEU", "FRA", "ITA", "ESP", "POL"].map((iso) => record(iso)),
+  }).filter((config) => config.international);
+  const layers = createRegionalLayers({
+    configs,
+    maxInternationalWorkers: 2,
+    maxWarmInternationalWorkers: 0,
+    createWorker: () => {
+      const worker = {
+        sent: [],
+        postMessage(message) { this.sent.push(message); },
+        terminate() { this.terminated = true; },
+      };
+      workers.push(worker);
+      return worker;
+    },
+  });
+  const view = { initialScale: 100, scale: 600, width: 200, height: 200,
+    rotation: [0, 0, 0] };
+  const options = { enabled: true, original: true, level: 6 };
+  const raw = { type: "MultiLineString", coordinates: [[[0, 0], [1, 1]]] };
+  const tree = [{ face: "+X", level: 1, i: 0, j: 0 }];
+  assert.deepEqual(layers.update(view, options), []);
+  assert.equal(layers.cacheStats().eligibleLayers, 8);
+  for (let i = 0; i < 8; i++) {
+    const worker = workers[i];
+    assert.ok(worker);
+    worker.onmessage({ data: { type: "ready", original: raw, quadtree: tree } });
+    assert.equal(layers.update(view, options).length, i);
+    const id = worker.sent[0].config.id;
+    worker.onmessage({ data: { type: "frame", level: 9, geometry: { id } } });
+    const overlays = layers.update(view, options);
+    assert.equal(overlays.length, i + 1);
+    assert.ok(overlays.every((o) => o.geometry !== raw && o.quadtree === tree &&
+      o.quadtreeLevel === 9 && o.quadtreeColor === regionalQuadtreeColor(o.geometry.id)));
+    assert.ok(layers.cacheStats().activeWorkers <= 2);
+  }
+  assert.equal(layers.cacheStats().renderedLayers, 8);
+  assert.equal(layers.cacheStats().queuedLayers, 0);
+  layers.reset();
+});
+
+test("failed regional processing never exposes original geometry", () => {
+  let worker;
+  const layers = createRegionalLayers({
+    configs: regionalConfig({ catalog: [record("CAN")] }).filter((c) => c.international),
+    createWorker: () => (worker = { postMessage() {}, terminate() {} }),
+  });
+  const view = { initialScale: 100, scale: 600, width: 200, height: 200, rotation: [0, 0, 0] };
+  const options = { enabled: true, original: true, level: 6 };
+  const raw = { type: "MultiLineString", coordinates: [] };
+  layers.update(view, options);
+  worker.onmessage({ data: { type: "ready", original: raw } });
+  assert.deepEqual(layers.update(view, options), []);
+  worker.onmessage({ data: { type: "frame", level: 9, geometry: raw, warning: "invalid" } });
+  assert.deepEqual(layers.update(view, options), []);
+  assert.equal(layers.cacheStats().failedLayers, 1);
   layers.reset();
 });
