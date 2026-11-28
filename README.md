@@ -190,14 +190,17 @@ The React/Vite globe is published via GitHub Pages at
 <https://vizhub-studio.github.io/quadstream/> (after the first successful deployment).
 See the [deployment and local development instructions](quadstream-globe/README.md).
 
-From a checkout, install dependencies and build, then run either command:
+From a checkout, install dependencies and build, then run one of:
 
-| Demo               | Command              | What it demonstrates                                                                                                                                         |
-| ------------------ | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Progressive map    | `npm run demo:map`   | Canvas/MapLibre, detail levels, shared arcs, simulated partition latency                                                                                     |
-| Orthographic globe | `npm run demo:globe` | D3 Canvas, Visionscarto 110m/50m inputs, zoom-gated US state/county boundaries, pinch zoom, rotation, worker-based LOD and original/reconstructed comparison |
+| Demo                       | Command               | What it demonstrates                                                                                                                                         |
+| -------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| React/Vite globe (default) | `npm run dev`         | The published React/Vite globe; see [quadstream-globe](quadstream-globe/README.md) for first-time setup                                                       |
+| Progressive map            | `npm run demo:map`    | Canvas/MapLibre, detail levels, shared arcs, simulated partition latency                                                                                     |
+| Orthographic globe (legacy)| `npm run demo:globe`  | D3 Canvas, Visionscarto 110m/50m inputs, zoom-gated US state/county boundaries, pinch zoom, rotation, worker-based LOD and original/reconstructed comparison |
 
-Open the local URL printed by the server (normally http://127.0.0.1:4173/).
+The Vite globe serves on http://localhost:5173/ and requires the app's own
+`npm ci` in `quadstream-globe`; the other two print their own local URL
+(normally http://127.0.0.1:4173/).
 The demos are not included in the npm artifact. The globe downloads the full
 atlas up front; its LOD reduction is not a bandwidth-saving streaming protocol.
 See [map demo](https://github.com/vizhub-studio/quadstream/blob/master/docs/PROGRESSIVE-MAP.md)
