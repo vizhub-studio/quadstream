@@ -50,6 +50,23 @@ body {
 #toolbar button {
   min-height: 36px;
 }
+#github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+  text-decoration: none;
+}
+#github-link:hover {
+  background: #41405e;
+}
+@media (pointer: coarse) {
+  #github-link {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
 #settings-toggle::after {
   content: " ▾";
 }
@@ -126,7 +143,9 @@ input {
   accent-color: #c4b5fd;
 }
 button,
-select {
+select,
+#github-link {
+  color: inherit;
   background: #29294a;
   border: 1px solid #8f86d9;
   border-radius: 4px;
@@ -135,7 +154,8 @@ select {
 button:focus-visible,
 select:focus-visible,
 input:focus-visible,
-summary:focus-visible {
+summary:focus-visible,
+#github-link:focus-visible {
   outline: 2px solid #c4b5fd;
 }
 label {
