@@ -26,3 +26,31 @@ test("production build boots under a non-root base path", async ({ page }) => {
   await page.waitForLoadState("load");
   expect(errors).toEqual([]);
 });
+
+test("GitHub source link stays accessible on desktop and mobile", async ({
+  page,
+  context,
+}) => {
+  const repository = "https://github.com/vizhub-studio/quadstream";
+  await context.route(repository, (route) =>
+    route.fulfill({ contentType: "text/html", body: "<title>GitHub</title>" }),
+  );
+  await page.goto(process.env.GLOBE_BASE_PATH ?? "/migration/");
+  const link = page.getByRole("link", { name: "View source on GitHub" });
+  await expect(link).toBeVisible();
+  await expect(link).toHaveAttribute("href", repository);
+  await expect(link).toHaveAttribute("target", "_blank");
+  await expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  await link.focus();
+  await expect(link).toBeFocused();
+  const popupPromise = page.waitForEvent("popup");
+  await link.press("Enter");
+  const popup = await popupPromise;
+  await expect(popup).toHaveURL(repository);
+  await popup.close();
+
+  await page.setViewportSize({ width: 320, height: 640 });
+  await expect(link).toBeInViewport();
+  await page.getByRole("button", { name: "Settings" }).click();
+  await expect(link).toBeInViewport();
+});
