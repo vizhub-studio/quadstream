@@ -21,6 +21,11 @@ import {
   loadRegionalCatalog,
 } from "../../../examples/globe/regional.mjs";
 import { GEO_PACKS_CREDITS, loadGeoPacksConfigs } from "../../../examples/globe/geopacks.mjs";
+import {
+  createGeometryResolver,
+  geometryMode,
+  internationalMode,
+} from "./geometry-sources.mjs";
 import * as d3 from "d3";
 import * as topojson from "topojson-client";
 import * as map from "../../../examples/globe/map.mjs";
@@ -33,6 +38,9 @@ export function mountGlobe(root) {
   const asset = (path) =>
     new URL(import.meta.env.BASE_URL + "globe-data/" + path, location.origin)
       .href;
+  const params = new URLSearchParams(location.search);
+  const transport = geometryMode(params, import.meta.env.VITE_GEOMETRY_CDN_ONLY === "1");
+  const geometryAsset = createGeometryResolver({ mode: transport, localAsset: asset });
   const configs = (catalog = []) => {
     const files = new Map(catalog.map((r) => [r.id, r.file]));
     return regionalConfig({
@@ -42,7 +50,7 @@ export function mountGlobe(root) {
       ...config,
       url: config.international
         ? asset("regional/" + files.get(config.id))
-        : asset(
+        : geometryAsset(
             "us/" +
               (config.id === "us-states"
                 ? "states-10m.json"
@@ -135,7 +143,7 @@ export function mountGlobe(root) {
       }),
     onChange: schedule,
   });
-  const international = new URLSearchParams(location.search).get("international");
+  const international = internationalMode(params, transport);
   let catalogStatus = international === "0" ? "disabled" : "loading";
   if (international !== "0") {
     const catalogRequest =
@@ -242,6 +250,7 @@ export function mountGlobe(root) {
             " outside"
           : "—"),
       "Atlas payload: " + atlasBytes + " bytes | geometry queries: " + requests,
+      "Geometry transport: " + transport,
       "International catalog: " + catalogStatus,
       "Regional layers: " +
         regional
@@ -546,7 +555,7 @@ export function mountGlobe(root) {
         source = fixture;
         atlasBytes = 0;
       } else {
-        const r = await fetch(asset("world/" + sourceName + ".json"), {
+        const r = await fetch(geometryAsset("world/" + sourceName + ".json"), {
           signal: abort.signal,
         });
         if (!r.ok) throw new Error("Atlas HTTP " + r.status);
