@@ -26,7 +26,7 @@ const $ = (id) => document.getElementById(id),
 const clipEnabled = new URLSearchParams(location.search).get("clip") !== "0";
 const draw = createGlobeRenderer(globalThis.d3, ctx, {
   cull: true,
-  clip: clipEnabled,
+  clip: clipEnabled,  onQuadtreeStats: () => diagnostics(),
 });
 const drawMinimap = miniCtx
   ? createMinimapRenderer(globalThis.d3, miniCtx)
@@ -130,6 +130,7 @@ function setStatus(text, phase) {
   status.dataset.phase = phase;
 }
 function diagnostics() {
+  const qt = draw.quadtreeStats();
   const reduction = frame?.sourceVertices
     ? 100 * (1 - frame.vertices / frame.sourceVertices)
     : 0;
@@ -191,6 +192,15 @@ function diagnostics() {
           drawStats.stream.outside +
           " outside"
         : "—"),
+    "Quadtree overlay: " +
+      (qt
+        ? qt.indexed + "/" + qt.total + " indexed; " +
+          qt.occupied + " unique; " + qt.visited + " visited; " +
+          qt.pruned + " subtrees pruned; " + qt.rendered + " rendered; " +
+          qt.edgesRejected + " edge-empty; geometry " +
+          qt.geometryMs.toFixed(1) + " ms; completion " +
+          (qt.completionMs?.toFixed(1) ?? "pending") + " ms"
+        : "—"),
     "Atlas payload: " + atlasBytes + " bytes | geometry queries: " + requests,
     "Regional layers: " +
       regional
@@ -226,6 +236,7 @@ function diagnostics() {
     clipRebuilt: String(drawStats?.rebuilt ?? ""),
     sourceVertices: String(frame?.sourceVertices ?? ""),
     mode: $("mode").value,
+    quadtreeStats: JSON.stringify(qt ?? null),
     regionalLayers: JSON.stringify(regional.status()),
   });
 }
