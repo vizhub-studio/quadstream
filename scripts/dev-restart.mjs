@@ -1,6 +1,6 @@
-// Restarts the globe dev server: stops whatever is listening on the PORT,
+// Restarts the Vite globe dev server: stops whatever is listening on the PORT,
 // then starts `npm run dev` detached and waits for it to respond.
-// Usage: npm run dev:restart  (PORT env overrides the default 4173)
+// Usage: npm run dev:restart  (PORT env overrides the Vite default 5173)
 import { execFileSync, spawn } from "node:child_process";
 import { openSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -8,7 +8,7 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
-const port = String(process.env.PORT ?? 4173);
+const port = String(process.env.PORT ?? 5173);
 const npm = process.platform === "win32" ? "npm.cmd" : "npm";
 const log = join(tmpdir(), "quadstream-dev.log");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
