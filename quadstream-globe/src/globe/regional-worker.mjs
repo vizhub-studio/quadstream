@@ -9,7 +9,7 @@ import { geoPacksObject } from "../../../examples/globe/geopacks.mjs";
 
 import { createRegionalFrameCache } from "../../../examples/globe/geometry-cache.mjs";
 
-let original, engine, warning;
+let original, engine;
 const frames = createRegionalFrameCache();
 const cleanLine = (line) => {
   const result = [];
@@ -25,7 +25,6 @@ self.onmessage = async ({ data }) => {
     if (data.type === "init") {
       frames.clear();
       engine = undefined;
-      warning = undefined;
       if (data.original) original = data.original;
       else {
         let topology = data.topology;
@@ -39,54 +38,41 @@ self.onmessage = async ({ data }) => {
           : data.config;
         original = internalBoundaryMesh(topology, config, topojson);
       }
-      try {
-        const features = original.coordinates
-          .map(cleanLine)
-          .filter((coordinates) => coordinates.length >= 2)
-          .map((coordinates, i) => ({
-            type: "Feature",
-            id: String(i),
-            properties: {},
-            geometry: { type: "LineString", coordinates },
-          }));
-        engine = buildSphericalQuadstream(
-          { type: "FeatureCollection", features },
-          { maxLevel: 20 },
-        );
-      } catch (error) {
-        warning = "Source fallback: " + String(error.message ?? error);
-      }
-      self.postMessage({ type: "ready", original, warning });
+      const features = original.coordinates
+        .map(cleanLine)
+        .filter((coordinates) => coordinates.length >= 2)
+        .map((coordinates, i) => ({
+          type: "Feature",
+          id: String(i),
+          properties: {},
+          geometry: { type: "LineString", coordinates },
+        }));
+      engine = buildSphericalQuadstream(
+        { type: "FeatureCollection", features },
+        { maxLevel: 20 },
+      );
+      const quadtree = engine.priorities.cells.map(({ face, level, i, j, key }) => ({
+        face, level, i, j, key,
+      }));
+      self.postMessage({ type: "ready", original, quadtree });
     } else if (data.type === "query") {
       const cached = frames.get(data.level);
       if (cached) {
         self.postMessage(cached);
         return;
       }
-      let geometry = original;
-      let frameWarning = warning;
-      if (engine) {
-        try {
-          const frame = engine.query({ level: data.level });
-          if (frame.valid)
-            geometry = {
-              type: "MultiLineString",
-              coordinates: frame.geojson.features.map(
-                (f) => f.geometry.coordinates,
-              ),
-            };
-          else frameWarning = "Source fallback: invalid simplified boundaries";
-        } catch (error) {
-          frameWarning = "Source fallback: " + String(error.message ?? error);
-        }
-      }
+      if (!engine) throw new Error("Regional Quadstream engine unavailable");
+      const frame = engine.query({ level: data.level });
+      if (!frame.valid) throw new Error("Invalid simplified regional boundaries");
       const result = {
         type: "frame",
         level: data.level,
-        geometry,
-        warning: frameWarning,
+        geometry: {
+          type: "MultiLineString",
+          coordinates: frame.geojson.features.map((f) => f.geometry.coordinates),
+        },
       };
-      if (!frameWarning) frames.set(data.level, result);
+      frames.set(data.level, result);
       self.postMessage(result);
     }
   } catch (error) {
