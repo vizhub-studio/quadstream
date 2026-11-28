@@ -6,7 +6,8 @@ export function internalBoundaryMesh(topology, config, topojson) {
     topology,
     object,
     (a, b) =>
-      (config.includeExternal && a == null && b == null) ||
+      // TopoJSON passes the same owning geometry twice for unshared arcs.
+      (config.includeExternal && a != null && a === b) ||
       (a != null &&
         b != null &&
         a !== b &&
