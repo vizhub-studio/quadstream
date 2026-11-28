@@ -241,3 +241,30 @@ repair promotes arcs.
 - **Self-crossing source rings** (e.g. 110m Sudan) used to force a full-detail
   source fallback. `examples/globe/repair.mjs` now cuts the loops so the feature
   simplifies normally. See `plans/UNSIMPLIFIED_GEOMETRY.md`.
+
+
+### Quadtree overlay viewport pruning
+
+The shared globe renderer builds an identity-cached sparse cube-face hierarchy
+incrementally when the overlay is enabled. Both index construction and
+traversal use the existing cooperative frame scheduler (500 items or a soft
+4 ms budget per slice). Camera changes cancel stale drawing; a partially
+built index can resume on the same immutable cell array. Only occupied cells
+are drawn; synthetic ancestors are traversal-only, and duplicate addresses
+from separate geometry groups are coalesced.
+
+Conservative spherical caps enclose complete radial cube-face squares, so a
+disjoint cap rejects an entire subtree. The overlay uses the same
+orthographic viewport cone as the geography renderer, but uses its current
+unpadded radius: unlike the geography clipper, the overlay has no padded
+geometry-window cache. At low zoom the cone can extend to the full visible
+hemisphere. A second great-circle edge test rejects lines that cannot
+intersect the cone before allocating longitude/latitude geometry. D3 and
+the canvas still perform final clipping of surviving lines.
+
+Diagnostics report input and indexed counts, unique occupied cells, visited
+nodes, pruned subtrees, rendered cells, cells with no intersecting edges,
+geometry-generation time, and elapsed completion time. Index construction
+is a one-time cost per cell-array identity; subsequent draws reuse the index
+and cached caps. The viewport cone bounds the rectangular canvas and can
+therefore conservatively retain geometry outside the actual canvas edges.
