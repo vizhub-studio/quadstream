@@ -6,14 +6,13 @@ Live demo: https://vizhub-studio.github.io/quadstream/
 
 <img width="981" height="964" alt="image" src="https://github.com/user-attachments/assets/1b54d21a-ea13-4cdf-b88c-6048b3e009dc" />
 
+<img width="1379" height="834" alt="image" src="https://github.com/user-attachments/assets/b9da65c2-5784-47b6-9a16-7970ac599e0e" />
+
 Quadstream prepares geographic shapes at multiple levels of detail while
 sharing exactly matching boundaries. Build once, query a simpler representation
 for a map or globe, or serialize planar geometry into independently loadable
 binary partitions. The TypeScript-first core is ESM with no runtime dependencies,
 and requires no VizHub account, map framework or server.
-
-> **Experimental 0.1.0.** Reference validation can be expensive; do not use it
-> for safety-critical geometry.
 
 ## Features
 
