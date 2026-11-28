@@ -5,6 +5,45 @@ to the existing US Census atlas. No external browser requests are necessary.
 The empty checked-in catalog keeps ordinary installs and CI independent of
 network downloads.
 
+
+## Experimental npm/CDN ADM1 source (React globe)
+
+Start the React globe normally and append `?international=cdn` to its URL.
+No regional downloader or package installation is needed for this mode.
+The existing local catalog remains the default, and `?international=0`
+still disables international boundaries. US states and counties are unchanged.
+
+The source is [@paramira/geo-packs 0.1.0](https://www.npmjs.com/package/@paramira/geo-packs),
+served as version-pinned static data through jsDelivr. Startup fetches the
+package file inventory and its world topology (country envelopes); it does
+not fetch subdivision topology until a country is admitted at 3x zoom.
+Only non-US ADM1 files are selected; ADM2 is intentionally out of scope.
+The package documents roughly 200 ADM1 country files, with known gaps.
+The globe retains the six-international-worker admission limit. Country
+envelopes use the package world outlines with a five-degree margin;
+these are approximate, not proven bounds on the subdivision geometry.
+
+The Settings > Data source panel links to per-country source and license
+credits. Data licenses differ by country; some are share-alike.
+Unlike local mode, the CDN receives requests that reveal the areas being
+viewed. No CDN availability or cache hit is guaranteed.
+
+### Live acceptance gates
+
+- Confirm the version-pinned jsDelivr flat inventory, world topology and
+  CAN ADM1 URL return valid JSON with browser CORS enabled. Inspect country
+  counts and sizes; ensure the expected polygon collection and shared arcs.
+- Start the React app with the CDN query parameter and inspect Diagnostics:
+  catalog status should report a nonzero layer count. Verify no subdivision
+  requests before the activation threshold, and Canada boundaries above 3x.
+- Test Brazil, India, Germany, France and the antimeridian, both geometry
+  modes, zoom reversal, worker eviction, HTTP failures, and mobile memory.
+- Run root and React checks and browser tests. Existing tests must remain
+  independent of the external network.
+- Promote this mode to default only after successful live validation.
+  The source package's data resolution, real payload sizes, browser CORS,
+  and exact coverage are not established by synthetic tests.
+
 ## Generate and try
 
 ```sh
