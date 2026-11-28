@@ -13,6 +13,13 @@ node scripts/download-regional-atlas.mjs CAN BRA IND DEU FRA
 npm run demo:globe
 ```
 
+Pass `--level=ADM1` and/or `--level=ADM2` to limit which layers are
+requested (default: both). For example, ADM1 only:
+
+```sh
+node scripts/download-regional-atlas.mjs --level=ADM1
+```
+
 Run the downloader without country arguments to request all available ADM1 and
 ADM2 layers other than USA. Each successful invocation replaces the catalog
 with the selected set. Assets are content-hashed and ignored by Git; do not

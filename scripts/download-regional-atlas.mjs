@@ -5,9 +5,20 @@ import { createHash } from "node:crypto";
 import { mesh } from "topojson-client";
 
 const args = process.argv.slice(2);
-const countries = new Set(args.map((s) => s.toUpperCase()));
-if (args.some((s) => !/^[A-Z]{3}$/i.test(s))) {
-  throw new Error("Usage: node scripts/download-regional-atlas.mjs [ISO3 ...]");
+const levels = [];
+const isoArgs = [];
+for (const arg of args) {
+  const match = /^--level=(ADM1|ADM2)$/i.exec(arg);
+  if (match) levels.push(match[1].toUpperCase());
+  else isoArgs.push(arg);
+}
+if (!levels.length) levels.push("ADM1", "ADM2");
+const selectedLevels = [...new Set(levels)];
+const countries = new Set(isoArgs.map((s) => s.toUpperCase()));
+if (isoArgs.some((s) => !/^[A-Z]{3}$/i.test(s))) {
+  throw new Error(
+    "Usage: node scripts/download-regional-atlas.mjs [--level=ADM1] [--level=ADM2] [ISO3 ...]",
+  );
 }
 const version = "gb80";
 const root = fileURLToPath(
@@ -59,7 +70,7 @@ async function get(url) {
 await mkdir(root, { recursive: true });
 const records = [];
 const failures = [];
-for (const level of ["ADM1", "ADM2"]) {
+for (const level of selectedLevels) {
   const index = JSON.parse(await get(api + "ALL/" + level + "/"));
   if (!Array.isArray(index)) throw new Error("Expected metadata array");
   for (const summary of index.sort((a, b) =>
