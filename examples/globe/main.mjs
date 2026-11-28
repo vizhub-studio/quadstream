@@ -26,7 +26,8 @@ const $ = (id) => document.getElementById(id),
 const clipEnabled = new URLSearchParams(location.search).get("clip") !== "0";
 const draw = createGlobeRenderer(globalThis.d3, ctx, {
   cull: true,
-  clip: clipEnabled,  onQuadtreeStats: () => diagnostics(),
+  clip: clipEnabled,
+  onQuadtreeStats: () => diagnostics(),
 });
 const drawMinimap = miniCtx
   ? createMinimapRenderer(globalThis.d3, miniCtx)
@@ -194,12 +195,24 @@ function diagnostics() {
         : "—"),
     "Quadtree overlay: " +
       (qt
-        ? qt.indexed + "/" + qt.total + " indexed; " +
-          qt.occupied + " unique; " + qt.visited + " visited; " +
-          qt.pruned + " subtrees pruned; " + qt.rendered + " rendered; " +
-          qt.edgesRejected + " edge-empty; geometry " +
-          qt.geometryMs.toFixed(1) + " ms; completion " +
-          (qt.completionMs?.toFixed(1) ?? "pending") + " ms"
+        ? qt.indexed +
+          "/" +
+          qt.total +
+          " indexed; " +
+          qt.occupied +
+          " unique; " +
+          qt.visited +
+          " visited; " +
+          qt.pruned +
+          " subtrees pruned; " +
+          qt.rendered +
+          " rendered; " +
+          qt.edgesRejected +
+          " edge-empty; geometry " +
+          qt.geometryMs.toFixed(1) +
+          " ms; completion " +
+          (qt.completionMs?.toFixed(1) ?? "pending") +
+          " ms"
         : "—"),
     "Atlas payload: " + atlasBytes + " bytes | geometry queries: " + requests,
     "Regional layers: " +
